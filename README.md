@@ -2,7 +2,7 @@
 System zarządzania Biblioteką
 
 Aplikacja będzie zawierać role takie jak:
--Administrator
+-Administrator </br>
 -Dyrektor
 -Pracownicy
 -Klient
