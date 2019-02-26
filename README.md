@@ -26,4 +26,4 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 -Pracownicy<br>
 -Klient<br>
 
-diagramy uml
+## Diagramy UML
