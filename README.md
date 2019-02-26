@@ -6,6 +6,7 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 1. Dodawanie nowego klienta
 1. Dodawanie nowego użytkownika
 1. Wświetlanie najpopularniejszych książek
+1. Wświetlanie polecanych książek
 1. Możliwość wypożyczania i rezerwowania książek
 1. Kategorie książek
 1. Wyszukiwanie książek po np. rok wydania, autor, itp.
