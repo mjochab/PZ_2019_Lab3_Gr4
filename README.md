@@ -1,5 +1,5 @@
 # PZ_2019_Lab3_Gr4
-##System zarządzania Biblioteką<br>
+#System zarządzania Biblioteką<br>
 
 Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilością bibliotek.
 1. Przesunięcia między bibliotekami np. książek, pracowników
