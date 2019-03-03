@@ -27,4 +27,4 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 -Klient<br>
 
 ## Diagramy UML
-![](Diagram_przypadku.jpg)
+![](file:///C:/Users/BlackBurn/Desktop/Diagram_przypadku.jpg)
