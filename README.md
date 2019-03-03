@@ -27,16 +27,16 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 -Klient<br>
 
 ## Diagramy UML
-1. Diagram przypadków użycia
+### Diagram przypadków użycia
 ![](https://i.imgsafe.org/c3/c311ca5a56.jpeg)
 
-1. Diagram Klas
+### Diagram Klas
 ![](https://i.imgsafe.org/c3/c317110318.jpeg)
 
-1. Diagram sekwencji
+### Diagram sekwencji
 ![](https://i.imgsafe.org/c3/c318e9f9a5.jpeg)
 
-1. Diagram aktywności
-![](https://i.imgsafe.org/c3/c31bc85309.jpeg)![]
+### Diagram aktywności
+![](https://i.imgsafe.org/c3/c31bc85309.jpeg)
 
 
