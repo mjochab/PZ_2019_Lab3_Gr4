@@ -27,4 +27,4 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 -Klient<br>
 
 ## Diagramy UML
-![](/Diagram_przypadku.jpg)
+![](https://i.imgsafe.org/c3/c311ca5a56.jpeg)
