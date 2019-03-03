@@ -27,3 +27,5 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 -Klient<br>
 
 ## Diagramy UML
+
+https://ibb.co/X4LXLLS  Diagram przypadków
