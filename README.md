@@ -28,4 +28,4 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 
 ## Diagramy UML
 
-![](https://ibb.co/X4LXLLS)![]
+!(https://ibb.co/X4LXLLS)
