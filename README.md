@@ -15,6 +15,11 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 1. Plik pdf z listą wypożyczonych książek przez klienta 
 1. Plik pdf z listą zamównionych książek
 
+### Wykorzystane technologie
+1. JavaFX
+1. Spring Boot (Spring Data)
+1. Gradle
+
 ### Gromadzone dane
 1. Dane personalne uzytkowników całego systemu
 1. Dane na temat książek (autor, rok wydania, stan, itp.)
