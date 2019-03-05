@@ -12,8 +12,8 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 1. Kategorie książek
 1. Wyszukiwanie książek po np. rok wydania, autor, itp.
 1. Zamawianie książek
-1. Plik pdf z listą wypożyczonych książek przez klienta 
-1. Plik pdf z listą zamównionych książek
+1. Generowanie pliku z listą wypożyczonych książek przez klienta 
+1. Generowanie pliku z listą zamównionych książek
 
 ### Wykorzystane technologie
 1. JavaFX
