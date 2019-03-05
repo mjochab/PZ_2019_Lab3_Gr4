@@ -33,7 +33,7 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 
 ## Diagramy UML
 ### Diagram przypadków użycia
-![](https://imgur.com/rRZHYhn)
+![](https://i.imgsafe.org/e3/e3f4331f7a.jpeg)
 
 ### Diagram Klas
 ![](https://i.imgsafe.org/c3/c317110318.jpeg)
