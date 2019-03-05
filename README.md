@@ -11,8 +11,7 @@ Przewidywane funkcjonalności:
 1. Wświetlanie najpopularniejszych książek
 1. Wświetlanie polecanych książek
 1. Możliwość wypożyczania i rezerwowania książek
-1. Kategorie książek
-1. Wyszukiwanie książek po np. rok wydania, autor, itp.
+1. Wyszukiwanie książek po np. rok wydania, autor, kategorii, itp.
 1. Zamawianie książek
 1. Generowanie pliku z listą wypożyczonych książek przez klienta 
 1. Generowanie pliku z listą zamównionych książek
