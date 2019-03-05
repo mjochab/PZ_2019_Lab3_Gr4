@@ -2,6 +2,8 @@
 ## System zarządzania Biblioteką
 
 Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilością bibliotek. 
+
+Przewidywane funkcjonalności: 
 1. Przesunięcia między bibliotekami np. książek, pracowników
 1. Dodawanie/edycja klienta przez pracownika
 1. Dodawanie/edycja pracownika przez administratora
@@ -23,7 +25,7 @@ Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilości�
 ### Gromadzone dane
 1. Dane personalne uzytkowników całego systemu
 1. Dane na temat książek (autor, rok wydania, stan, itp.)
-
+1. Dane na temat wypożyczeń książek.
 
 ### Aplikacja będzie zawierać role takie jak: 
 -Administrator <br>
