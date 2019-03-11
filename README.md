@@ -34,13 +34,13 @@ Przewidywane funkcjonalności:
 
 ## Diagramy UML
 ### Diagram przypadków użycia
-![](https://i.imgsafe.org/e3/e3f4331f7a.jpeg)
+![](https://i.imgsafe.org/6a/6a59eaa6cc.jpeg)
 
 ### Diagram Klas
 ![](https://i.imgsafe.org/c3/c317110318.jpeg)
 
 ### Diagram sekwencji
-![](https://i.imgsafe.org/c3/c318e9f9a5.jpeg)
+![](https://i.imgsafe.org/6a/6a5bbb5f92.jpeg)
 
 ### Diagram aktywności
 ![](https://i.imgsafe.org/c3/c31bc85309.jpeg)
