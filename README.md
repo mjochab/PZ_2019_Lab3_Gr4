@@ -8,6 +8,7 @@ Przewidywane funkcjonalności:
 1. Dodawanie/edycja klienta przez pracownika
 1. Dodawanie/edycja pracownika przez administratora
 1. Dodawanie/edycja książek przez pracownika
+1. Dodawanie administratora
 1. Wświetlanie najpopularniejszych książek
 1. Wświetlanie polecanych książek
 1. Możliwość wypożyczania i rezerwowania książek
@@ -15,6 +16,7 @@ Przewidywane funkcjonalności:
 1. Zamawianie książek
 1. Generowanie pliku z listą wypożyczonych książek przez klienta 
 1. Generowanie pliku z listą zamównionych książek
+
 
 ### Wykorzystane technologie
 1. JavaFX
