@@ -48,8 +48,6 @@ Przewidywane funkcjonalności:
 ![](https://i.imgsafe.org/c3/c31bc85309.jpeg)
 
 
-
-
 ## Projekt wizualny aplikacji (szkice)
 ### Zamawianie / Wypożyczanie
 ![](https://i.imgsafe.org/0a/0af2c5b40d.png)
