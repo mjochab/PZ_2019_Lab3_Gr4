@@ -49,6 +49,7 @@ Przewidywane funkcjonalności:
 
 
 
+
 ## Projekt wizualny aplikacji (szkice)
 ### Zamawianie / Wypożyczanie
 ![](https://i.imgsafe.org/0a/0af2c5b40d.png)
