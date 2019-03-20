@@ -53,4 +53,7 @@ Przewidywane funkcjonalności:
 ![](https://i.imgsafe.org/0a/0af2c5b40d.png)
 ![](https://i.imgsafe.org/0a/0af2d25b75.png)
 
+### Strona główna
+![](https://i.imgsafe.org/2a/2a42e56962.png)
+![](https://i.imgsafe.org/2a/2a42e8e6d3.png)
 
