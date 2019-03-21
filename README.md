@@ -52,6 +52,8 @@ Przewidywane funkcjonalności:
 ### Zamawianie / Wypożyczanie
 ![](https://i.imgsafe.org/0a/0af2c5b40d.png)
 ![](https://i.imgsafe.org/3b/3bd4fca808.png)
+#### Obsługa zamówień
+![](https://i.imgsafe.org/3c/3c75210bcf.png)
 
 ### Strona główna
 ![](https://i.imgsafe.org/2a/2a42e56962.png)
