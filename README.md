@@ -57,3 +57,14 @@ Przewidywane funkcjonalności:
 ![](https://i.imgsafe.org/2a/2a42e56962.png)
 ![](https://i.imgsafe.org/2a/2a42e8e6d3.png)
 
+### Dodawanie użytkownika
+![](https://i.imgsafe.org/3a/3a4825ff4c.jpeg)
+
+### Edycja pracownika
+![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
+
+### Dodawanie książek
+![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
+
+### Edytowanie książek
+![](https://i.imgsafe.org/3a/3a48a191ba.jpeg)
