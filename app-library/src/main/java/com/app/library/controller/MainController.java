@@ -16,8 +16,8 @@ public class MainController {
     private void initialize() {
         HamburgerSlideCloseTransition burgerTask = new HamburgerSlideCloseTransition(hamburgerButton);
         burgerTask.setRate(-1);
-        hamburgerButton.addEventHandler(MouseEvent.MOUSE_PRESSED, (e)->{
-            burgerTask.setRate(burgerTask.getRate()*-1);
+        hamburgerButton.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
+            burgerTask.setRate(burgerTask.getRate() * -1);
             burgerTask.play();
         });
     }
