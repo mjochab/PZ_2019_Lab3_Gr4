@@ -21,4 +21,16 @@ public class MainController {
             burgerTask.play();
         });
     }
+
+    public void test(){
+        Syste.out.println("Wypisz");
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+
+
+    }
+
 }
