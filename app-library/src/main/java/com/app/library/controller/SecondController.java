@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Controller
-public class MainController {
+public class SecondController {
 
     @FXML
     private ResourceBundle resources;
@@ -38,7 +38,7 @@ public class MainController {
         });
 
         hamburgerButton.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
-            viewManager.show(ViewType.SECOND);
+            viewManager.show(ViewType.MAIN);
         });
     }
 
@@ -46,16 +46,4 @@ public class MainController {
     public void setViewManager(ViewManager viewManager) {
         this.viewManager = viewManager;
     }
-
-    public void test(){
-        Syste.out.println("Wypisz");
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
-
-
-    }
-
 }

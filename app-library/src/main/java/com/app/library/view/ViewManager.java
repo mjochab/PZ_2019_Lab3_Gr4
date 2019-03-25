@@ -18,7 +18,6 @@ public class ViewManager {
 
     private ConfigurableApplicationContext context;
     private Stage stage;
-    private FXMLLoader fxmlLoader = new FXMLLoader();
 
     public void init(Stage stage) {
         this.stage = stage;
@@ -36,6 +35,7 @@ public class ViewManager {
 
     private Parent getView(String viewName) {
         String viewPath = getViewPath(viewName);
+        FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setControllerFactory(context::getBean);
         fxmlLoader.setLocation(getClass().getResource(viewPath));
 
