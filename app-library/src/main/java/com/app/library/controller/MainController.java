@@ -42,4 +42,16 @@ public class MainController {
     public void setViewManager(ViewManager viewManager) {
         this.viewManager = viewManager;
     }
+
+    public void test(){
+        Syste.out.println("Wypisz");
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+
+
+    }
+
 }
