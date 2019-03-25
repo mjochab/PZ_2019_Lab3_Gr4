@@ -22,6 +22,8 @@ Przewidywane funkcjonalności:
 1. JavaFX
 1. Spring Boot (Spring Data)
 1. Gradle
+1. JavaFX Material Design Library (JFoenix) - https://github.com/jfoenixadmin/JFoenix
+1. JavaFX Scene builder - https://gluonhq.com/products/scene-builder/
 
 ### Gromadzone dane
 1. Dane personalne uzytkowników całego systemu
