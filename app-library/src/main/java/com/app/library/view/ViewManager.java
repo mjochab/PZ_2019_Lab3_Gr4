@@ -23,7 +23,7 @@ public class ViewManager {
         this.stage = stage;
 
         Parent mainWindow = getView(ViewType.MAIN.getFxmlName());
-        Scene scene = new Scene(mainWindow, 800, 600);
+        Scene scene = new Scene(mainWindow, 1280, 800);
         stage.setScene(scene);
         stage.show();
     }
@@ -50,7 +50,7 @@ public class ViewManager {
         StringBuilder builder = new StringBuilder();
         builder.append(VIEWS_DIR);
         builder.append(viewName);
-        builder.append((VIEWS_EXTENSION));
+        builder.append(VIEWS_EXTENSION);
 
         return builder.toString();
     }

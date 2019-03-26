@@ -1,0 +1,19 @@
+.background{
+    -fx-background-image:url("../images/tlo.jpg");
+
+}
+
+
+.border_menu{
+    -fx-border-size: 5 10 15 20;
+    -fx-border-color:black;
+}
+
+
+.brown_background{
+    -fx-background-color: #937854;
+}
+
+.menu_item_active{
+    -fx-background-color: #DAA520;
+}
