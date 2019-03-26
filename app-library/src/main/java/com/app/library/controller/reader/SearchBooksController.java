@@ -1,16 +1,20 @@
-package com.app.library.controller;
+package com.app.library.controller.reader;
 
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 @Controller
-public class SecondController {
+public class SearchBooksController implements Initializable {
 
     @FXML
     private JFXHamburger hamburgerButton;
@@ -19,8 +23,9 @@ public class SecondController {
 
     private HamburgerSlideCloseTransition burgerTask;
 
+    @Override
     @FXML
-    private void initialize() {
+    public void initialize(URL location, ResourceBundle resources) {
         assert hamburgerButton != null : "fx:id=\"hamburgerButton\" was not injected: check your FXML file 'main.fxml'.";
 
         burgerTask = new HamburgerSlideCloseTransition(hamburgerButton);
@@ -28,14 +33,14 @@ public class SecondController {
     }
 
     @FXML
-    void hamburgerButtonPressed(MouseEvent event) {
-        burgerTask.setRate(burgerTask.getRate() * -1);
-        burgerTask.play();
+    void hamburgerButtonClicked(MouseEvent event) {
+        this.viewManager.show(ViewType.MAIN);
     }
 
     @FXML
-    void hamburgerButtonClicked(MouseEvent event) {
-        viewManager.show(ViewType.MAIN);
+    void hamburgerButtonPressed(MouseEvent event) {
+        burgerTask.setRate(burgerTask.getRate() * -1);
+        burgerTask.play();
     }
 
     @Autowired

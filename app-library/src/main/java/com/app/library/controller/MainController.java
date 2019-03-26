@@ -5,12 +5,16 @@ import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 @Controller
-public class MainController {
+public class MainController implements Initializable {
     
     @FXML
     private JFXHamburger hamburgerButton;
@@ -19,8 +23,9 @@ public class MainController {
 
     private HamburgerSlideCloseTransition burgerTask;
 
+    @Override
     @FXML
-    private void initialize() {
+    public void initialize(URL location, ResourceBundle resources) {
         assert hamburgerButton != null : "fx:id=\"hamburgerButton\" was not injected: check your FXML file 'main.fxml'.";
 
         burgerTask = new HamburgerSlideCloseTransition(hamburgerButton);
@@ -35,7 +40,7 @@ public class MainController {
 
     @FXML
     void hamburgerButtonClicked(MouseEvent event) {
-        viewManager.show(ViewType.SECOND);
+        viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
     @Autowired
