@@ -1,10 +1,12 @@
 package com.app.library.controller.reader;
 
+
+
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition;
-import javafx.event.Event;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @Controller
-public class SearchBooksController implements Initializable {
+public class My_orders_Controller implements Initializable {
 
     @FXML
     private JFXHamburger hamburgerButton;
@@ -40,14 +42,14 @@ public class SearchBooksController implements Initializable {
     }
 
     @FXML
-    void hamburgerButtonClicked(MouseEvent event) {
-        this.viewManager.show(ViewType.MAIN);
-    }
-
-    @FXML
     void hamburgerButtonPressed(MouseEvent event) {
         burgerTask.setRate(burgerTask.getRate() * -1);
         burgerTask.play();
+    }
+
+    @FXML
+    void hamburgerButtonClicked(MouseEvent event) {
+        viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
     @Autowired
@@ -55,7 +57,9 @@ public class SearchBooksController implements Initializable {
         this.viewManager = viewManager;
     }
 
-    public void go_to_account(Event event) throws IOException {
+    @FXML
+//    przejście do zakładki "konto"
+        public void go_to_account(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/account.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Konto");
@@ -63,4 +67,17 @@ public class SearchBooksController implements Initializable {
         stage.show();
     }
 
+    public void go_to_home(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Strona Główna");
+        stage.setScene(new Scene(root, 597, 852));
+        stage.show();
+
+
+    }
+
+
+
 }
+
