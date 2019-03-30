@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.SearchBooksController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employer.Adding_Book_Controller">
     <top>
         <JFXToolbar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: rgba(147,120,84,0.9);" BorderPane.alignment="CENTER">
             <left>
@@ -34,7 +34,7 @@
                <children>
                   <HBox alignment="BOTTOM_LEFT" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="147.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót">
+                        <Button fx:id="powrot" onAction="#go_to_home" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="147.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót">
                            <font>
                               <Font size="18.0" />
                            </font>

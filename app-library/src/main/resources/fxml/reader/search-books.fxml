@@ -26,7 +26,7 @@
             </Text>
          </center>
          <right>
-            <Button fx:id="test" onAction="#go_to_account" mnemonicParsing="false" prefHeight="25.0" prefWidth="237.0" text="Button" BorderPane.alignment="CENTER" />
+            <Button fx:id="test" mnemonicParsing="false" onAction="#go_to_account" prefHeight="25.0" prefWidth="237.0" text="Profil (przycisk testowy)" BorderPane.alignment="CENTER" />
          </right>
       </JFXToolbar>
    </top>
