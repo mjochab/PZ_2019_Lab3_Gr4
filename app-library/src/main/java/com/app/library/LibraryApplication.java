@@ -33,8 +33,7 @@ public class LibraryApplication extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
-
-		primaryStage.setTitle("Biblioteka");
+		primaryStage.setTitle("Strona Główna");
 		primaryStage.setScene(new Scene(root, 597, 852));
 		primaryStage.show();
 	}
