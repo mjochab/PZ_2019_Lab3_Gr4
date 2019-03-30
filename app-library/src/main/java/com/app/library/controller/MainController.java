@@ -33,7 +33,7 @@ public class MainController {
     }
 
     @FXML
-    public void go_to_profil(Event event) throws IOException {
+    public void go_to_account(Event event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/account.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Konto");
