@@ -1,5 +1,6 @@
 package com.app.library.controller.reader;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,15 @@ public class Account_Controller {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Strona Główna");
+        stage.setScene(new Scene(root, 597, 852));
+        stage.show();
+    }
+
+    @FXML
+    public void go_to_search_books(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/search-books.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Wyszukaj książkę");
         stage.setScene(new Scene(root, 597, 852));
         stage.show();
     }

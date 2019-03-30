@@ -77,6 +77,15 @@ public class My_orders_Controller implements Initializable {
 
     }
 
+    @FXML
+    public void go_to_search_books(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/search-books.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Wyszukaj książkę");
+        stage.setScene(new Scene(root, 597, 852));
+        stage.show();
+    }
+
 
 
 }
