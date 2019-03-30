@@ -34,7 +34,7 @@
                <children>
                   <HBox alignment="BOTTOM_LEFT" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="powrot" onAction="#go_to_home" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="147.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót">
+                        <Button fx:id="powrot" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#go_to_home" prefHeight="50.0" prefWidth="147.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót">
                            <font>
                               <Font size="18.0" />
                            </font>
