@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Adding_Book_Controller {
+public class List_Books_Controller {
 
     public void go_to_home(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/employer/account-employer.fxml"));
@@ -18,5 +18,4 @@ public class Adding_Book_Controller {
         stage.setScene(new Scene(root, 757, 877));
         stage.show();
     }
-
 }

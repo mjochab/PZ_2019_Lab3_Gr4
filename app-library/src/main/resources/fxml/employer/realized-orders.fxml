@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employer.List_orders_Controller">
    <top>
       <JFXToolbar prefHeight="47.0" prefWidth="61.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <left>
@@ -48,6 +48,7 @@
                </center>
             </BorderPane>
             <Button layoutX="477.0" layoutY="656.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="89.0" style="-fx-background-color: #937854;" text="Refresh" />
+            <Button fx:id="powrót" layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="47.0" prefWidth="69.0" style="-fx-background-color: #937854;" text="Powrót" />
          </children>
       </AnchorPane>
    </center>

@@ -41,7 +41,7 @@ public class Account_Controller {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/search-books.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Wyszukaj książkę");
-        stage.setScene(new Scene(root, 597, 852));
+        stage.setScene(new Scene(root, 1280, 800));
         stage.show();
     }
 

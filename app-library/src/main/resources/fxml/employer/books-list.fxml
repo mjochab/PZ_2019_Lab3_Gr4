@@ -6,14 +6,13 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employer.List_Books_Controller">
    <top>
       <JFXToolbar prefHeight="47.0" prefWidth="61.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <left>
@@ -47,12 +46,17 @@
                   </HBox>
                </center>
             </BorderPane>
-            <TextField layoutX="138.0" layoutY="45.0" prefHeight="25.0" prefWidth="325.0" promptText="Wyszukiwarka" style="-fx-font-size: 16;">
-               <effect>
-                  <ColorAdjust brightness="1.0" />
-               </effect>
-            </TextField>
-            <Button alignment="TOP_CENTER" layoutX="412.0" layoutY="669.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="125.0" style="-fx-background-color: #937854; -fx-font-size: 16;" styleClass="color-palette" stylesheets="@../../../Program%20Files/Java/jdk1.8.0_201/jre/lib/ext/com/sun/javafx/scene/control/skin/modena/modena.css" text="Refresh" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="powrót" layoutX="497.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: #937854;" text="Powrót">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="441.0" layoutY="688.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="96.0" style="-fx-background-color: #937854;" text="Odśwież">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField layoutX="132.0" layoutY="59.0" prefHeight="25.0" prefWidth="345.0" promptText="Wyszukiwarka" />
          </children>
       </AnchorPane>
    </center>
