@@ -7,8 +7,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -31,13 +29,8 @@
       </JFXToolbar>
    </top>
    <center>
-      <AnchorPane prefHeight="490.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="490.0" prefWidth="600.0" styleClass="background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="755.0" fitWidth="600.0" opacity="0.86">
-               <image>
-                  <Image url="@../../../../../../../Desktop/Okienka/biblioteka.png" />
-               </image>
-            </ImageView>
             <BorderPane layoutX="64.0" layoutY="86.0" prefHeight="610.0" prefWidth="473.0">
                <center>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="473.0" BorderPane.alignment="CENTER">

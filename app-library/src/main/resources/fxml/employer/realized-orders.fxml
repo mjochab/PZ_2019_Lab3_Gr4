@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -29,14 +27,9 @@
       </JFXToolbar>
    </top>
    <center>
-      <AnchorPane prefHeight="490.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="490.0" prefWidth="600.0" styleClass="background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="755.0" fitWidth="600.0" opacity="0.86">
-               <image>
-                  <Image url="@../../../../../../../Desktop/Okienka/biblioteka.png" />
-               </image>
-            </ImageView>
-            <BorderPane layoutY="46.0" prefHeight="610.0" prefWidth="600.0">
+            <BorderPane layoutY="173.0" prefHeight="483.0" prefWidth="600.0">
                <center>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="591.0" BorderPane.alignment="CENTER">
                      <children>
@@ -54,7 +47,7 @@
                   </HBox>
                </center>
             </BorderPane>
-            <Button alignment="TOP_CENTER" layoutX="470.0" layoutY="656.0" mnemonicParsing="false" opacity="0.88" prefHeight="29.0" prefWidth="95.0" style="-fx-background-color: #937854; -fx-font-size: 16; -fx-font-style: gr;" styleClass="color-palette" stylesheets="@../../../Program%20Files/Java/jdk1.8.0_201/jre/lib/ext/com/sun/javafx/scene/control/skin/modena/modena.css" text="Refresh" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="477.0" layoutY="656.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="89.0" style="-fx-background-color: #937854;" text="Refresh" />
          </children>
       </AnchorPane>
    </center>
