@@ -25,13 +25,8 @@ public class Account_Controller {
     @Autowired
     private ViewManager viewManager;
 
-    public void go_to_my_orders(Event event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/my_orders.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Konto");
-        stage.setScene(new Scene(root, 597, 852));
-        stage.show();
-
+    public void goToMyOrders(Event event) throws IOException {
+        viewManager.show(ViewType.MY_ORDERS);
     }
 
     @FXML
@@ -40,7 +35,7 @@ public class Account_Controller {
     }
 
     @FXML
-    public void go_to_search_books(ActionEvent event) throws IOException {
+    public void goToSearchBooks(ActionEvent event) throws IOException {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 

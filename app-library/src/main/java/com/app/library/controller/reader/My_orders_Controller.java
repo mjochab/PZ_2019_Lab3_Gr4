@@ -67,14 +67,8 @@ public class My_orders_Controller implements Initializable {
         stage.show();
     }
 
-    public void go_to_home(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Strona Główna");
-        stage.setScene(new Scene(root, 597, 852));
-        stage.show();
-
-
+    public void goToHome(ActionEvent event) throws IOException {
+        viewManager.show(ViewType.MAIN);
     }
 
     @FXML

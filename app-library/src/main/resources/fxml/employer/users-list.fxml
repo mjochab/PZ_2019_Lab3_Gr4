@@ -49,7 +49,7 @@
             <TextField layoutX="91.0" layoutY="83.0" prefHeight="25.0" prefWidth="277.0" promptText="Wyszukiwarka" />
             <Button layoutX="416.0" layoutY="74.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="104.0" style="-fx-background-color: #937854;" text="Search" />
             <Button layoutX="442.0" layoutY="663.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="91.0" style="-fx-background-color: #937854;" text="Refresh" />
-            <Button fx:id="powrót" layoutX="520.0" layoutY="8.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="40.0" prefWidth="73.0" style="-fx-background-color: #937854;" text="Powrót" />
+            <Button fx:id="powrót" layoutX="520.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="40.0" prefWidth="73.0" style="-fx-background-color: #937854;" text="Powrót" />
          </children>
       </AnchorPane>
    </center>

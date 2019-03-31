@@ -54,6 +54,17 @@ public enum ViewType {
         public String getFrameTitle() {
             return "Logowanie";
         }
+
+    },
+    MY_ORDERS {
+        public String getFxmlName() {
+            return "shared/my_orders";
+        }
+
+        public String getFrameTitle() {
+            return "Konto";
+        }
+
     };
 
     public abstract String getFxmlName();

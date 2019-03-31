@@ -52,7 +52,7 @@ public class SearchBooksController implements Initializable {
     }
 
     @FXML
-    public void go_to_account(Event event) {
+    public void goToAccount(Event event) {
         this.viewManager.show(ViewType.READER_ACCOUNT);
     }
 

@@ -16,12 +16,12 @@ public class MainController {
     private ViewManager viewManager;
 
     @FXML
-    public void go_to_employer(Event event) throws IOException {
+    public void goToEmployer(Event event) throws IOException {
         viewManager.show(ViewType.EMPLOYER_ACCOUNT);
     }
 
     @FXML
-    public void go_to_account(Event event) throws IOException {
+    public void goToAccount(Event event) throws IOException {
         viewManager.show(ViewType.READER_ACCOUNT);
     }
 
