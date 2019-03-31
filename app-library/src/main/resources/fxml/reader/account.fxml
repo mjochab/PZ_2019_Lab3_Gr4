@@ -46,7 +46,7 @@
                         <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="search" onMouseClicked="#goToSearchBooks" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_search_books" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="search" onAction="#goToSearchBooks" layoutX="482.0" layoutY="10.0" mnemonicParsing="false"  prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -59,7 +59,7 @@
                         <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="my_orders" onMouseClicked="#goToMyOrders" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="my_orders" onAction="#goToMyOrders" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -91,7 +91,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button fx:id="logout" onMouseClicked="#goToHome" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="logout" onAction="#goToHome" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
