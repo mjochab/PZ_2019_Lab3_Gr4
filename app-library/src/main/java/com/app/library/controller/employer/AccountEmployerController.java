@@ -38,7 +38,7 @@ public class AccountEmployerController {
     }
 
     @FXML
-    public void goToListUsers(Event event) throws IOException {
+    public void goToListOfUsers(Event event) throws IOException {
         viewManager.show(ViewType.EMPLOYER_LIST_OF_USERS);
     }
 
