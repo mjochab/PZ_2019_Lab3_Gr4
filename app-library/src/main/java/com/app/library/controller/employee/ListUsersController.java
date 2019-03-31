@@ -13,7 +13,7 @@ public class ListUsersController {
     private ViewManager viewManager;
 
     @FXML
-    public void goToEmployerAccount() {
+    public void goToEmployeeAccount() {
         viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
     }
 

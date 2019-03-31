@@ -99,17 +99,17 @@ public enum ViewType {
     EMPLOYEE_ADD_OF_BOOKS {
         public String getFxmlName() {
 
-            return "employer/adding-book";
+            return "employee/adding-book";
         }
 
         public String getFrameTitle() {
             return "Dodawanie książki";
         }
     },
-    EMPLOYER_BACK {
+    EMPLOYEE_BACK {
         public String getFxmlName() {
 
-            return "employer/account-employer";
+            return "employee/account-employee";
         }
 
         public String getFrameTitle() {

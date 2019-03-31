@@ -121,7 +121,7 @@
                               </Text>
                            </graphic>
                         </Button>
-                        <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToEmployerAccount" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToEmployeeAccount" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
