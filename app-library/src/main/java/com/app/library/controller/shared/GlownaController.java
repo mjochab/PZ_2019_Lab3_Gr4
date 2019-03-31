@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Zaloguj_Controller {
+public class GlownaController {
 
     @FXML
-    public void go_to_home(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
+    public void go_to_my_orders(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/my_orders.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Biblioteka");
+        stage.setTitle("Strona Główna");
         stage.setScene(new Scene(root, 597, 852));
         stage.show();
     }
