@@ -13,9 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
-
 @Controller
-public class AddingBookController {
+public class ListBooksController {
 
     @Autowired
     private ViewManager viewManager;
@@ -26,7 +25,7 @@ public class AddingBookController {
     }
 
     @FXML
-    public void goToListOfBooks(){
+    public void goToListBooks(){
         viewManager.show(ViewType.EMPLOYER_LIST_OF_BOOKS);
     }
 
@@ -36,7 +35,7 @@ public class AddingBookController {
     }
 
     @FXML
-    public void goToListOfUsers(){
+    public void goToListUsers(){
         viewManager.show(ViewType.EMPLOYER_LIST_OF_USERS);
     }
 
@@ -46,9 +45,7 @@ public class AddingBookController {
     }
 
     @FXML
-    public void goToBack(){
-        viewManager.show(ViewType.EMPLOYER_BACK);
-    }
-
+    public void goToAddBooks() { viewManager.show(ViewType.EMPLOYER_ADD_OF_BOOKS);}
 
 }
+

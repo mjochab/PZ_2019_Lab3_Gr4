@@ -13,9 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
-
 @Controller
-public class AddingBookController {
+public class ListUsersController {
 
     @Autowired
     private ViewManager viewManager;
@@ -46,9 +45,7 @@ public class AddingBookController {
     }
 
     @FXML
-    public void goToBack(){
-        viewManager.show(ViewType.EMPLOYER_BACK);
-    }
+    public void goToAddBooks() { viewManager.show(ViewType.EMPLOYER_ADD_OF_BOOKS);}
 
 
 }

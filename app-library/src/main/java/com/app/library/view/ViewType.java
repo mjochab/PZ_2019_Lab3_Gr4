@@ -56,41 +56,68 @@ public enum ViewType {
         }
     },
     READER_MY_ORDERS {
-      public String getFxmlName(){
-          return "reader/my_orders";
-      }
+        public String getFxmlName() {
+            return "reader/my_orders";
+        }
 
-      public String getFrameTitle(){
-          return "Moje zamówienia";
-      }
+        public String getFrameTitle() {
+            return "Moje zamówienia";
+        }
     },
     EMPLOYER_LIST_OF_BOOKS {
-        public String getFxmlName(){
+        public String getFxmlName() {
             return "employer/books-list";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
             return "Lista książek";
         }
     },
     EMPLOYER_REALIZED_ORDERS {
-        public String getFxmlName(){
+        public String getFxmlName() {
+
             return "employer/realized-orders";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
             return "Zamówienia";
         }
     },
     EMPLOYER_LIST_OF_USERS {
-        public String getFxmlName(){
+        public String getFxmlName() {
+
             return "employer/users-list";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
             return "Użytkownicy";
         }
+    },
+    EMPLOYER_ADD_OF_BOOKS {
+        public String getFxmlName() {
+
+            return "employer/adding-book";
+        }
+
+        public String getFrameTitle() {
+            return "Dodawanie książki";
+        }
+    },
+        EMPLOYER_BACK {
+            public String getFxmlName() {
+
+                return "employer/account-employer";
+            }
+
+            public String getFrameTitle() {
+                return "Konto";
+            }
     };
+
+
+
+
+
 
     public abstract String getFxmlName();
 
