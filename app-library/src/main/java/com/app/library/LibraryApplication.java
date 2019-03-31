@@ -2,6 +2,10 @@ package com.app.library;
 
 import com.app.library.view.ViewManager;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -28,8 +32,11 @@ public class LibraryApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("Library app");
-		viewManager.init(primaryStage);
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/glowna.fxml"));
+
+		primaryStage.setTitle("Biblioteka");
+		primaryStage.setScene(new Scene(root, 597, 852));
+		primaryStage.show();
 	}
 
 	@Override

@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.MainController.java">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.My_orders_Controller">
    <top>
-      <JFXToolbar prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+      <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <left>
-            <JFXHamburger fx:id="hamburgerButton" prefHeight="47.0" prefWidth="61.0" BorderPane.alignment="CENTER" />
+            <JFXHamburger fx:id="hamburgerButton" prefHeight="64.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
          </left>
       </JFXToolbar>
    </top>
@@ -27,7 +27,7 @@
          <children>
             <HBox opacity="0.88" prefHeight="78.0" prefWidth="597.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="78.0" prefWidth="105.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#go_to_home" prefHeight="78.0" prefWidth="105.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="57.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -40,7 +40,7 @@
                         <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="159.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="search" onAction="#go_to_search_books" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="166.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -62,7 +62,7 @@
                         <String fx:value="menu_item_active" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="234.0" layoutY="10.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Konto">
+                  <Button fx:id="account" layoutX="234.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_account" prefHeight="78.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Konto">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -71,9 +71,9 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="346.0" layoutY="10.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="126.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="logout" layoutX="346.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="87.0" prefWidth="126.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="logout" fitHeight="56.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/logout.png" />
                            </image>
