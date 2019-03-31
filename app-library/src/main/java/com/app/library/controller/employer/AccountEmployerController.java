@@ -46,7 +46,10 @@ public class AccountEmployerController {
     public void goToHome(ActionEvent event) throws IOException {
         viewManager.show(ViewType.MAIN);
     }
-
+    @FXML
+    public void goToLogout(ActionEvent event) throws IOException {
+        viewManager.show(ViewType.MAIN);
+    }
 
     }
 

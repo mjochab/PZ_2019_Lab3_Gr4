@@ -47,7 +47,7 @@ public class AddingBookController {
 
     @FXML
     public void goToBack(){
-        viewManager.show(ViewType.EMPLOYER_BACK);
+        viewManager.show(ViewType.MAIN);
     }
 
 
