@@ -48,7 +48,7 @@
                </center>
             </BorderPane>
             <Button layoutX="477.0" layoutY="656.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="89.0" style="-fx-background-color: #937854;" text="Refresh" />
-            <Button fx:id="powrót" layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="47.0" prefWidth="69.0" style="-fx-background-color: #937854;" text="Powrót" />
+            <Button fx:id="powrót" layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="47.0" prefWidth="69.0" style="-fx-background-color: #937854;" text="Powrót" />
          </children>
       </AnchorPane>
    </center>
