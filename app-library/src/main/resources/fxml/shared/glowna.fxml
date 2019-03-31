@@ -51,8 +51,8 @@
                   </JFXToolbar>
                </children>
             </AnchorPane>
-            <Button fx:id="user" onAction="#goToReaderAccount" layoutX="72.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #937859;" text="Profil_user_przycisk_testowy" textAlignment="CENTER" />
-            <Button layoutX="327.0"  layoutY="14.0" mnemonicParsing="false"  style="-fx-background-color: #937859;" text="Pracownik_profil_przycisk_testowy" />
+            <Button fx:id="user" layoutX="72.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToReaderAccount" style="-fx-background-color: #937859;" text="Profil_user_przycisk_testowy" textAlignment="CENTER" />
+            <Button onAction="#goToEmployer" layoutX="327.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #937859;" text="Pracownik_profil_przycisk_testowy" />
             <Button layoutX="193.0" layoutY="76.0" mnemonicParsing="false" style="-fx-background-color: #937859;" text="Profil_dyrektor_przycisk testowy" />
          </children>
       </AnchorPane>
