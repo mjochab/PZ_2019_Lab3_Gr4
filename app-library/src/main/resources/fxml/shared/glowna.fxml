@@ -62,8 +62,8 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="426.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_rejestracja" prefHeight="40.0" prefWidth="84.0" style="-fx-background-color: #937859; -fx-border-color: black; -fx-border-radius: 12;" text="Zarejestruj" />
-                  <Button layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#go_to_zaloguj" prefHeight="40.0" prefWidth="84.0" style="-fx-background-color: #937859; -fx-border-color: black; -fx-border-radius: 12;" text="Zaloguj" />
+                  <Button layoutX="426.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToRejestracja" prefHeight="40.0" prefWidth="84.0" style="-fx-background-color: #937859; -fx-border-color: black; -fx-border-radius: 12;" text="Zarejestruj" />
+                  <Button layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToZaloguj" prefHeight="40.0" prefWidth="84.0" style="-fx-background-color: #937859; -fx-border-color: black; -fx-border-radius: 12;" text="Zaloguj" />
                   <JFXTextField alignment="CENTER" layoutX="14.0" layoutY="16.0" prefHeight="38.0" prefWidth="238.0" style="-fx-border-color: black; -fx-border-radius: 12;" text="Wyszukaj" />
                </children>
             </AnchorPane>
