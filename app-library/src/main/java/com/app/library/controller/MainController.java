@@ -41,6 +41,23 @@ public class MainController {
         stage.show();
     }
 
+    @FXML
+    public void go_to_rejestracja(Event event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/rejestracja.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Rejestracja");
+        stage.setScene(new Scene(root, 600, 853));
+        stage.show();
+    }
+
+    @FXML
+    public void go_to_zaloguj(Event event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/shared/logowanie.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Logowanie");
+        stage.setScene(new Scene(root, 600, 853));
+        stage.show();
+    }
 
 }
 
