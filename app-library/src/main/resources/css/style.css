@@ -17,3 +17,9 @@
 .menu_item_active{
     -fx-background-color: #DAA520;
 }
+
+.white_background{
+-fx-background-color: white;
+}
+
+

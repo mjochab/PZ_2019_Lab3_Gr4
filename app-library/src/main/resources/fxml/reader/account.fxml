@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
@@ -8,72 +7,93 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.Account_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
    <top>
-      <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
-         <left>
-            <JFXHamburger prefHeight="64.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
-         </left>
+      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto" textAlignment="CENTER" wrappingWidth="331.13671875" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+         </center>
       </JFXToolbar>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox opacity="0.88" prefHeight="78.0" prefWidth="600.0">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
                <children>
-                  <Button fx:id="home" layoutX="56.0" layoutY="57.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="78.0" prefWidth="105.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="home" layoutX="246.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fitHeight="57.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/library.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <styleClass>
-                        <String fx:value="border_menu" />
                         <String fx:value="brown_background" />
+                        <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="search" onAction="#go_to_search_books" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="166.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="search" onMouseClicked="#go_to_search_books" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_search_books" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/lupa.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <styleClass>
-                        <String fx:value="border_menu" />
                         <String fx:value="brown_background" />
+                        <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="my_orders" layoutX="115.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_my_orders" prefHeight="78.0" prefWidth="142.0" stylesheets="@../../css/style.css" text="Moje zamówienia">
+                  <Button fx:id="my_orders" onMouseClicked="#go_to_my_orders" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
                      </styleClass>
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="23.0" />
                      </font>
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </graphic>
                   </Button>
-                  <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Konto">
+                  <Button fx:id="account" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="23.0" />
                      </font>
                      <styleClass>
                         <String fx:value="border_menu" />
                         <String fx:value="menu_item_active" />
                      </styleClass>
-                  </Button>
-                  <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#go_to_home" prefHeight="78.0" prefWidth="126.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="logout" onMouseClicked="#go_to_home" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                     <graphic>
+                        <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/logout.png" />
                            </image>
@@ -86,128 +106,121 @@
                   </Button>
                </children>
             </HBox>
-            <VBox layoutX="-5.0" layoutY="96.0" prefHeight="695.0" prefWidth="606.0">
+         </top>
+         <BorderPane.margin>
+            <Insets left="50.0" right="50.0" top="20.0" />
+         </BorderPane.margin>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox opacity="0.88" prefHeight="59.0" prefWidth="687.0">
+                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="236.0" right="126.0" top="40.0" />
+                     </VBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="212.0" stylesheets="@../../css/style.css" text="Login:">
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font size="38.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="323.0" stylesheets="@../../css/style.css" text="\$LOGIN">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
-                        </Label>
-                        <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="71.0" stylesheets="@../../css/style.css">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="\$login">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/pencil-edit-button.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
                         </Button>
                      </children>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="59.0" prefWidth="687.0">
+                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="212.0" stylesheets="@../../css/style.css" text="Nr karty:">
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font size="38.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nr. karty">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="68.0" prefWidth="323.0" stylesheets="@../../css/style.css" text="\$numer">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="\$nrnarty">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="38.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
                            <HBox.margin>
-                              <Insets />
+                              <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="71.0" stylesheets="@../../css/style.css">
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
-                        </Button>
                      </children>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="236.0" right="236.0" top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="89.0" opacity="0.88" prefHeight="59.0" prefWidth="687.0">
+                  <HBox layoutX="246.0" layoutY="50.0" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="212.0" stylesheets="@../../css/style.css" text="Hasło">
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font size="38.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="68.0" prefWidth="323.0" stylesheets="@../../css/style.css" text="*********">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="\$haslo">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="38.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
                            <HBox.margin>
-                              <Insets />
+                              <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="71.0" stylesheets="@../../css/style.css">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/pencil-edit-button.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
                         </Button>
                      </children>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="236.0" right="126.0" top="20.0" />
                      </VBox.margin>
                   </HBox>
                </children>
             </VBox>
-         </children>
-      </AnchorPane>
+         </center>
+      </BorderPane>
    </center>
 </BorderPane>

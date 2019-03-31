@@ -1,154 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXToolbar?>
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="852.0" prefWidth="597.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employer.Adding_Book_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employer.AddingBookController">
     <top>
-        <JFXToolbar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: rgba(147,120,84,0.9);" BorderPane.alignment="CENTER">
+        <JFXToolbar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="1280.0" style="-fx-background-color: rgba(147,120,84,0.9);" BorderPane.alignment="CENTER">
 
          <center>
-            <Label text="Nowa książka" BorderPane.alignment="CENTER">
+            <Label BorderPane.alignment="CENTER">
                <font>
                   <Font size="38.0" />
                </font>
+               <graphic>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nowa książka">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+               </graphic>
             </Label>
          </center>
         </JFXToolbar>
     </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox layoutX="1.0" layoutY="-3.0" prefHeight="793.0" prefWidth="605.0">
-               <children>
-                  <HBox alignment="BOTTOM_LEFT" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="80.0" right="80.0" top="20.0" />
+         </BorderPane.margin>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="powrot"   alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#go_to_home" prefHeight="50.0" prefWidth="147.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót">
+                        <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <graphic>
+                              <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/library.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="list_of_books" onMouseClicked="#go_to_list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
                            <font>
-                              <Font size="18.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
-                           <HBox.margin>
-                              <Insets left="50.0" />
-                           </HBox.margin>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista książek">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="orders" onMouseClicked="#go_to_realized_orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                           <font>
+                              <Font name="Candara Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="users" onMouseClicked="#go_to_list_of_users" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css" text="Użytkownicy">
+                           <styleClass>
+                              <String fx:value="border_menu" />
+                              <String fx:value="brown_background" />
+                           </styleClass>
+                           <font>
+                              <Font name="Candara Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Użytkownicy">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="add_books" layoutX="490.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <styleClass>
+                              <String fx:value="border_menu" />
+                              <String fx:value="menu_item_active" />
+                           </styleClass>
+                           <font>
+                              <Font name="Candara Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj książkę">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="account" onMouseClicked="#go_to_employer_account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                           <font>
+                              <Font name="Candara Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logout" onMouseClicked="#go_to_home" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/logout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="border_menu" />
+                              <String fx:value="brown_background" />
+                           </styleClass>
                         </Button>
                      </children>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="92.0" prefWidth="596.0" spacing="10.0">
+               </top>
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="160.0" right="160.0" top="20.0" />
+                     </BorderPane.margin>
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="112.0" prefWidth="244.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Tytuł">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField alignment="CENTER" prefHeight="112.0" prefWidth="367.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </TextField>
+                        <HBox opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj tytuł">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </Label>
+                              <TextField fx:id="title" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" text="Sample title">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj autora">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </Label>
+                              <TextField fx:id="author" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" text="Sample author">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj ilość">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </Label>
+                              <TextField fx:id="number" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="390.0" text="Sample number">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" opacity="0.92" prefHeight="70.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="70.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="add_book" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css">
+                                 <font>
+                                    <Font name="System Bold" size="21.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
-                     <VBox.margin>
-                        <Insets top="50.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="110.0" opacity="0.88" prefHeight="112.0" prefWidth="596.0" spacing="10.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0" prefWidth="244.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Autor">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField alignment="CENTER" prefHeight="132.0" prefWidth="367.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="222.0" opacity="0.88" prefHeight="112.0" prefWidth="596.0" spacing="10.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0" prefWidth="244.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Wydawnictwo">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField alignment="CENTER" prefHeight="117.0" prefWidth="367.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="334.0" opacity="0.88" prefHeight="112.0" prefWidth="596.0" spacing="10.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0" prefWidth="244.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Rok wydania">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField alignment="CENTER" prefHeight="117.0" prefWidth="367.0">
-                           <font>
-                              <Font size="26.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="426.0" opacity="0.88" prefHeight="112.0" prefWidth="596.0" spacing="10.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="216.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Dodaj">
-                           <font>
-                              <Font size="32.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="40.0" />
-                     </VBox.margin>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
    </center>
 </BorderPane>
