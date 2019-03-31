@@ -57,7 +57,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="list_of_books" onMouseClicked="#go_to_list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="list_of_books" onMouseClicked="#goToListOfBooks" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
@@ -73,7 +73,7 @@
                               </Text>
                            </graphic>
                         </Button>
-                        <Button fx:id="orders" onMouseClicked="#go_to_realized_orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="orders" onMouseClicked="#goToRealizedOrders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
@@ -89,7 +89,7 @@
                               </Text>
                            </graphic>
                         </Button>
-                        <Button fx:id="users" onMouseClicked="#go_to_list_of_users" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css" text="Użytkownicy">
+                        <Button fx:id="users" onMouseClicked="#goToListOfUsers" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css" text="Użytkownicy">
                            <styleClass>
                               <String fx:value="border_menu" />
                               <String fx:value="brown_background" />
@@ -121,7 +121,7 @@
                               </Text>
                            </graphic>
                         </Button>
-                        <Button fx:id="account" onMouseClicked="#go_to_employer_account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="account" onMouseClicked="#goToeEmployerAccount" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
@@ -137,7 +137,7 @@
                               </Text>
                            </graphic>
                         </Button>
-                        <Button fx:id="logout" onMouseClicked="#go_to_home" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="logout" onMouseClicked="#goToHome" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
                            <graphic>
                               <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

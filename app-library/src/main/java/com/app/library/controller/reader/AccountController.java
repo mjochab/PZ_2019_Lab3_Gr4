@@ -25,17 +25,17 @@ public class AccountController {
 
 
     @FXML
-    public void go_to_search_books(){
+    public void goToSearchBooks(){
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
     @FXML
-    public void go_to_my_orders(){
+    public void goToMyOrders(){
         viewManager.show(ViewType.READER_MY_ORDERS);
     }
 
     @FXML
-    public void go_to_home(){
+    public void goToHome(){
         viewManager.show(ViewType.MAIN);
     }
 

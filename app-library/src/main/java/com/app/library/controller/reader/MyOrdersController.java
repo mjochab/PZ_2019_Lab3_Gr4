@@ -16,17 +16,17 @@ public class MyOrdersController {
 
 
     @FXML
-    public void go_to_account(){
+    public void goToAccount(){
         viewManager.show(ViewType.READER_ACCOUNT);
     }
 
     @FXML
-    public void go_to_home(){
+    public void goToHome(){
         viewManager.show(ViewType.MAIN);
     }
 
     @FXML
-    public void go_to_search_books(){
+    public void goToSearchBooks(){
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 

@@ -21,27 +21,27 @@ public class AddingBookController {
     private ViewManager viewManager;
 
     @FXML
-    public void go_to_employer_account(){
+    public void goToeEmployerAccount(){
         viewManager.show(ViewType.EMPLOYER_ACCOUNT);
     }
 
     @FXML
-    public void go_to_list_of_books(){
+    public void goToListOfBooks(){
         viewManager.show(ViewType.EMPLOYER_LIST_OF_BOOKS);
     }
 
     @FXML
-    public void go_to_realized_orders(){
+    public void goToRealizedOrders(){
         viewManager.show(ViewType.EMPLOYER_REALIZED_ORDERS);
     }
 
     @FXML
-    public void go_to_list_of_users(){
+    public void goToListOfUsers(){
         viewManager.show(ViewType.EMPLOYER_LIST_OF_USERS);
     }
 
     @FXML
-    public void go_to_home(){
+    public void goToHome(){
         viewManager.show(ViewType.MAIN);
     }
 

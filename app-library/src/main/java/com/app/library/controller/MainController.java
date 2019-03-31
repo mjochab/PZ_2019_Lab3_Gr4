@@ -21,7 +21,7 @@ public class MainController {
     }
 
     @FXML
-    public void goToAccount(Event event) throws IOException {
+    public void goToReaderAccount(Event event) throws IOException {
         viewManager.show(ViewType.READER_ACCOUNT);
     }
 
