@@ -24,6 +24,7 @@ public class ViewManager {
 
         Parent mainWindow = getView(ViewType.MAIN.getFxmlName());
         Scene scene = new Scene(mainWindow, 1280, 800);
+        stage.setTitle(ViewType.MAIN.getFrameTitle());
         stage.setScene(scene);
         stage.show();
     }
@@ -31,6 +32,7 @@ public class ViewManager {
     public void show(ViewType viewType) {
         Parent parent = getView(viewType.getFxmlName());
         stage.getScene().setRoot(parent);
+        stage.setTitle(viewType.getFrameTitle());
     }
 
     private Parent getView(String viewName) {

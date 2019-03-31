@@ -26,6 +26,7 @@ public class SearchBooksController implements Initializable {
     @FXML
     private JFXHamburger hamburgerButton;
 
+    @Autowired
     private ViewManager viewManager;
 
     private HamburgerSlideCloseTransition burgerTask;
@@ -50,17 +51,9 @@ public class SearchBooksController implements Initializable {
         burgerTask.play();
     }
 
-    @Autowired
-    public void setViewManager(ViewManager viewManager) {
-        this.viewManager = viewManager;
-    }
-
-    public void go_to_account(Event event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/reader/account.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Konto");
-        stage.setScene(new Scene(root, 597, 852));
-        stage.show();
+    @FXML
+    public void go_to_account(Event event) {
+        this.viewManager.show(ViewType.READER_ACCOUNT);
     }
 
 }
