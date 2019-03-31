@@ -17,7 +17,7 @@ public class MainController {
 
     @FXML
     public void goToEmployer(Event event) throws IOException {
-        viewManager.show(ViewType.EMPLOYER_ACCOUNT);
+        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
     }
 
     @FXML
