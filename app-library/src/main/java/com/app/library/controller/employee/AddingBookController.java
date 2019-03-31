@@ -13,7 +13,7 @@ public class AddingBookController {
     private ViewManager viewManager;
 
     @FXML
-    public void goToeEmployerAccount() {
+    public void goToEmployerAccount() {
         viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
     }
 
@@ -34,6 +34,11 @@ public class AddingBookController {
 
     @FXML
     public void goToHome() {
+        viewManager.show(ViewType.MAIN);
+    }
+
+    @FXML
+    public void goToBack() {
         viewManager.show(ViewType.MAIN);
     }
 

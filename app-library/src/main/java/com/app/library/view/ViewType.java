@@ -95,6 +95,26 @@ public enum ViewType {
         public String getFrameTitle() {
             return "Użytkownicy";
         }
+    },
+    EMPLOYEE_ADD_OF_BOOKS {
+        public String getFxmlName() {
+
+            return "employer/adding-book";
+        }
+
+        public String getFrameTitle() {
+            return "Dodawanie książki";
+        }
+    },
+    EMPLOYER_BACK {
+        public String getFxmlName() {
+
+            return "employer/account-employer";
+        }
+
+        public String getFrameTitle() {
+            return "Konto";
+        }
     };
 
     public abstract String getFxmlName();
