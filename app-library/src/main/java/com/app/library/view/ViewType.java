@@ -1,15 +1,7 @@
 package com.app.library.view;
 
 public enum ViewType {
-    MAIN {
-        public String getFxmlName() {
-            return "shared/glowna";
-        }
-
-        public String getFrameTitle() {
-            return "Biblioteka";
-        }
-    },
+    // reader
     READER_SEARCH_BOOKS {
         public String getFxmlName() {
             return "reader/search-books";
@@ -28,13 +20,24 @@ public enum ViewType {
             return "Konto";
         }
     },
-    EMPLOYER_ACCOUNT {
+    READER_MY_ORDERS {
         public String getFxmlName() {
-            return "employer/account-employer";
+            return "reader/my_orders";
         }
 
         public String getFrameTitle() {
-            return "Konto";
+            return "Moje zamówienia";
+        }
+    },
+
+    // shared
+    SIGN_IN {
+        public String getFxmlName() {
+            return "shared/logowanie";
+        }
+
+        public String getFrameTitle() {
+            return "Logowanie";
         }
     },
     REGISTER {
@@ -46,49 +49,71 @@ public enum ViewType {
             return "Rejestracja";
         }
     },
-    SIGN_IN {
+    MAIN {
         public String getFxmlName() {
-            return "shared/logowanie";
+            return "shared/glowna";
         }
 
         public String getFrameTitle() {
-            return "Logowanie";
+            return "Biblioteka";
         }
     },
-    READER_MY_ORDERS {
-      public String getFxmlName(){
-          return "reader/my_orders";
-      }
 
-      public String getFrameTitle(){
-          return "Moje zamówienia";
-      }
-    },
-    EMPLOYER_LIST_OF_BOOKS {
-        public String getFxmlName(){
-            return "employer/books-list";
+    // employee
+    EMPLOYEE_LIST_OF_BOOKS {
+        public String getFxmlName() {
+            return "employee/books-list";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
             return "Lista książek";
         }
     },
-    EMPLOYER_REALIZED_ORDERS {
-        public String getFxmlName(){
-            return "employer/realized-orders";
+    EMPLOYEE_REALIZED_ORDERS {
+        public String getFxmlName() {
+            return "employee/realized-orders";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
             return "Zamówienia";
         }
     },
-    EMPLOYER_LIST_OF_USERS {
-        public String getFxmlName(){
-            return "employer/users-list";
+    EMPLOYEE_ACCOUNT {
+        public String getFxmlName() {
+            return "employee/account-employee";
         }
 
-        public String getFrameTitle(){
+        public String getFrameTitle() {
+            return "Konto";
+        }
+    },
+    EMPLOYEE_LIST_OF_USERS {
+        public String getFxmlName() {
+            return "employee/users-list";
+        }
+
+        public String getFrameTitle() {
             return "Użytkownicy";
+        }
+    },
+    EMPLOYEE_ADD_OF_BOOKS {
+        public String getFxmlName() {
+
+            return "employee/adding-book";
+        }
+
+        public String getFrameTitle() {
+            return "Dodawanie książki";
+        }
+    },
+    EMPLOYEE_BACK {
+        public String getFxmlName() {
+
+            return "employee/account-employee";
+        }
+
+        public String getFrameTitle() {
+            return "Konto";
         }
     };
 
