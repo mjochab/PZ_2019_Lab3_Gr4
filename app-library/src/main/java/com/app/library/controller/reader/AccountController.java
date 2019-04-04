@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 @Controller
@@ -39,5 +40,9 @@ public class AccountController {
         viewManager.show(ViewType.MAIN);
     }
 
+    @FXML
+    public void goToCart(){
+        viewManager.show(ViewType.READER_CART);
+    }
 
 }

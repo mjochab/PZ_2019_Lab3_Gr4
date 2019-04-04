@@ -5,8 +5,6 @@
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,25 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.MyOrdersController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.CartController">
    <top>
-      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
-         <center>
-            <Label BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="40.0" />
-               </font>
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia" translateX="50.0">
-                     <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Text>
-               </graphic>
-            </Label>
-         </center>
+      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <right>
-            <JFXButton fx:id="cart" onMouseClicked="#goToCart" prefHeight="100.0" prefWidth="100.0" styleClass="border_menu" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
+            <JFXButton prefHeight="100.0" prefWidth="100.0" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
                <graphic>
                   <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -41,14 +25,21 @@
                      </image>
                   </ImageView>
                </graphic>
+               <styleClass>
+                  <String fx:value="border_menu" />
+                  <String fx:value="menu_item_active" />
+               </styleClass>
             </JFXButton>
          </right>
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Koszyk" translateX="50.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+         </center>
       </JFXToolbar>
    </top>
-   <styleClass>
-      <String fx:value="brown_background" />
-      <String fx:value="background" />
-   </styleClass>
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -57,7 +48,11 @@
          <top>
             <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="home" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                     <styleClass>
+                        <String fx:value="brown_background" />
+                        <String fx:value="border_menu" />
+                     </styleClass>
                      <graphic>
                         <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -65,12 +60,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="search" layoutX="10.0" layoutY="10.0" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
                      </styleClass>
-                  </Button>
-                  <Button fx:id="search" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -78,18 +73,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="orders" layoutX="246.0" layoutY="10.0" onMouseClicked="#goToOrders" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="my_orders" layoutX="246.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="border_menu" />
-                        <String fx:value="menu_item_active" />
                      </styleClass>
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
@@ -98,11 +86,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </Button>
-                  <Button fx:id="account" layoutX="482.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="account" layoutX="482.0" layoutY="10.0" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -114,8 +99,12 @@
                            </font>
                         </Text>
                      </graphic>
-                  </Button>
-                  <Button fx:id="logout" layoutX="718.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  </JFXButton>
+                  <JFXButton fx:id="logout" layoutX="718.0" layoutY="10.0" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                     <styleClass>
+                        <String fx:value="brown_background" />
+                        <String fx:value="border_menu" />
+                     </styleClass>
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -123,30 +112,26 @@
                            </image>
                         </ImageView>
                      </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </Button>
+                  </JFXButton>
                </children>
             </HBox>
          </top>
          <center>
             <JFXTreeTableView opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets top="30.0" />
+                  <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
                </BorderPane.margin>
                <columns>
-                  <TreeTableColumn prefWidth="191.0">
+                  <TreeTableColumn prefWidth="278.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
                   </TreeTableColumn>
-                  <TreeTableColumn prefWidth="142.0">
+                  <TreeTableColumn prefWidth="245.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
                            <font>
@@ -155,7 +140,7 @@
                         </Text>
                      </graphic>
                   </TreeTableColumn>
-                  <TreeTableColumn prefWidth="244.0">
+                  <TreeTableColumn prefWidth="368.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania">
                            <font>
@@ -164,29 +149,11 @@
                         </Text>
                      </graphic>
                   </TreeTableColumn>
-                  <TreeTableColumn prefWidth="201.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data wypożyczenia">
-                           <font>
-                              <Font name="System Bold" size="14.0"  />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="195.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Termin oddania">
-                           <font>
-                              <Font name="System Bold" size="14.0"  />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="206.0">
+                  <TreeTableColumn prefWidth="188.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
@@ -196,4 +163,18 @@
          </center>
       </BorderPane>
    </center>
+   <bottom>
+      <JFXButton contentDisplay="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+         <graphic>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Złóż zamówienie">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+         </graphic>
+      </JFXButton>
+   </bottom>
 </BorderPane>

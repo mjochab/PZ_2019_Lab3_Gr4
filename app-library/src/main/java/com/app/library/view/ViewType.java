@@ -115,6 +115,15 @@ public enum ViewType {
         public String getFrameTitle() {
             return "Konto";
         }
+    },
+    READER_CART {
+        public String getFxmlName(){
+            return "reader/cart";
+        }
+
+        public String getFrameTitle(){
+            return "Koszyk";
+        }
     };
 
     public abstract String getFxmlName();

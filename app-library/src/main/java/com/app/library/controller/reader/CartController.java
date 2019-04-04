@@ -1,28 +1,21 @@
 package com.app.library.controller.reader;
 
-
 import com.app.library.view.ViewManager;
-
 import com.app.library.view.ViewType;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+
 @Controller
-public class MyOrdersController {
+public class CartController {
 
     @Autowired
     private ViewManager viewManager;
 
-
-    @FXML
-    public void goToAccount(){
-        viewManager.show(ViewType.READER_ACCOUNT);
-    }
-
     @FXML
     public void goToHome(){
-        viewManager.show(ViewType.MAIN);
+        viewManager.show(ViewType. MAIN);
     }
 
     @FXML
@@ -30,14 +23,14 @@ public class MyOrdersController {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
-
     @FXML
-    public void goToCart(){
-        viewManager.show(ViewType.READER_CART);
+    public void goToOrders(){
+        viewManager.show(ViewType.READER_MY_ORDERS);
     }
 
-
-
+    @FXML
+    public void goToAccount(){
+        viewManager.show(ViewType.READER_ACCOUNT);
+    }
 
 }
-
