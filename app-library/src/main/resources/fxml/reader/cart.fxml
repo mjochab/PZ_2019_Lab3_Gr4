@@ -48,7 +48,7 @@
          <top>
             <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="home" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="home" contentDisplay="CENTER" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -61,7 +61,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="search" layoutX="10.0" layoutY="10.0" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="search" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -74,7 +74,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="orders" layoutX="246.0" layoutY="10.0" onMouseClicked="#goToOrders" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="orders" contentDisplay="CENTER" layoutX="246.0" layoutY="10.0" onMouseClicked="#goToOrders" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -87,7 +87,7 @@
                         </Text>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="account" layoutX="482.0" layoutY="10.0" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="account" contentDisplay="CENTER" layoutX="482.0" layoutY="10.0" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -100,7 +100,7 @@
                         </Text>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="logout" layoutX="718.0" layoutY="10.0" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                  <JFXButton fx:id="logout" contentDisplay="CENTER" layoutX="718.0" layoutY="10.0" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
