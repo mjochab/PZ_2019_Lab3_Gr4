@@ -1,3 +1,7 @@
+ALTER DATABASE `urz_library_db`
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_bin;
+
 -- -----------------------------------------------------
 -- Table `role`
 -- -----------------------------------------------------
