@@ -22,10 +22,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	runtimeOnly 'mysql:mysql-connector-java'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.flywaydb:flyway-core'
 	compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.8'
-//	runtimeOnly 'mysql:mysql-connector-java'
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//	implementation 'org.flywaydb:flyway-core'
 //	compileOnly 'org.projectlombok:lombok'
 //	annotationProcessor 'org.projectlombok:lombok' --- TODO uncomment later
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
