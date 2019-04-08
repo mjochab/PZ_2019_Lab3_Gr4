@@ -15,16 +15,14 @@ public class Library {
 
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id",insertable = false, updatable = false)
+    @JoinColumn(insertable = false, updatable = false)
     @NotNull
-    private User directorId;
-
-
+    private User director;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "address_id", insertable = false, updatable = false)
+    @JoinColumn(insertable = false, updatable = false)
     @NotNull
-    private Address addressId;
+    private Address address;
 
     @Column(name = "name")
     @Length(max = 64)
@@ -39,20 +37,20 @@ public class Library {
         this.id = id;
     }
 
-    public User getDirectorId() {
-        return directorId;
+    public User getDirector() {
+        return director;
     }
 
-    public void setDirectorId(User directorId) {
-        this.directorId = directorId;
+    public void setDirector(User director) {
+        this.director = director;
     }
 
-    public Address getAddressId() {
-        return addressId;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(Address addressId) {
-        this.addressId = addressId;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -62,4 +60,8 @@ public class Library {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
+
 }
