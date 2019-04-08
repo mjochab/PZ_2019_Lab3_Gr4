@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.awt.print.Book;
 
 public class Library {
 
@@ -13,13 +14,14 @@ public class Library {
     private Integer id;
 
 
-    @ManyToOne(optional = false)
+    @ManyToOne(targetEntity = User.class)
     private String director_id;
 
 
-    @OneToOne(optional = false)
+    @OneToOne(targetEntity = User.class)
     private String address_id;
 
+    @OneToOne(targetEntity = Book.class)
     @Column(name = "name")
     @NotBlank
     @Length(max = 64)
