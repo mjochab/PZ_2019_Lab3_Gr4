@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class BookUnit {
@@ -19,13 +20,13 @@ public class BookUnit {
     private String signature;
 
     @Column(name = "checked_out")
-    @NotBlank
+    @NotNull
     @Length(min = 1, max = 1)
-    private byte checkedOut;
+    private boolean checkedOut;
 
     @ManyToOne(optional = false, targetEntity = Book.class)
-    @NotBlank
-    private int book_id;
+    @NotNull
+    private Book book;
 
 
 
@@ -47,19 +48,19 @@ public class BookUnit {
         this.signature = signature;
     }
 
-    public byte getCheckedOut() {
+    public boolean isCheckedOut() {
         return checkedOut;
     }
 
-    public void setCheckedOut(byte checkedOut) {
+    public void setCheckedOut(boolean checkedOut) {
         this.checkedOut = checkedOut;
     }
 
-    public int getBookId() {
-        return book_id;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBookId(int bookId) {
-        this.book_id = bookId;
+    public void setBook(Book book) {
+        this.book = book;
     }
 }

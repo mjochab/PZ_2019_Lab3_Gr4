@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Book {
@@ -23,11 +24,11 @@ public class Book {
     private String publishingCompany;
 
     @Column(name = "year_of_publication")
-    @NotBlank
+    @NotNull
     private int yearOfPublication;
 
     @Column(name = "library_id")
-    @NotBlank
+    @NotNull
     private int libraryId;
 
     @NotBlank
