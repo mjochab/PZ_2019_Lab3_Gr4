@@ -67,21 +67,22 @@ public class BookRental {
         this.prolongationNumber = prolongationNumber;
     }
 
-    public User getUser() {
-        return user;
+    public User getBorrower() {
+        return borrower;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setBorrower(User borrower) {
+        this.borrower = borrower;
     }
 
-    public BookUnit getBookUnit() {
-        return bookUnit;
+    public User getLender() {
+        return lender;
     }
 
-    public void setBookUnit(BookUnit bookUnit) {
-        this.bookUnit = bookUnit;
+    public void setLender(User lender) {
+        this.lender = lender;
     }
+
 
 
 
