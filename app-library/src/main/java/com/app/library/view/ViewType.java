@@ -124,6 +124,30 @@ public enum ViewType {
         public String getFrameTitle(){
             return "Koszyk";
         }
+    },
+    BOSS_ACCOUNT {
+        public String getFxmlName() {
+            return "boss/account-boss";
+        }
+
+        public String getFrameTitle() {
+            return "Konto";
+        }
+    },
+    BOSS_LIST_OF_EMPLOYEE {
+        public String getFxmlName() { return "boss/employee-list"; }
+
+        public String getFrameTitle() { return "Lista pracowników"; }
+    },
+    BOSS_LIST_OF_LIBRERIES {
+        public String getFxmlName() { return "boss/libraries-list"; }
+
+        public String getFrameTitle() { return "Lista bibliotek"; }
+    },
+    BOSS_ADD_EMPLOYEE {
+        public String getFxmlName() { return "boss/add-employee"; }
+
+        public String getFrameTitle() { return "Dodaj prcownika"; }
     };
 
     public abstract String getFxmlName();

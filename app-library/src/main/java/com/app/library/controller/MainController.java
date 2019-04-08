@@ -56,6 +56,11 @@ public class MainController implements Initializable {
     public void goToZaloguj(Event event) throws IOException {
         viewManager.show(ViewType.SIGN_IN);
     }
+
+    @FXML
+    public void goToBoss(Event event) throws IOException {
+        viewManager.show(ViewType.BOSS_ACCOUNT);
+    }
 }
 
 
