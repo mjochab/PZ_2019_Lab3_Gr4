@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.awt.print.Book;
 
+@Entity
 public class Library {
 
 
@@ -14,15 +15,15 @@ public class Library {
     private Integer id;
 
 
-    @ManyToOne(targetEntity = User.class)
+    @ManyToOne(optional = false, targetEntity = User.class)
     private String director_id;
 
 
-    @OneToOne(targetEntity = User.class)
+    @OneToOne(optional = false, targetEntity = User.class)
     private String address_id;
 
-    @OneToOne(targetEntity = Book.class)
-    @Column(name = "name")
+
+
     @NotBlank
     @Length(max = 64)
     private String name;

@@ -27,10 +27,10 @@ public class Book {
     @NotNull
     private int yearOfPublication;
 
-    @Column(name = "library_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
     @NotNull
-    @ManyToOne(targetEntity = Library.class)
-    private int libraryId;
+    private Library library;
 
     @NotBlank
     @Length(min = 1, max = 128)
@@ -71,12 +71,12 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public int getLibraryId() {
-        return libraryId;
+    public Library getLibrary() {
+        return library;
     }
 
-    public void setLibraryId(int libraryId) {
-        this.libraryId = libraryId;
+    public void setLibrary(Library library) {
+        this.library = library;
     }
 
     public String getAuthor() {
