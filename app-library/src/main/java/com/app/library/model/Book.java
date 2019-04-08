@@ -29,6 +29,7 @@ public class Book {
 
     @Column(name = "library_id")
     @NotNull
+    @ManyToOne(targetEntity = Library.class)
     private int libraryId;
 
     @NotBlank
