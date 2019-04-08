@@ -14,29 +14,29 @@ public class EmployeeOfLibrary {
     private Integer id;
 
     @ManyToOne(optional = false)
-    private User userId;
+    private User user;
 
     @ManyToOne(optional = false)
-    private Library libraryId;
+    private Library library;
 
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }
 
-    public User getUserId() { return userId; }
+    public User getUser() { return user; }
 
-    public void setUserId(User userId) { this.userId = userId; }
+    public void setUser(User user) { this.user = user; }
 
-    public Library getLibraryId() { return libraryId; }
+    public Library getLibrary() { return library; }
 
-    public void setLibraryId(Library libraryId) { this.libraryId = libraryId; }
+    public void setLibrary(Library library) { this.library = library; }
 
     @Override
     public String toString() {
         return "EmployeeOfLibrary{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", libraryId='" + libraryId + '\'' +
+                ", user=" + user +
+                ", library='" + library + '\'' +
                 '}';
     }
 }
