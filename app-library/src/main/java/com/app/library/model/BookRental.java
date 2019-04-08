@@ -26,13 +26,13 @@ public class BookRental {
 
     @ManyToOne(optional = false)
     @NotNull
-    @JoinColumn(name = "id", insertable = false, updatable = false)
-    private User user;
+    @JoinColumn(name = "borrow_by_user", updatable = false)
+    private User borrower;
 
     @ManyToOne(optional = false)
     @NotNull
-    @JoinColumn(name = "id", insertable = false, updatable = false)
-    private BookUnit bookUnit;
+    @JoinColumn(name = "lend_by_user", updatable = false)
+    private User lender;
 
 
     public Integer getId() {
