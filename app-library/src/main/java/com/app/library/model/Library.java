@@ -1,33 +1,32 @@
 package com.app.library.model;
 
 import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.NotBlank;
-import java.awt.print.Book;
+
 
 @Entity
 public class Library {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(insertable = false, updatable = false)
+    @NotNull
+    private User director;
 
-    @ManyToOne(optional = false, targetEntity = User.class)
-    private String director_id;
+    @ManyToOne(optional = false)
+    @JoinColumn(insertable = false, updatable = false)
+    @NotNull
+    private Address address;
 
-
-    @OneToOne(optional = false, targetEntity = User.class)
-    private String address_id;
-
-
-
-    @NotBlank
+    @Column(name = "name")
     @Length(max = 64)
+    @NotBlank
     private String name;
-
 
     public Integer getId() {
         return id;
@@ -37,20 +36,20 @@ public class Library {
         this.id = id;
     }
 
-    public String getDirector_id() {
-        return director_id;
+    public User getDirector() {
+        return director;
     }
 
-    public void setDirector_id(String director_id) {
-        this.director_id = director_id;
+    public void setDirector(User director) {
+        this.director = director;
     }
 
-    public String getAddress_id() {
-        return address_id;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddress_id(String address_id) {
-        this.address_id = address_id;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -60,6 +59,5 @@ public class Library {
     public void setName(String name) {
         this.name = name;
     }
-
 
 }

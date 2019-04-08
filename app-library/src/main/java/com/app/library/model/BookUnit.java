@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="book_unit")
+@Table(name = "book_unit")
 public class BookUnit {
 
     @Id
@@ -22,16 +22,11 @@ public class BookUnit {
 
     @Column(name = "checked_out")
     @NotNull
-    @Length(min = 1, max = 1)
     private boolean checkedOut;
 
-    @ManyToOne(optional = false, targetEntity = Book.class)
+    @ManyToOne(optional = false)
     @NotNull
     private Book book;
-
-
-
-
 
     public Integer getId() {
         return id;

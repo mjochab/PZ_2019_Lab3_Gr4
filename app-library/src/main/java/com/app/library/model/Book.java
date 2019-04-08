@@ -4,8 +4,10 @@ package com.app.library.model;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Book {
@@ -24,20 +26,17 @@ public class Book {
     private String publishingCompany;
 
     @Column(name = "year_of_publication")
-    @NotNull
+    @Min(1800)
     private int yearOfPublication;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(insertable = false, updatable = false)
     @NotNull
     private Library library;
 
     @NotBlank
     @Length(min = 1, max = 128)
     private String author;
-
-
-
 
     public Integer getId() {
         return id;
