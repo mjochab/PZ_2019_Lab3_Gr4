@@ -1,4 +1,4 @@
-package com.app.library.model.enumerate;
+package com.app.library.model;
 
 
 import com.app.library.model.User;
