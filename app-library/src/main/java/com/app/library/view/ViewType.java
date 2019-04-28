@@ -148,6 +148,11 @@ public enum ViewType {
         public String getFxmlName() { return "boss/add-employee"; }
 
         public String getFrameTitle() { return "Dodaj prcownika"; }
+    },
+    INDIVIDUAL_VIEW_OF_BOOK{
+      public String getFxmlName() {return "shared/individual-book's-view";}
+
+      public String getFrameTitle() { return "shared/individual-book's-view"; }
     };
 
     public abstract String getFxmlName();

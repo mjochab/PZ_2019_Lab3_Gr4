@@ -38,6 +38,10 @@ public class Book {
     @Length(min = 1, max = 128)
     private String author;
 
+    public Book() {
+
+    }
+
     public Integer getId() {
         return id;
     }
