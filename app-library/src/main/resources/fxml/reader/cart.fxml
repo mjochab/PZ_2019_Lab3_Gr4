@@ -2,10 +2,10 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXToolbar?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -117,12 +117,12 @@
             </HBox>
          </top>
          <center>
-            <JFXTreeTableView opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <TableView fx:id="table" opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
                </BorderPane.margin>
                <columns>
-                  <TreeTableColumn prefWidth="278.0">
+                  <TableColumn fx:id="colTitle" prefWidth="278.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł">
                            <font>
@@ -130,8 +130,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="245.0">
+                  </TableColumn>
+                  <TableColumn fx:id="colAuthor" prefWidth="245.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
                            <font>
@@ -139,8 +139,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="368.0">
+                  </TableColumn>
+                  <TableColumn fx:id="colYearOfPublication" prefWidth="368.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania">
                            <font>
@@ -148,8 +148,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="188.0">
+                  </TableColumn>
+                  <TableColumn fx:id="colAvailable" prefWidth="188.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                            <font>
@@ -157,9 +157,9 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
+                  </TableColumn>
                </columns>
-            </JFXTreeTableView>
+            </TableView>
          </center>
       </BorderPane>
    </center>

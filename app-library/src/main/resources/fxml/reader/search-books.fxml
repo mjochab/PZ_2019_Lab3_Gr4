@@ -46,12 +46,12 @@
          <center>
             <FlowPane>
                <children>
-                  <JFXTextField alignment="BASELINE_CENTER" focusColor="#4bc34b" prefHeight="87.0" prefWidth="1180.0" promptText="Wyszukaj" style="-fx-background-color: rgba(255, 255, 255, 0.7);" unFocusColor="WHITE">
+                  <JFXTextField fx:id="search_field" alignment="BASELINE_CENTER" focusColor="#4bc34b" prefHeight="87.0" prefWidth="1180.0" promptText="Wyszukaj" style="-fx-background-color: rgba(255, 255, 255, 0.7);" unFocusColor="WHITE">
                      <font>
                         <Font name="AnjaliOldLipi" size="32.0" />
                      </font>
                   </JFXTextField>
-                  <TableView fx:id="table" opacity="0.88" prefHeight="510.0" prefWidth="1180.0" style="-fx-background-color: rgba(146, 119, 84, 0.9);">
+                  <TableView fx:id="table" opacity="0.88" prefHeight="510.0" prefWidth="1180.0" style="-fx-background-color: rgba(146, 119, 84, 0.9);" styleClass="table-row-cell" stylesheets="@../../css/style.css">
                     <columns>
                       <TableColumn fx:id="colTitle" prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Tytuł" />
                       <TableColumn fx:id="colAuthor" prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Autor" />

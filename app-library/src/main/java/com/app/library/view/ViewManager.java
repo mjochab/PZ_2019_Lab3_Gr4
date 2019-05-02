@@ -1,5 +1,6 @@
 package com.app.library.view;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -7,6 +8,7 @@ import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 
@@ -18,6 +20,8 @@ public class ViewManager {
 
     private ConfigurableApplicationContext context;
     private Stage stage;
+    private FXMLLoader fxmlLoader;
+
 
     public void init(Stage stage) {
         this.stage = stage;
@@ -29,6 +33,7 @@ public class ViewManager {
         stage.show();
     }
 
+
     public void show(ViewType viewType) {
         Parent parent = getView(viewType.getFxmlName());
         stage.getScene().setRoot(parent);
@@ -37,10 +42,9 @@ public class ViewManager {
 
     private Parent getView(String viewName) {
         String viewPath = getViewPath(viewName);
-        FXMLLoader fxmlLoader = new FXMLLoader();
+        this.fxmlLoader = new FXMLLoader();
         fxmlLoader.setControllerFactory(context::getBean);
         fxmlLoader.setLocation(getClass().getResource(viewPath));
-
         try {
             return (Parent) fxmlLoader.load();
         } catch (IOException e) {
@@ -55,6 +59,14 @@ public class ViewManager {
         builder.append(VIEWS_EXTENSION);
 
         return builder.toString();
+    }
+
+    public FXMLLoader getFxmlLoader() {
+        return fxmlLoader;
+    }
+
+    public void setFxmlLoader(FXMLLoader fxmlLoader) {
+        this.fxmlLoader = fxmlLoader;
     }
 
     @Autowired
