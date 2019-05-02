@@ -1,19 +1,29 @@
 package com.app.library.controller.shared;
 
+import com.app.library.model.Book;
+import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
+import com.app.library.view.ViewType;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
 @Controller
-public class IndividualBookController {
+public class IndividualBookController implements Initializable {
 
     @Autowired
     private ViewManager viewManager;
+
+    @Autowired
+    private PersistenceService persistenceService;
 
     @FXML
     private Text text_author = new Text();
@@ -30,16 +40,18 @@ public class IndividualBookController {
 
     @FXML
     public void goToBookSearch() {
-               Stage stage = (Stage)btn.getScene().getWindow();
-               stage.close();
+        viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
+        setData(book.getAuthor(), book.getYearOfPublication(), book.getName());
+    }
 
-
-    @FXML
-    public void setData(String author, int rok, String title){
-        text_author.setText("Autor: "+author);
-        year_text.setText("Rok wydania: "+rok);
+    private void setData(String author, int rok, String title) {
+        text_author.setText("Autor: " + author);
+        year_text.setText("Rok wydania: " + rok);
         title_text.setText(title);
     }
 }

@@ -29,33 +29,13 @@ public enum ViewType {
             return "Moje zamówienia";
         }
     },
-
-    // shared
-    SIGN_IN {
-        public String getFxmlName() {
-            return "shared/logowanie";
+    READER_CART {
+        public String getFxmlName(){
+            return "reader/cart";
         }
 
-        public String getFrameTitle() {
-            return "Logowanie";
-        }
-    },
-    REGISTER {
-        public String getFxmlName() {
-            return "shared/rejestracja";
-        }
-
-        public String getFrameTitle() {
-            return "Rejestracja";
-        }
-    },
-    MAIN {
-        public String getFxmlName() {
-            return "shared/glowna";
-        }
-
-        public String getFrameTitle() {
-            return "Biblioteka";
+        public String getFrameTitle(){
+            return "Koszyk";
         }
     },
 
@@ -116,15 +96,8 @@ public enum ViewType {
             return "Konto";
         }
     },
-    READER_CART {
-        public String getFxmlName(){
-            return "reader/cart";
-        }
 
-        public String getFrameTitle(){
-            return "Koszyk";
-        }
-    },
+    // boss
     BOSS_ACCOUNT {
         public String getFxmlName() {
             return "boss/account-boss";
@@ -149,10 +122,39 @@ public enum ViewType {
 
         public String getFrameTitle() { return "Dodaj prcownika"; }
     },
-    INDIVIDUAL_VIEW_OF_BOOK{
+
+    // shared
+    SINGLE_BOOK {
       public String getFxmlName() {return "shared/individual-book's-view";}
 
       public String getFrameTitle() { return "shared/individual-book's-view"; }
+    },
+    SIGN_IN {
+        public String getFxmlName() {
+            return "shared/logowanie";
+        }
+
+        public String getFrameTitle() {
+            return "Logowanie";
+        }
+    },
+    REGISTER {
+        public String getFxmlName() {
+            return "shared/rejestracja";
+        }
+
+        public String getFrameTitle() {
+            return "Rejestracja";
+        }
+    },
+    MAIN {
+        public String getFxmlName() {
+            return "shared/glowna";
+        }
+
+        public String getFrameTitle() {
+            return "Biblioteka";
+        }
     };
 
     public abstract String getFxmlName();
