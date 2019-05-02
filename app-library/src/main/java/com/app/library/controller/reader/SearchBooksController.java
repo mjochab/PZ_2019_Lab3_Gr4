@@ -85,48 +85,30 @@ public class SearchBooksController implements Initializable {
     }
 
 
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        //określenie typów wartości kolumn
-        colTitle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
-        colAuthor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-        colPublishingCompany.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-        colYearOfPublication.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-        colAvailable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
-
-
-        //tworzenie listy i wstawienie jej do tabeli
-        List<Book> list = bookRepository.findAll();
-
-        ObservableList listaa = FXCollections.observableArrayList();
-        for(int i =0; i<list.size(); i++) {
-            List<String> listToTable = new ArrayList<>();
-            listToTable.add(list.get(i).getName());
-            listToTable.add(list.get(i).getAuthor());
-            listToTable.add(list.get(i).getPublishingCompany());
-            listToTable.add(String.valueOf(list.get(i).getYearOfPublication()));
-
-            List<BookUnit> listBookUnit = bookUnitRepository.findByBookId(i + 1);
-
-            for (int j = 0; j < listBookUnit.size(); j++) {
-                int ilosc = 0;
-                if(!listBookUnit.get(i).isCheckedOut()){
-                    ilosc += 1;
-                }
-                if (ilosc > 0) {
-                    listToTable.add("Dostępna");
-                } else {
-                    listToTable.add("Niedostępna");
+    //filtrowanie danych w tabeli
+    private void filteringTable(){
+        ObservableList data =  table.getItems();
+        search_field.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+            if (oldValue != null && (newValue.length() < oldValue.length())) {
+                table.setItems(data);
+            }
+            String value = newValue.toLowerCase();
+            ObservableList<List<String>> subentries = FXCollections.observableArrayList();
+            long count = table.getColumns().stream().count();
+            for (int i = 0; i < table.getItems().size(); i++) {
+                for (int j = 0; j < count; j++) {
+                    String entry = "" + table.getColumns().get(j).getCellData(i);
+                    if (entry.toLowerCase().contains(value)) {
+                        subentries.add(table.getItems().get(i));
+                        break;
+                    }
                 }
             }
-            listaa.add(listToTable);
-        }
-        table.setItems(listaa);
+            table.setItems(subentries);
+        });
+    }
 
-
+    private void goToIndividualBooksView(){
         //przejście do widoku indywidualnego książki na onDoubleClick
         table.setRowFactory( tv -> {
             TableRow<List<String>> row = new TableRow<>();
@@ -141,31 +123,56 @@ public class SearchBooksController implements Initializable {
             });
             return row;
         });
+    }
 
+    private void fillTable(){
+        //tworzenie listy i wstawienie jej do tabeli
+        List<Book> list = bookRepository.findAll();
+        ObservableList listaa = FXCollections.observableArrayList();
+        for(int i =0; i<list.size(); i++) {
+            List<String> listToTable = new ArrayList<>();
+            listToTable.add(list.get(i).getName());
+            listToTable.add(list.get(i).getAuthor());
+            listToTable.add(list.get(i).getPublishingCompany());
+            listToTable.add(String.valueOf(list.get(i).getYearOfPublication()));
 
-
-//        filtrowanie danych w tabeli
-        ObservableList data =  table.getItems();
-        search_field.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
-            if (oldValue != null && (newValue.length() < oldValue.length())) {
-                table.setItems(data);
-            }
-            String value = newValue.toLowerCase();
-            ObservableList<List<String>> subentries = FXCollections.observableArrayList();
-
-            long count = table.getColumns().stream().count();
-            for (int i = 0; i < table.getItems().size(); i++) {
-                for (int j = 0; j < count; j++) {
-                    String entry = "" + table.getColumns().get(j).getCellData(i);
-                    if (entry.toLowerCase().contains(value)) {
-                        subentries.add(table.getItems().get(i));
-                        break;
-                    }
+            // sprawdzenie czy książka nie została już wypożyczona
+            List<BookUnit> listBookUnit = bookUnitRepository.findByBookId(i + 1);
+            for (int j = 0; j < listBookUnit.size(); j++) {
+                int ilosc = 0;
+                if(!listBookUnit.get(i).isCheckedOut()){
+                    ilosc += 1;
+                }
+                if (ilosc > 0) {
+                    listToTable.add("Dostępna");
+                } else {
+                    listToTable.add("Niedostępna");
                 }
             }
-            table.setItems(subentries);
-        });
+            listaa.add(listToTable);
+        }
+        table.setItems(listaa);
+    }
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        //określenie typów wartości w kolumnach
+        colTitle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        colAuthor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+        colPublishingCompany.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
+        colYearOfPublication.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
+        colAvailable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+
+        //wypełnienie tabeli danymi z bazy
+        fillTable();
+
+        //metoda pozwalająca na przejście do indywidualnego widoku książki po dwukrotnym kliknięciu na rząd w tabeli
+        goToIndividualBooksView();
+
+        //metoda filtrująca tabelę
+        filteringTable();
 
 
     }
