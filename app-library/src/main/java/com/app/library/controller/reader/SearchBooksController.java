@@ -2,7 +2,9 @@ package com.app.library.controller.reader;
 
 import com.app.library.controller.shared.IndividualBookController;
 import com.app.library.model.Book;
+import com.app.library.model.BookUnit;
 import com.app.library.repository.BookRepository;
+import com.app.library.repository.BookUnitRepository;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXTextField;
@@ -33,6 +35,9 @@ public class SearchBooksController implements Initializable {
 
     @Autowired
     BookRepository bookRepository;
+
+    @Autowired
+    BookUnitRepository bookUnitRepository;
 
     @FXML
     private JFXTextField search_field = new JFXTextField();
@@ -95,15 +100,28 @@ public class SearchBooksController implements Initializable {
 
         //tworzenie listy i wstawienie jej do tabeli
         List<Book> list = bookRepository.findAll();
+
         ObservableList listaa = FXCollections.observableArrayList();
-        for(int i =0; i<list.size(); i++){
+        for(int i =0; i<list.size(); i++) {
             List<String> listToTable = new ArrayList<>();
             listToTable.add(list.get(i).getName());
             listToTable.add(list.get(i).getAuthor());
             listToTable.add(list.get(i).getPublishingCompany());
             listToTable.add(String.valueOf(list.get(i).getYearOfPublication()));
-            listToTable.add("Dostępna");
 
+            List<BookUnit> listBookUnit = bookUnitRepository.findByBookId(i + 1);
+
+            for (int j = 0; j < listBookUnit.size(); j++) {
+                int ilosc = 0;
+                if(!listBookUnit.get(i).isCheckedOut()){
+                    ilosc += 1;
+                }
+                if (ilosc > 0) {
+                    listToTable.add("Dostępna");
+                } else {
+                    listToTable.add("Niedostępna");
+                }
+            }
             listaa.add(listToTable);
         }
         table.setItems(listaa);
@@ -118,6 +136,7 @@ public class SearchBooksController implements Initializable {
                     viewManager.show(ViewType.INDIVIDUAL_VIEW_OF_BOOK);
                     IndividualBookController individualBookController = viewManager.getFxmlLoader().getController();
                     individualBookController.setData(table_row.get(0), table_row.get(1), Integer.parseInt(table_row.get(3)), table_row.get(4));
+                    individualBookController.disableButtonIfUnavailable(table_row.get(4));
                 }
             });
             return row;
