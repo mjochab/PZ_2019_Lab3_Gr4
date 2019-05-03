@@ -115,7 +115,7 @@ public class SearchBooksController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2) {
                     List<String> table_row = row.getItem();
-                    viewManager.show(ViewType.INDIVIDUAL_VIEW_OF_BOOK);
+                    viewManager.show(ViewType.SINGLE_BOOK);
                     IndividualBookController individualBookController = viewManager.getFxmlLoader().getController();
                     individualBookController.setData(table_row.get(0), table_row.get(1), Integer.parseInt(table_row.get(3)), table_row.get(4));
                     individualBookController.disableButtonIfUnavailable(table_row.get(4));

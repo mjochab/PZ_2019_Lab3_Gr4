@@ -1,13 +1,16 @@
 package com.app.library.controller.shared;
 
 import com.app.library.controller.reader.CartController;
+import com.app.library.model.Book;
+import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
-import com.sun.org.apache.xml.internal.security.Init;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -18,10 +21,13 @@ import java.util.ResourceBundle;
 
 
 @Controller
-public class IndividualBookController {
+public class IndividualBookController implements Initializable {
 
     @Autowired
     private ViewManager viewManager;
+
+    @Autowired
+    private PersistenceService persistenceService;
 
     @FXML
     private Text author_text = new Text();
@@ -41,9 +47,16 @@ public class IndividualBookController {
     @FXML
     private Button addToCart = new Button();
 
+
     @FXML
     public void goToBookSearch() {
-               viewManager.show(ViewType.READER_SEARCH_BOOKS);
+        viewManager.show(ViewType.READER_SEARCH_BOOKS);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
+        
     }
 
     @FXML
@@ -61,6 +74,7 @@ public class IndividualBookController {
 
 
     }
+
 
 
     @FXML
