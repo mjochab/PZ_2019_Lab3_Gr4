@@ -1,5 +1,10 @@
 package com.app.library.controller.reader;
 
+import com.app.library.model.Book;
+import com.app.library.model.BookUnit;
+import com.app.library.repository.BookRepository;
+import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleStringProperty;
@@ -24,22 +29,17 @@ public class CartController implements Initializable {
     @Autowired
     private ViewManager viewManager;
 
-    @FXML
-    private TableView<List<String>> table = new TableView();
+    @Autowired
+    private PersistenceService persistenceService;
+
+    @Autowired
+    private BookRepository bookRepository;
 
     @FXML
-    private TableColumn<List<String>, String> colTitle = new TableColumn<>();
+    private TableView<List<String>> cartTable = new TableView();
 
     @FXML
-    private TableColumn<List<String>, String> colAuthor = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colYearOfPublication = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colAvailable= new TableColumn<>();
-
-    private ObservableList observableList = FXCollections.observableArrayList();
+    private TableColumn<List<String>, String> titleColumn, authorColumn, yearColumn, signatureColumn, statusColumn = new TableColumn<>();
 
 
     @FXML
@@ -62,22 +62,54 @@ public class CartController implements Initializable {
         viewManager.show(ViewType.READER_ACCOUNT);
     }
 
+    //ustawienie itemów dla tabeli
+    private void setCartTable(List<BookUnit> lista){
+        cartTable.setItems(getListForCartTable(lista));
+    }
+
+    //tworzenie listy, która będzie wrzucona do tabeli
+    private ObservableList<List<String>> getListForCartTable(List<BookUnit> bookUnitList){
+        ObservableList<List<String>> observableList = FXCollections.observableArrayList();
+        for(int i = 0; i<bookUnitList.size(); i++){
+            Book book = bookRepository.findById(bookUnitList.get(i).getBook().getId().intValue());
+            List<String> stringList1 = new ArrayList<>();
+            stringList1.add(book.getName());
+            stringList1.add(book.getAuthor());
+            stringList1.add(String.valueOf(book.getYearOfPublication()));
+            stringList1.add(bookUnitList.get(i).getSignature());
+            if(bookUnitList.get(i).isCheckedOut()){
+                stringList1.add("Niedostępna");
+            }else{
+                stringList1.add("Dostępna");
+            }
+            observableList.addAll(stringList1);
+        }
+        return observableList;
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        colTitle.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
-        colAuthor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-        colYearOfPublication.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-        colAvailable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-        table.setItems(observableList);
+
+        List<BookUnit> bookUnitList = persistenceService.getCart();
+
+        titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        authorColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+        yearColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
+        signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
+        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+
+        //wypełnienie tabeli
+        setCartTable(bookUnitList);
+
+
+
 
     }
 
 
-    public void addToObservableList(List<String> lista){
-        this.observableList.add(lista);
-    }
+
 
 
 

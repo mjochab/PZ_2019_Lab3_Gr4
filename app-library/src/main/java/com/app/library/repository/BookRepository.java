@@ -12,5 +12,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
       Book findByName(String name);
 
+      Book findById(int id);
+
 
 }

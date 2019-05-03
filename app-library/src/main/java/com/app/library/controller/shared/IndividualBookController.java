@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
@@ -92,6 +93,13 @@ public class IndividualBookController implements Initializable {
         bookUnitTable.setItems(observableList);
     }
 
+    @FXML
+    private void addToCart(){
+            List<String> stringList = bookUnitTable.getSelectionModel().getSelectedItem();
+            BookUnit bookUnit = bookUnitRepository.findBySignature(stringList.get(0));
+            persistenceService.addToCart(bookUnit);
+            viewManager.show(ViewType.READER_CART);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -108,6 +116,8 @@ public class IndividualBookController implements Initializable {
         //wyświetlenie danych w bookUnitTable
         List<BookUnit> bookUnitList = bookUnitRepository.findByBookId(book.getId());
         setTableData(bookUnitList);
+
+
 
     }
 }

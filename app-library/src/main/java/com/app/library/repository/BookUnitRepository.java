@@ -15,4 +15,6 @@ public interface BookUnitRepository extends JpaRepository<BookUnit, Integer> {
 
     List<BookUnit> findByBookId(int book_id);
 
+    BookUnit findBySignature(String signature);
+
 }
