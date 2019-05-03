@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.shared.AddingUserController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.shared.RejestracjaController">
    <top>
       <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <left>
@@ -50,7 +50,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Imie">
+                        <TextField fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Imie">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -68,7 +68,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="284.0" text="Nazwisko">
+                        <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="284.0" text="Nazwisko">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -86,7 +86,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Mail">
+                        <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Mail">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -107,7 +107,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="282.0" text="Pesel">
+                        <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="282.0" text="Pesel">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -125,7 +125,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title8" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Kod pocztowy">
+                        <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Kod pocztowy">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -143,7 +143,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title6" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Ulica">
+                        <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Ulica">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -161,7 +161,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title7" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Miasto">
+                        <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Miasto">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -179,7 +179,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title4" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
+                        <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -200,7 +200,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title5" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
+                        <TextField fx:id="password2TextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -210,7 +210,7 @@
                </children>
             </VBox>
             <AnchorPane layoutX="188.0" layoutY="419.0" prefHeight="92.0" prefWidth="211.0" />
-            <Button layoutX="222.0" layoutY="643.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Zarejestruj">
+            <Button layoutX="222.0" layoutY="643.0" mnemonicParsing="false" onMouseClicked="#addUser" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Zarejestruj">
                <font>
                   <Font size="24.0" />
                </font>
