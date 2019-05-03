@@ -2,6 +2,7 @@ package com.app.library.controller.reader;
 
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
@@ -23,7 +25,58 @@ public class AccountController {
    @Autowired
     private ViewManager viewManager;
 
+    @FXML
+    private JFXButton cart;
 
+    @FXML
+    private JFXButton home;
+
+    @FXML
+    private JFXButton search;
+
+    @FXML
+    private JFXButton my_orders;
+
+    @FXML
+    private JFXButton account;
+
+    @FXML
+    private JFXButton logout;
+
+    @FXML
+    private Label mailTextBox;
+
+    @FXML
+    private Label cardTextBox;
+
+    @FXML
+    private Label firstNameTextBox;
+
+    @FXML
+    private Label surnameTextBox;
+
+    @FXML
+    private Label cityTextBox;
+
+    @FXML
+    private Label streetTextBox;
+
+    @FXML
+    private Label codeTextBox;
+
+    @FXML
+    private Label peselTextBox;
+
+    @FXML
+    private Label wojewodztwoTextBox;
+
+    @FXML
+    private Label countryTextBox;
+
+    @FXML
+    void editMail(MouseEvent event) {
+
+    }
 
     @FXML
     public void goToSearchBooks(){
@@ -44,5 +97,7 @@ public class AccountController {
     public void goToCart(){
         viewManager.show(ViewType.READER_CART);
     }
+
+
 
 }
