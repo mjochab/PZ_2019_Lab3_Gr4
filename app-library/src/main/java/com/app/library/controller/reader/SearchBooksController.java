@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -87,7 +88,7 @@ public class SearchBooksController implements Initializable {
 
         table.setRowFactory(tv -> {
             TableRow<Book> row = new TableRow<>();
-            row.setOnMouseClicked((event) -> {
+            row.setOnMouseClicked((MouseEvent event) -> {
                 if (event.getClickCount() == 2) {
                     Book book = row.getItem();
                     persistanceService.addToStore(PersistenceKeys.SINGLE_BOOK, book);
