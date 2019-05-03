@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintViolationException;
 
-public class RejestracjaController {
+public class AddingUserController {
 
     @Autowired
     private ViewManager viewManager;
