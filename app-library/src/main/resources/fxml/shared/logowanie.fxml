@@ -50,7 +50,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Login">
+                        <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Login">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -68,7 +68,7 @@
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="title" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Password">
+                        <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Password">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>

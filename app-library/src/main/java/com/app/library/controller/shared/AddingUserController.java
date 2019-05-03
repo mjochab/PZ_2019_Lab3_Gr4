@@ -37,7 +37,7 @@ public class AddingUserController {
     private TextField firstNameTextBox;
 
     @FXML
-    private TextField secondNameTextBox;
+    private TextField surnameTextBox;
 
     @FXML
     private TextField mailTextBox;
@@ -63,7 +63,7 @@ public class AddingUserController {
     @FXML
     public void addBook(MouseEvent mouseEvent) {
         String firstName = firstNameTextBox.getText();
-        String secondName = secondNameTextBox.getText();
+        String surname = surnameTextBox.getText();
         String mail = mailTextBox.getText();
         String pesel = peselTextBox.getText();
         String code = codeTextBox.getText();

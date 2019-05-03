@@ -57,7 +57,7 @@ public class User {
         this.mail = mail;
     }
 
-    
+
 
     public String getPassword() {
         return password;
