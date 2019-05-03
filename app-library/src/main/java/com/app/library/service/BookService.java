@@ -4,13 +4,14 @@ import com.app.library.model.Book;
 import com.app.library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
+@Validated
 public class BookService {
-
-    private Integer lastClickedBookId = null;
 
     private BookRepository bookRepository;
 
@@ -22,12 +23,8 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public Integer getLastClickedBookId() {
-        return lastClickedBookId;
-    }
-
-    public void setLastClickedBookId(Integer id) {
-        this.lastClickedBookId = id;
+    public Book saveBook(@Valid Book book) {
+        return bookRepository.save(book);
     }
 
     @Autowired
