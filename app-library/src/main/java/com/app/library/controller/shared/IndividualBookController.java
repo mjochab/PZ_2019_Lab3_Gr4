@@ -2,13 +2,21 @@ package com.app.library.controller.shared;
 
 import com.app.library.controller.reader.CartController;
 import com.app.library.model.Book;
+import com.app.library.model.BookUnit;
+import com.app.library.repository.BookUnitRepository;
 import com.app.library.service.PersistenceService;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,25 +35,24 @@ public class IndividualBookController implements Initializable {
     private ViewManager viewManager;
 
     @Autowired
+    private BookUnitRepository bookUnitRepository;
+
+    @Autowired
     private PersistenceService persistenceService;
 
-    @FXML
-    private Text author_text = new Text();
 
     @FXML
-    private Text year_text = new Text();
+    private TableView<List<String>> bookUnitTable = new TableView<>();
 
     @FXML
-    private Text title_text = new Text();
+    private TableColumn<List<String>, String> signatureColumn, availibilityColumn = new TableColumn<>();
 
     @FXML
-    private Text status_text = new Text();
+    private Text authorText,yearText, titleText, companyText = new Text();
 
     @FXML
-    private Button back_btn = new Button();
+    private Button goBackButton, addToCartButton = new Button();
 
-    @FXML
-    private Button addToCart = new Button();
 
 
     @FXML
@@ -53,43 +60,54 @@ public class IndividualBookController implements Initializable {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
-        
-    }
 
-    @FXML
-    public void addToCart(){
-
-        List<String> lista = new ArrayList<>();
-        lista.add(title_text.getText());
-        lista.add(author_text.getText());
-        lista.add(year_text.getText());
-        lista.add(status_text.getText());
-
-        viewManager.show(ViewType.READER_CART);
-        CartController cartController = viewManager.getFxmlLoader().getController();
-        cartController.addToObservableList(lista);
-
-
-    }
-
-
-
-    @FXML
-    public void setData( String title, String author, int rok, String status){
-        author_text.setText(author);
-        year_text.setText(String.valueOf(rok));
-        title_text.setText(title);
-        status_text.setText(status);
-    }
-
-    @FXML
-    public void disableButtonIfUnavailable(String status){
+    private void disableButtonIfUnavailable(String status){
         if(status == "Niedostępna"){
-            addToCart.setDisable(true);
+            addToCartButton.setDisable(true);
         }
     }
 
+
+    private void showBookData( Book book){
+        authorText.setText(book.getAuthor());
+        yearText.setText(String.valueOf(book.getYearOfPublication()));
+        titleText.setText(book.getName());
+        companyText.setText(book.getPublishingCompany());
+    }
+
+
+    private void setTableData(List<BookUnit> lista){
+        ObservableList observableList = FXCollections.observableArrayList();
+
+        for(int i = 0; i<lista.size(); i++){
+            List<String> stringList = new ArrayList<>();
+            stringList.add(lista.get(i).getSignature());
+            if(lista.get(i).isCheckedOut()){
+                stringList.add("Niedostępna");
+            }else{
+                stringList.add("Dostępna");
+            }
+            observableList.add(stringList);
+        }
+        bookUnitTable.setItems(observableList);
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //pobranie książki przechowywanej w pamięci
+        Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
+
+
+        signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        availibilityColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+
+        //wyświetlenie danych o pobranej książce
+        showBookData(book);
+
+        //wyświetlenie danych w bookUnitTable
+        List<BookUnit> bookUnitList = bookUnitRepository.findByBookId(book.getId());
+        setTableData(bookUnitList);
+
+    }
 }

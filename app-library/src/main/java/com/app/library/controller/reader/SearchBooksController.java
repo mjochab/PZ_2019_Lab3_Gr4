@@ -1,10 +1,12 @@
 package com.app.library.controller.reader;
 
-import com.app.library.controller.shared.IndividualBookController;
+
 import com.app.library.model.Book;
 import com.app.library.model.BookUnit;
 import com.app.library.repository.BookRepository;
 import com.app.library.repository.BookUnitRepository;
+import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXTextField;
@@ -34,10 +36,11 @@ public class SearchBooksController implements Initializable {
     private ViewManager viewManager;
 
     @Autowired
-    BookRepository bookRepository;
+    private PersistenceService persistenceService;
 
     @Autowired
-    BookUnitRepository bookUnitRepository;
+    BookRepository bookRepository;
+
 
     @FXML
     private JFXTextField search_field = new JFXTextField();
@@ -46,22 +49,7 @@ public class SearchBooksController implements Initializable {
     private TableView<List<String>> table = new TableView();
 
     @FXML
-    private TableColumn<List<String>, String> colTitle = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colAuthor = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colPublishingCompany = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colYearOfPublication = new TableColumn<>();
-
-    @FXML
-    private TableColumn<List<String>, String> colAvailable = new TableColumn<>();
-
-
-
+    private TableColumn<List<String>, String> colTitle, colAuthor, colPublishingCompany, colYearOfPublication = new TableColumn<>();
 
 
     @FXML
@@ -108,6 +96,7 @@ public class SearchBooksController implements Initializable {
         });
     }
 
+    @FXML
     private void goToIndividualBooksView(){
         //przejście do widoku indywidualnego książki na onDoubleClick
         table.setRowFactory( tv -> {
@@ -115,10 +104,9 @@ public class SearchBooksController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2) {
                     List<String> table_row = row.getItem();
+                    Book book = bookRepository.findByName(table_row.get(0));
+                    persistenceService.addToStore(PersistenceKeys.SINGLE_BOOK, book);
                     viewManager.show(ViewType.SINGLE_BOOK);
-                    IndividualBookController individualBookController = viewManager.getFxmlLoader().getController();
-                    individualBookController.setData(table_row.get(0), table_row.get(1), Integer.parseInt(table_row.get(3)), table_row.get(4));
-                    individualBookController.disableButtonIfUnavailable(table_row.get(4));
                 }
             });
             return row;
@@ -136,19 +124,6 @@ public class SearchBooksController implements Initializable {
             listToTable.add(list.get(i).getPublishingCompany());
             listToTable.add(String.valueOf(list.get(i).getYearOfPublication()));
 
-            // sprawdzenie czy książka nie została już wypożyczona
-            List<BookUnit> listBookUnit = bookUnitRepository.findByBookId(i + 1);
-            for (int j = 0; j < listBookUnit.size(); j++) {
-                int ilosc = 0;
-                if(!listBookUnit.get(i).isCheckedOut()){
-                    ilosc += 1;
-                }
-                if (ilosc > 0) {
-                    listToTable.add("Dostępna");
-                } else {
-                    listToTable.add("Niedostępna");
-                }
-            }
             listaa.add(listToTable);
         }
         table.setItems(listaa);
@@ -163,7 +138,7 @@ public class SearchBooksController implements Initializable {
         colAuthor.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
         colPublishingCompany.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
         colYearOfPublication.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-        colAvailable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+
 
         //wypełnienie tabeli danymi z bazy
         fillTable();
