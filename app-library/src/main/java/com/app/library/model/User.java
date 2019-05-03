@@ -26,12 +26,73 @@ public class User {
 
     @NotBlank
     @Length(max = 64)
-    private String surname;
+    private String secondName;
 
     @NotBlank
     @Length(max = 11, min = 11)
     @Column(unique = true)
     private String pesel;
+
+    @NotBlank
+    @Length(max = 64)
+    private String mail;
+
+    @NotBlank
+    @Length(max = 64)
+    private String code;
+
+    @NotBlank
+    @Length(max = 64)
+    private String street;
+
+    @NotBlank
+    @Length(max = 64)
+    private String city;
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @NotBlank
+    @Length(max = 64)
+    private String password;
+
 
     public Integer getId() {
         return id;
@@ -65,12 +126,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getPesel() {
