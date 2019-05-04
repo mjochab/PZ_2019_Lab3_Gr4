@@ -10,10 +10,14 @@ import java.util.List;
 @Service
 public class LibraryService {
 
-    @Autowired
     private LibraryRepository libraryRepository;
 
     public List<Library> findAll() {
         return libraryRepository.findAll();
+    }
+
+    @Autowired
+    public void setLibraryRepository(LibraryRepository libraryRepository) {
+        this.libraryRepository = libraryRepository;
     }
 }

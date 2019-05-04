@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -41,6 +42,7 @@ public class Book {
     private Library library;
 
     @OneToMany(mappedBy = "book", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @NotEmpty
     private Set<BookUnit> bookUnits;
 
     public Book() {
@@ -158,6 +160,10 @@ public class Book {
         }
 
         public Builder quantity(int quantity) {
+            if (quantity <= 0) {
+                throw new RuntimeException("Quantity can not be lower than 0.");
+            }
+
             this.bookUnits = IntStream.rangeClosed(1, quantity).mapToObj(el -> {
                 BookUnit unit = new BookUnit();
                 unit.setCheckedOut(false);
