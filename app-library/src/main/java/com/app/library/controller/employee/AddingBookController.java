@@ -28,42 +28,10 @@ public class AddingBookController implements Initializable {
     private static final int DEFAULT_BOOKS_QUANTITY = 1;
     private static final int DEFAULT_YEAR_OF_PUBLICATION = 2000;
 
-    @Autowired
     private ViewManager viewManager;
-
-    @Autowired
     private BookService bookService;
-
-    @Autowired
     private LibraryService libraryService;
-
-    @Autowired
     private ViewUtils viewUtils;
-
-    @FXML
-    public void goToEmployeeAccount() {
-        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
-    }
-
-    @FXML
-    public void goToListOfBooks() {
-        viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
-    }
-
-    @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
-    }
-
-    @FXML
-    public void goToListOfUsers() {
-        viewManager.show(ViewType.EMPLOYEE_LIST_OF_USERS);
-    }
-
-    @FXML
-    public void goToHome() {
-        viewManager.show(ViewType.MAIN);
-    }
 
     @FXML
     private TextField titleTextBox;
@@ -137,6 +105,7 @@ public class AddingBookController implements Initializable {
         AlertMessage message = new AlertMessage();
         message.setHeader("Sukces");
         message.setContent("Książka została pomyślnie dodana");
+
         viewUtils.showSuccessAlert(message);
     }
 
@@ -164,12 +133,57 @@ public class AddingBookController implements Initializable {
             if (!empty && item != null) {
                 Address libraryAddress = item.getAddress();
                 String libraryCellText = String.format(
-                    "%s, %s, %s, %s", item.getName(), libraryAddress.getCity(), libraryAddress.getStreet(), libraryAddress.getZipCode()
+                        "%s, %s, %s, %s", item.getName(), libraryAddress.getCity(), libraryAddress.getStreet(), libraryAddress.getZipCode()
                 );
                 setText(libraryCellText);
             } else {
                 setText(null);
             }
         }
+    }
+
+    @FXML
+    public void goToEmployeeAccount() {
+        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
+    }
+
+    @FXML
+    public void goToListOfBooks() {
+        viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
+    }
+
+    @FXML
+    public void goToRealizedOrders() {
+        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    }
+
+    @FXML
+    public void goToListOfUsers() {
+        viewManager.show(ViewType.EMPLOYEE_LIST_OF_USERS);
+    }
+
+    @FXML
+    public void goToHome() {
+        viewManager.show(ViewType.MAIN);
+    }
+
+    @Autowired
+    void setViewManager(ViewManager viewManager) {
+        this.viewManager = viewManager;
+    }
+
+    @Autowired
+    void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
+
+    @Autowired
+    void setLibraryService(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
+
+    @Autowired
+    void setViewUtils(ViewUtils viewUtils) {
+        this.viewUtils = viewUtils;
     }
 }
