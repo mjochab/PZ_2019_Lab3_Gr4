@@ -27,24 +27,13 @@
     <left>
         <AnchorPane maxWidth="-Infinity" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="readersTable" layoutX="80.0" layoutY="200.0" opacity="0.85" prefHeight="468.0"
-                           prefWidth="1122.0" style="-fx-background-color: #937854;">
-                    <columns>
-                        <TableColumn fx:id="firstNameColumn" prefWidth="228.0" text="Imię"/>
-                        <TableColumn fx:id="surnameColumn" prefWidth="245.0" text="Nazwisko"/>
-                        <TableColumn fx:id="emailColumn" prefWidth="340.0" text="Adres email"/>
-                        <TableColumn fx:id="peselColumn" minWidth="0.0" prefWidth="308.0" text="Pesel"/>
-                    </columns>
-                </TableView>
-                <TextField fx:id="searchReadersTextField" layoutX="80.0" layoutY="137.0" onKeyReleased="#findReaders"
-                           prefHeight="40.0" prefWidth="1122.0" promptText="Wyszukaj"/>
                 <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                                 minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0"
                                 prefWidth="122.0" stylesheets="@../../css/style.css">
                             <graphic>
-                                <ImageView fx:id="home" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true"
+                                <ImageView fx:id="homeImage" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true"
                                            preserveRatio="true">
                                     <image>
                                         <Image url="@../../images/library.png"/>
@@ -58,7 +47,7 @@
                         </Button>
                         <Button fx:id="list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
                                 maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToListOfBooks" prefHeight="100.0" prefWidth="160.0"
+                                onMouseClicked="#goToListOfBooks" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>
@@ -77,7 +66,7 @@
                         </Button>
                         <Button fx:id="orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
                                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToRealizedOrders" prefHeight="100.0" prefWidth="160.0"
+                                onMouseClicked="#goToRealizedOrders" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>
@@ -113,28 +102,9 @@
                                 </Text>
                             </graphic>
                         </Button>
-                        <Button fx:id="add_books" layoutX="490.0" layoutY="10.0" maxHeight="-Infinity"
-                                maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#goToAddBooks" prefHeight="100.0" prefWidth="160.0"
-                                stylesheets="@../../css/style.css">
-                            <styleClass>
-                                <String fx:value="border_menu"/>
-                                <String fx:value="brown_background"/>
-                            </styleClass>
-                            <font>
-                                <Font name="Candara Bold" size="20.0"/>
-                            </font>
-                            <graphic>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj książkę">
-                                    <font>
-                                        <Font size="20.0"/>
-                                    </font>
-                                </Text>
-                            </graphic>
-                        </Button>
                         <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity"
                                 maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="160.0"
+                                onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>
@@ -153,7 +123,7 @@
                         </Button>
                         <Button fx:id="logout" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
                                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="160.0"
+                                onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <graphic>
                                 <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
@@ -169,6 +139,19 @@
                         </Button>
                     </children>
                 </HBox>
+                <TextField fx:id="searchReadersTextField" layoutX="80.0" layoutY="137.0" onKeyReleased="#findReaders"
+                           prefHeight="40.0" prefWidth="850.0" promptText="Wyszukaj"/>
+                <Button layoutX="947.0" layoutY="137.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="255.0"
+                        text="Dodaj czytelnika"/>
+                <TableView fx:id="readersTable" layoutX="80.0" layoutY="200.0" opacity="0.85" prefHeight="468.0"
+                           prefWidth="1122.0" style="-fx-background-color: #937854;">
+                    <columns>
+                        <TableColumn fx:id="firstNameColumn" prefWidth="228.0" text="Imię"/>
+                        <TableColumn fx:id="surnameColumn" prefWidth="245.0" text="Nazwisko"/>
+                        <TableColumn fx:id="emailColumn" prefWidth="340.0" text="Adres email"/>
+                        <TableColumn fx:id="peselColumn" minWidth="0.0" prefWidth="308.0" text="Pesel"/>
+                    </columns>
+                </TableView>
             </children>
         </AnchorPane>
     </left>

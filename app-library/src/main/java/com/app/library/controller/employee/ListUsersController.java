@@ -93,11 +93,6 @@ public class ListUsersController implements Initializable {
         viewManager.show(ViewType.MAIN);
     }
 
-    @FXML
-    public void goToAddBooks() {
-        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
-    }
-
     @Autowired
     public void setViewManager(ViewManager viewManager) {
         this.viewManager = viewManager;
