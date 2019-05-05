@@ -34,7 +34,7 @@ public class ListBooksController implements Initializable {
     private TableView<Book> booksTable;
 
     @FXML
-    private TableColumn<Book, Number> idColumn;
+    private TableColumn<Book, String> publishingCompanyColumn;
 
     @FXML
     private TableColumn<Book, String> titleColumn;
@@ -77,8 +77,8 @@ public class ListBooksController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        publishingCompanyColumn.setCellValueFactory(new PropertyValueFactory<>("publishingCompany"));
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
         quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getBookUnits().size()));
 

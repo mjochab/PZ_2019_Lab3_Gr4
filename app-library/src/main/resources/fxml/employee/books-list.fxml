@@ -32,11 +32,14 @@
                            prefHeight="46.0" prefWidth="1124.0" promptText="Wyszukaj"/>
                 <TableView fx:id="booksTable" editable="true" layoutX="79.0" layoutY="214.0" opacity="0.91"
                            prefHeight="436.0" prefWidth="1126.0" style="-fx-background-color: #937854;">
+                    <placeholder>
+                        <Label text="Nie znaleziono żadnych książek"/>
+                    </placeholder>
                     <columns>
-                        <TableColumn fx:id="idColumn" minWidth="0.0" prefWidth="114.0" text="ID"/>
-                        <TableColumn fx:id="titleColumn" prefWidth="599.0" text="Tytuł"/>
-                        <TableColumn fx:id="authorColumn" prefWidth="279.0" text="Autor"/>
-                        <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="133.0" text="Ilość"/>
+                        <TableColumn fx:id="titleColumn" prefWidth="428.0" text="Tytuł"/>
+                        <TableColumn fx:id="publishingCompanyColumn" prefWidth="259.0" text="Wydawnictwo"/>
+                        <TableColumn fx:id="authorColumn" prefWidth="266.0" text="Autor"/>
+                        <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="172.0" text="Ilość"/>
                     </columns>
                 </TableView>
                 <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="1125.0">
