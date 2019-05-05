@@ -17,34 +17,28 @@ public class AccountEmployeeController {
     private ViewManager viewManager;
 
     @FXML
-    public void goToListBooks(Event event) throws IOException {
+    public void goToListOfBooks() {
         viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
     }
 
-
     @FXML
-    public void goToListOrders(Event event) throws IOException {
+    public void goToRealizedOrders() {
         viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
     }
 
     @FXML
-    public void goToAddBooks(Event event) throws IOException {
-        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
-    }
-
-    @FXML
-    public void goToListOfUsers(Event event) throws IOException {
+    public void goToListOfUsers() {
         viewManager.show(ViewType.EMPLOYEE_LIST_OF_USERS);
     }
 
     @FXML
-    public void goToHome(ActionEvent event) throws IOException {
+    public void goToHome() {
         viewManager.show(ViewType.MAIN);
     }
 
     @FXML
-    public void goToLogout(ActionEvent event) throws IOException {
-        viewManager.show(ViewType.MAIN);
+    public void goToEmployeeAccount() {
+        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
     }
 
 }
