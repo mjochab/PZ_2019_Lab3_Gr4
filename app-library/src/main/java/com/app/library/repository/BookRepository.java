@@ -12,8 +12,8 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
       @Query("SELECT book " +
               "FROM Book book " +
-              "WHERE    book.name LIKE %:query% " +
-              "OR       book.author LIKE %:query% " +
-              "OR       book.publishingCompany LIKE %:query%")
+              "WHERE    lower(book.name) LIKE %:query% " +
+              "OR       lower(book.author) LIKE %:query% " +
+              "OR       lower(book.publishingCompany) LIKE %:query%")
       List<Book> findByQuery(@Param("query") String query);
 }

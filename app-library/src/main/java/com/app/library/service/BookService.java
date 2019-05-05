@@ -19,7 +19,7 @@ public class BookService {
 
     public List<Book> findAll() { return bookRepository.findAll(); }
 
-    public List<Book> findByQuery(String query) { return bookRepository.findByQuery(query); }
+    public List<Book> findByQuery(String query) { return bookRepository.findByQuery(query.toLowerCase()); }
 
     public Book saveBook(@Valid Book book) { return bookRepository.save(book); }
 
