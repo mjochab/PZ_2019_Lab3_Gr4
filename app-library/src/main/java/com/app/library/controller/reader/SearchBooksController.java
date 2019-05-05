@@ -74,7 +74,6 @@ public class SearchBooksController implements Initializable {
         viewManager.show(ViewType.READER_CART);
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colYearOfPublication.setCellValueFactory(new PropertyValueFactory<>("yearOfPublication"));
