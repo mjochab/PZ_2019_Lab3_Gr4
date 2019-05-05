@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Positive;
 import java.util.List;
 
 @Service
@@ -15,11 +16,11 @@ public class BookService {
 
     private BookRepository bookRepository;
 
-    public Book findById(Integer id) { return bookRepository.getOne(id); }
+    public Book findById(@Positive Integer id) { return bookRepository.getOne(id); }
 
     public List<Book> findAll() { return bookRepository.findAll(); }
 
-    public List<Book> findByQuery(String query) { return bookRepository.findByQuery(query.toLowerCase()); }
+    public List<Book> findByQueryIgnoreCase(String query) { return bookRepository.findByQuery(query.toLowerCase()); }
 
     public Book saveBook(@Valid Book book) { return bookRepository.save(book); }
 

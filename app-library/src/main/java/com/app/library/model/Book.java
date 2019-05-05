@@ -41,7 +41,7 @@ public class Book {
     @NotNull
     private Library library;
 
-    @OneToMany(mappedBy = "book", cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "book", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }, fetch = FetchType.EAGER)
     @NotEmpty
     private Set<BookUnit> bookUnits;
 

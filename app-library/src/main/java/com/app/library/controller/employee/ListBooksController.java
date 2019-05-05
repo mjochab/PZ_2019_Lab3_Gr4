@@ -4,21 +4,18 @@ import com.app.library.model.Book;
 import com.app.library.service.BookService;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.net.URL;
 import java.util.List;
@@ -90,7 +87,7 @@ public class ListBooksController implements Initializable {
     @FXML
     public void findBooks(KeyEvent event) {
         String query = ((TextField) event.getTarget()).getText();
-        List<Book> books = bookService.findByQuery(query);
+        List<Book> books = bookService.findByQueryIgnoreCase(query);
 
         setTableItems(books);
     }
