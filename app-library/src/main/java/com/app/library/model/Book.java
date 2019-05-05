@@ -110,8 +110,8 @@ public class Book {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", publishingCompany='" + publishingCompany + '\'' +
-                ", yearOfPublication=" + yearOfPublication +
                 ", author='" + author + '\'' +
+                ", yearOfPublication=" + yearOfPublication +
                 '}';
     }
 

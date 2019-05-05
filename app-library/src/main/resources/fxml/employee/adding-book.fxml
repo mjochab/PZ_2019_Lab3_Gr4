@@ -79,7 +79,7 @@
                         </Button>
                         <Button fx:id="orders1" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity"
                                 maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToRealizedOrders" prefHeight="100.0" prefWidth="200.0"
+                                onMouseClicked="#goToReaderOrders" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>

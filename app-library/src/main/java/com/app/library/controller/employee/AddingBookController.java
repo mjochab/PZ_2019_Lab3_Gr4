@@ -153,8 +153,8 @@ public class AddingBookController implements Initializable {
     }
 
     @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    public void goToReaderOrders() {
+        viewManager.show(ViewType.EMPLOYEE_READER_ORDERS);
     }
 
     @FXML

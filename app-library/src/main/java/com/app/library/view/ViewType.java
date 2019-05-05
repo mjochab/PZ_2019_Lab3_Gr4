@@ -49,9 +49,9 @@ public enum ViewType {
             return "Lista książek";
         }
     },
-    EMPLOYEE_REALIZED_ORDERS {
+    EMPLOYEE_READER_ORDERS {
         public String getFxmlName() {
-            return "employee/realized-orders";
+            return "employee/reader-orders";
         }
 
         public String getFrameTitle() {
@@ -84,16 +84,6 @@ public enum ViewType {
 
         public String getFrameTitle() {
             return "Dodawanie książki";
-        }
-    },
-    EMPLOYEE_BACK {
-        public String getFxmlName() {
-
-            return "employee/account-employee";
-        }
-
-        public String getFrameTitle() {
-            return "Konto";
         }
     },
 
