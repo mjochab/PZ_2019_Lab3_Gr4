@@ -11,10 +11,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "book_unit")
 public class BookUnit {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
+    @Id
     @NotBlank
     @Length(min = 1, max = 64)
     @Column(unique = true)
@@ -27,14 +25,6 @@ public class BookUnit {
     @ManyToOne(optional = false)
     @NotNull
     private Book book;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getSignature() {
         return signature;

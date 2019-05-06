@@ -77,7 +77,7 @@ public class CartController implements Initializable {
             stringList1.add(book.getName());
             stringList1.add(book.getAuthor());
             stringList1.add(String.valueOf(book.getYearOfPublication()));
-            stringList1.add(bookUnitList.get(i).getSignature());
+            stringList1.add(String.valueOf(bookUnitList.get(i).getSignature()));
             if(bookUnitList.get(i).isCheckedOut()){
                 stringList1.add("Niedostępna");
             }else{

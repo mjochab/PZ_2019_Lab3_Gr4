@@ -87,7 +87,7 @@ public class IndividualBookController implements Initializable {
 
         for(int i = 0; i<lista.size(); i++){
             List<String> stringList = new ArrayList<>();
-            stringList.add(lista.get(i).getSignature());
+            stringList.add(String.valueOf(lista.get(i).getSignature()));
             if(lista.get(i).isCheckedOut()){
                 stringList.add("Niedostępna");
             }else{
@@ -121,6 +121,7 @@ public class IndividualBookController implements Initializable {
         //wyświetlenie danych w bookUnitTable
         List<BookUnit> bookUnitList = bookUnitService.findByBookId(book.getId());
         setTableData(bookUnitList);
+
 
 
 
