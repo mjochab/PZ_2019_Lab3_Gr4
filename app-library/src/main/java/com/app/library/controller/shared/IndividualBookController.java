@@ -4,6 +4,8 @@ import com.app.library.controller.reader.CartController;
 import com.app.library.model.Book;
 import com.app.library.model.BookUnit;
 import com.app.library.repository.BookUnitRepository;
+import com.app.library.service.BookService;
+import com.app.library.service.BookUnitService;
 import com.app.library.service.PersistenceService;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
@@ -36,7 +38,10 @@ public class IndividualBookController implements Initializable {
     private ViewManager viewManager;
 
     @Autowired
-    private BookUnitRepository bookUnitRepository;
+    private BookService bookService;
+
+    @Autowired
+    private BookUnitService bookUnitService;
 
     @Autowired
     private PersistenceService persistenceService;
@@ -96,7 +101,7 @@ public class IndividualBookController implements Initializable {
     @FXML
     private void addToCart(){
             List<String> stringList = bookUnitTable.getSelectionModel().getSelectedItem();
-            BookUnit bookUnit = bookUnitRepository.findBySignature(stringList.get(0));
+            BookUnit bookUnit = bookUnitService.findBySignature(stringList.get(0));
             persistenceService.addToCart(bookUnit);
             viewManager.show(ViewType.READER_CART);
     }
@@ -114,7 +119,7 @@ public class IndividualBookController implements Initializable {
         showBookData(book);
 
         //wyświetlenie danych w bookUnitTable
-        List<BookUnit> bookUnitList = bookUnitRepository.findByBookId(book.getId());
+        List<BookUnit> bookUnitList = bookUnitService.findByBookId(book.getId());
         setTableData(bookUnitList);
 
 

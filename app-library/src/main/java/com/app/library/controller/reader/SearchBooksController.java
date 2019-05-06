@@ -2,9 +2,8 @@ package com.app.library.controller.reader;
 
 
 import com.app.library.model.Book;
-import com.app.library.model.BookUnit;
 import com.app.library.repository.BookRepository;
-import com.app.library.repository.BookUnitRepository;
+import com.app.library.service.BookService;
 import com.app.library.service.PersistenceService;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
@@ -39,7 +38,7 @@ public class SearchBooksController implements Initializable {
     private PersistenceService persistenceService;
 
     @Autowired
-    BookRepository bookRepository;
+    BookService bookService;
 
 
     @FXML
@@ -104,7 +103,7 @@ public class SearchBooksController implements Initializable {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2) {
                     List<String> table_row = row.getItem();
-                    Book book = bookRepository.findByName(table_row.get(0));
+                    Book book = bookService.findByName(table_row.get(0));
                     persistenceService.addToStore(PersistenceKeys.SINGLE_BOOK, book);
                     viewManager.show(ViewType.SINGLE_BOOK);
                 }
@@ -115,7 +114,7 @@ public class SearchBooksController implements Initializable {
 
     private void fillTable(){
         //tworzenie listy i wstawienie jej do tabeli
-        List<Book> list = bookRepository.findAll();
+        List<Book> list = bookService.findAll();
         ObservableList listaa = FXCollections.observableArrayList();
         for(int i =0; i<list.size(); i++) {
             List<String> listToTable = new ArrayList<>();

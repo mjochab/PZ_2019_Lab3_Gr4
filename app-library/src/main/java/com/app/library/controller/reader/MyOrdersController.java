@@ -15,6 +15,7 @@ public class MyOrdersController {
     private ViewManager viewManager;
 
 
+
     @FXML
     public void goToAccount(){
         viewManager.show(ViewType.READER_ACCOUNT);
@@ -35,6 +36,9 @@ public class MyOrdersController {
     public void goToCart(){
         viewManager.show(ViewType.READER_CART);
     }
+
+
+
 
 
 

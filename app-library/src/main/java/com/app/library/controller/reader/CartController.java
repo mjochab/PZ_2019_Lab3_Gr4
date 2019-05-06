@@ -3,6 +3,7 @@ package com.app.library.controller.reader;
 import com.app.library.model.Book;
 import com.app.library.model.BookUnit;
 import com.app.library.repository.BookRepository;
+import com.app.library.service.BookService;
 import com.app.library.service.PersistenceService;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
@@ -33,7 +34,7 @@ public class CartController implements Initializable {
     private PersistenceService persistenceService;
 
     @Autowired
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @FXML
     private TableView<List<String>> cartTable = new TableView();
@@ -71,7 +72,7 @@ public class CartController implements Initializable {
     private ObservableList<List<String>> getListForCartTable(List<BookUnit> bookUnitList){
         ObservableList<List<String>> observableList = FXCollections.observableArrayList();
         for(int i = 0; i<bookUnitList.size(); i++){
-            Book book = bookRepository.findById(bookUnitList.get(i).getBook().getId().intValue());
+            Book book = bookService.findById(bookUnitList.get(i).getBook().getId().intValue());
             List<String> stringList1 = new ArrayList<>();
             stringList1.add(book.getName());
             stringList1.add(book.getAuthor());
@@ -100,8 +101,8 @@ public class CartController implements Initializable {
         signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
         statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
 
-        //wypełnienie tabeli
         setCartTable(bookUnitList);
+
 
 
 
