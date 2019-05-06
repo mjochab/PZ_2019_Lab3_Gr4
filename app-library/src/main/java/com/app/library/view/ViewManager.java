@@ -43,8 +43,9 @@ public class ViewManager {
 
         try {
             return (Parent) fxmlLoader.load();
-        } catch (IOException e) {
-            return null;
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            throw new RuntimeException(ex);
         }
     }
 

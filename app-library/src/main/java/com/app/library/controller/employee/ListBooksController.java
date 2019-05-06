@@ -42,36 +42,6 @@ public class ListBooksController implements Initializable {
     @FXML
     private TableColumn<Book, Number> quantityColumn;
 
-    @FXML
-    public void goToEmployeeAccount() {
-        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
-    }
-
-    @FXML
-    public void goToListBooks() {
-        viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
-    }
-
-    @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
-    }
-
-    @FXML
-    public void goToListUsers() {
-        viewManager.show(ViewType.EMPLOYEE_LIST_OF_USERS);
-    }
-
-    @FXML
-    public void goToHome() {
-        viewManager.show(ViewType.MAIN);
-    }
-
-    @FXML
-    public void goToAddBooks() {
-        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -95,6 +65,36 @@ public class ListBooksController implements Initializable {
     private void setTableItems(List<Book> books) {
         ObservableList<Book> observableBooks = FXCollections.observableList(books);
         booksTable.setItems(observableBooks);
+    }
+
+    @FXML
+    public void goToEmployeeAccount() {
+        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
+    }
+
+    @FXML
+    public void goToListOfBooks() {
+        viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
+    }
+
+    @FXML
+    public void goToRealizedOrders() {
+        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    }
+
+    @FXML
+    public void goToListOfUsers() {
+        viewManager.show(ViewType.EMPLOYEE_LIST_OF_USERS);
+    }
+
+    @FXML
+    public void goToHome() {
+        viewManager.show(ViewType.MAIN);
+    }
+
+    @FXML
+    public void goToAddBook() {
+        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
     }
 
     @Autowired

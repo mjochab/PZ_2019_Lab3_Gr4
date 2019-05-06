@@ -28,27 +28,13 @@
         <AnchorPane prefHeight="490.0" prefWidth="600.0" stylesheets="@../../css/style.css"
                     BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="searchBooksTextFIeld" layoutX="80.0" layoutY="147.0" onKeyReleased="#findBooks"
-                           prefHeight="46.0" prefWidth="1124.0" promptText="Wyszukaj"/>
-                <TableView fx:id="booksTable" editable="true" layoutX="79.0" layoutY="214.0" opacity="0.91"
-                           prefHeight="436.0" prefWidth="1126.0" style="-fx-background-color: #937854;">
-                    <placeholder>
-                        <Label text="Nie znaleziono żadnych książek"/>
-                    </placeholder>
-                    <columns>
-                        <TableColumn fx:id="titleColumn" prefWidth="428.0" text="Tytuł"/>
-                        <TableColumn fx:id="publishingCompanyColumn" prefWidth="259.0" text="Wydawnictwo"/>
-                        <TableColumn fx:id="authorColumn" prefWidth="266.0" text="Autor"/>
-                        <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="172.0" text="Ilość"/>
-                    </columns>
-                </TableView>
-                <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="1125.0">
+                <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                                 minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0"
                                 prefWidth="122.0" stylesheets="@../../css/style.css">
                             <graphic>
-                                <ImageView fx:id="home1" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true"
+                                <ImageView fx:id="home" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true"
                                            preserveRatio="true">
                                     <image>
                                         <Image url="@../../images/library.png"/>
@@ -62,11 +48,11 @@
                         </Button>
                         <Button fx:id="list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
                                 maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#goToListBooks" onMouseClicked="#goToListBooks" prefHeight="100.0"
-                                prefWidth="160.0" stylesheets="@../../css/style.css">
+                                onMouseClicked="#goToListOfBooks" prefHeight="100.0" prefWidth="200.0"
+                                stylesheets="@../../css/style.css">
                             <styleClass>
-                                <String fx:value="border_menu"/>
                                 <String fx:value="menu_item_active"/>
+                                <String fx:value="border_menu"/>
                             </styleClass>
                             <font>
                                 <Font name="System Bold" size="20.0"/>
@@ -79,10 +65,10 @@
                                 </Text>
                             </graphic>
                         </Button>
-                        <Button fx:id="orders1" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity"
-                                maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#goToRealizedOrders" onMouseClicked="#goToRealizedOrders" prefHeight="100.0"
-                                prefWidth="160.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                                minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onMouseClicked="#goToRealizedOrders" prefHeight="100.0" prefWidth="200.0"
+                                stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>
                                 <String fx:value="border_menu"/>
@@ -98,10 +84,10 @@
                                 </Text>
                             </graphic>
                         </Button>
-                        <Button fx:id="users1" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        <Button fx:id="users" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
                                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#goToListUsers" onMouseClicked="#goToListUsers" prefHeight="100.0"
-                                prefWidth="202.0" stylesheets="@../../css/style.css" textAlignment="CENTER">
+                                onMouseClicked="#goToListOfUsers" prefHeight="100.0" prefWidth="202.0"
+                                stylesheets="@../../css/style.css" textAlignment="CENTER">
                             <styleClass>
                                 <String fx:value="border_menu"/>
                                 <String fx:value="brown_background"/>
@@ -110,26 +96,7 @@
                                 <Font name="Candara Bold" size="20.0"/>
                             </font>
                             <graphic>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Użytkownicy">
-                                    <font>
-                                        <Font size="20.0"/>
-                                    </font>
-                                </Text>
-                            </graphic>
-                        </Button>
-                        <Button fx:id="add_books1" layoutX="490.0" layoutY="10.0" maxHeight="-Infinity"
-                                maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onAction="#goToAddBooks" prefHeight="100.0" prefWidth="160.0"
-                                stylesheets="@../../css/style.css">
-                            <styleClass>
-                                <String fx:value="border_menu"/>
-                                <String fx:value="brown_background"/>
-                            </styleClass>
-                            <font>
-                                <Font name="Candara Bold" size="20.0"/>
-                            </font>
-                            <graphic>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj książkę">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Czytelnicy">
                                     <font>
                                         <Font size="20.0"/>
                                     </font>
@@ -138,7 +105,7 @@
                         </Button>
                         <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity"
                                 maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="160.0"
+                                onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <styleClass>
                                 <String fx:value="brown_background"/>
@@ -155,9 +122,9 @@
                                 </Text>
                             </graphic>
                         </Button>
-                        <Button fx:id="logout1" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity"
-                                maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                                onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="160.0"
+                        <Button fx:id="logout" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                                minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="200.0"
                                 stylesheets="@../../css/style.css">
                             <graphic>
                                 <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
@@ -173,6 +140,22 @@
                         </Button>
                     </children>
                 </HBox>
+                <TextField fx:id="searchBooksTextFIeld" layoutX="80.0" layoutY="137.0" onKeyReleased="#findBooks"
+                           prefHeight="40.0" prefWidth="850.0" promptText="Wyszukaj"/>
+                <Button layoutX="947.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#goToAddBook"
+                        prefHeight="40.0" prefWidth="250.0" text="Dodaj książkę"/>
+                <TableView fx:id="booksTable" editable="true" layoutX="80.0" layoutY="200.0" opacity="0.91"
+                           prefHeight="468.0" prefWidth="1122.0" style="-fx-background-color: #937854;">
+                    <placeholder>
+                        <Label text="Nie znaleziono żadnych książek"/>
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="titleColumn" prefWidth="428.0" text="Tytuł"/>
+                        <TableColumn fx:id="publishingCompanyColumn" prefWidth="259.0" text="Wydawnictwo"/>
+                        <TableColumn fx:id="authorColumn" prefWidth="266.0" text="Autor"/>
+                        <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="172.0" text="Ilość"/>
+                    </columns>
+                </TableView>
             </children>
         </AnchorPane>
     </center>
