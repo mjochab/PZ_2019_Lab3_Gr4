@@ -173,7 +173,7 @@
       </BorderPane>
    </center>
    <bottom>
-      <JFXButton contentDisplay="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+      <JFXButton fx:id="orderButton" onMouseClicked="#submitOrder" contentDisplay="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" />
          </BorderPane.margin>

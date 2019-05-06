@@ -11,7 +11,7 @@ import java.util.List;
 public interface BooksOrderRepository  extends JpaRepository<BooksOrder, Integer> {
 
     @Query("SELECT o FROM BooksOrder o " +
-            "INNER JOIN User user ON user.id = o.reader.id " +
+            "INNER JOIN User user ON user.id = o.user.id " +
             "WHERE  (lower(user.firstName) LIKE %:query% OR lower(user.surname) LIKE %:query%) " +
             "AND (" +
             "       (o.createdAt >= :orderDateFrom OR :orderDateFrom = null) " +
@@ -21,4 +21,9 @@ public interface BooksOrderRepository  extends JpaRepository<BooksOrder, Integer
                                                     @Param("orderDateFrom") Date orderDateFrom,
                                                     @Param("orderDateTo") Date orderDateTo);
 
+    List<BooksOrder> findByUserId(int id);
+
+
+    @Override
+    <S extends BooksOrder> S save(S entity);
 }

@@ -16,6 +16,10 @@ public class BookUnitService {
 
     public List<BookUnit> findByBookId(int book_id) {return bookUnitRepository.findByBookId(book_id);}
 
+    public void save(BookUnit bookUnit) {
+        bookUnitRepository.save(bookUnit);
+    }
+
     @Autowired
     public void setBookRepository(BookUnitRepository bookRepository) {
         this.bookUnitRepository = bookRepository;

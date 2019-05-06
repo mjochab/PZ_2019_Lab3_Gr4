@@ -1,10 +1,13 @@
 package com.app.library.controller.reader;
 
 import com.app.library.model.Book;
+import com.app.library.model.BookOrderUnit;
 import com.app.library.model.BookUnit;
+import com.app.library.model.BooksOrder;
+import com.app.library.repository.BookOrderUnitRepository;
 import com.app.library.repository.BookRepository;
-import com.app.library.service.BookService;
-import com.app.library.service.PersistenceService;
+import com.app.library.repository.BooksOrderRepository;
+import com.app.library.service.*;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
@@ -13,15 +16,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 @Controller
@@ -36,11 +38,25 @@ public class CartController implements Initializable {
     @Autowired
     private BookService bookService;
 
+    @Autowired
+    private BookUnitService bookUnitService;
+
+    @Autowired
+    private BooksOrderService booksOrderService;
+
+    @Autowired
+    private BookUnitOrderService bookUnitOrderService;
+
+
+
     @FXML
     private TableView<List<String>> cartTable = new TableView();
 
     @FXML
     private TableColumn<List<String>, String> titleColumn, authorColumn, yearColumn, signatureColumn, statusColumn = new TableColumn<>();
+
+    @FXML
+    private Button orderButton = new Button();
 
 
     @FXML
@@ -68,6 +84,7 @@ public class CartController implements Initializable {
         cartTable.setItems(getListForCartTable(lista));
     }
 
+
     //tworzenie listy, która będzie wrzucona do tabeli
     private ObservableList<List<String>> getListForCartTable(List<BookUnit> bookUnitList){
         ObservableList<List<String>> observableList = FXCollections.observableArrayList();
@@ -86,6 +103,42 @@ public class CartController implements Initializable {
             observableList.addAll(stringList1);
         }
         return observableList;
+    }
+
+    @FXML
+    private void submitOrder(){
+        if(!persistenceService.getCart().isEmpty()) {
+            Calendar cal = Calendar.getInstance();
+            Date date = cal.getTime();
+
+//            dodawanie nowych rekordów do tabeli books_order
+            BooksOrder booksOrder = new BooksOrder();
+            booksOrder.setCreatedAt(date);
+            booksOrder.setReadyToRelease(false);
+            //tu będzie zalogowany user
+            booksOrder.setReader(null);
+            booksOrderService.save(booksOrder);
+
+            for (int i = 0; i < persistenceService.getCart().size(); i++) {
+                //zmiana checkedOut na true
+                BookUnit bookUnit = bookUnitService.findBySignature(persistenceService.getCart().get(i).getSignature());
+                bookUnit.setCheckedOut(true);
+                bookUnitService.save(bookUnit);
+
+                //dodawanie nowych rekordów do tabeli book_unit_order
+                BookOrderUnit bookOrderUnit = new BookOrderUnit();
+                bookOrderUnit.setBooksOrder(booksOrder);
+                bookOrderUnit.setBookUnit(persistenceService.getCart().get(i));
+                bookOrderUnit.setReadyToRent(false);
+                bookUnitOrderService.save(bookOrderUnit);
+            }
+
+
+
+            persistenceService.cleanCart();
+            viewManager.show(ViewType.READER_MY_ORDERS);
+        }
+
     }
 
 

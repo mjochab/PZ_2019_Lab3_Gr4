@@ -32,6 +32,9 @@ public class PersistenceService {
         throw new RuntimeException(String.format("Object with key %s not exist", key));
     }
 
+    public void cleanCart(){
+        cart.clear();
+    }
 
     public void addToCart(BookUnit bookUnit) {
         this.cart.add(bookUnit);

@@ -19,12 +19,18 @@ public class BooksOrderService {
 
     public List<BooksOrder> findAllOrders() { return booksOrderRepository.findAll(); }
 
+    public List<BooksOrder> findByUserId(int id) { return booksOrderRepository.findByUserId(id);}
+
     public List<BooksOrder> findByQueryIgnoreCaseAndCreatedAtBetween(String query, LocalDate orderDateFrom, LocalDate orderDateTo) {
         String searchQuery = query != null ? query : "";
         Date dateFrom = DateUtils.asDate(orderDateFrom);
         Date dateTo = DateUtils.asDate(orderDateTo);
 
         return booksOrderRepository.findByQueryAndCreatedAtBetween(searchQuery.toLowerCase(), dateFrom, dateTo);
+    }
+
+    public void save(BooksOrder booksOrder){
+        booksOrderRepository.save(booksOrder);
     }
 
     @Autowired

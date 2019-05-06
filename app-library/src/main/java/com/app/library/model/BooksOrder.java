@@ -19,7 +19,7 @@ public class BooksOrder {
     private boolean readyToRelease;
 
     @ManyToOne(optional = false)
-    private User reader;
+    private User user;
 
     public BooksOrder() {
     }
@@ -49,11 +49,11 @@ public class BooksOrder {
     }
 
     public User getReader() {
-        return reader;
+        return user;
     }
 
     public void setReader(User reader) {
-        this.reader = reader;
+        this.user = reader;
     }
 
     @Override
