@@ -67,10 +67,17 @@ public class IndividualBookController implements Initializable {
     }
 
 
-    private void disableButtonIfUnavailable(String status){
-        if(status == "Niedostępna"){
-            addToCartButton.setDisable(true);
-        }
+    private void disableButtonIfUnavailable(){
+        bookUnitTable.setRowFactory( tv -> {
+            TableRow<List<String>> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                    if(row.getItem().get(1) == "Dostępna"){
+                        addToCartButton.setDisable(false);
+                    }
+
+            });
+            return row;
+        });
     }
 
 
@@ -88,10 +95,17 @@ public class IndividualBookController implements Initializable {
         for(int i = 0; i<lista.size(); i++){
             List<String> stringList = new ArrayList<>();
             stringList.add(String.valueOf(lista.get(i).getSignature()));
+
             if(lista.get(i).isCheckedOut()){
                 stringList.add("Niedostępna");
             }else{
                 stringList.add("Dostępna");
+            }
+            for(int j = 0; j<persistenceService.getCart().size(); j++){
+                if(persistenceService.getCart().get(j).getSignature().equals(stringList.get(0))){
+                    stringList.set(1, "Już w koszyku");
+                }
+
             }
             observableList.add(stringList);
         }
@@ -108,6 +122,8 @@ public class IndividualBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addToCartButton.setDisable(true);
+
         //pobranie książki przechowywanej w pamięci
         Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
 
@@ -122,6 +138,8 @@ public class IndividualBookController implements Initializable {
         List<BookUnit> bookUnitList = bookUnitService.findByBookId(book.getId());
         setTableData(bookUnitList);
 
+
+       disableButtonIfUnavailable();
 
 
 
