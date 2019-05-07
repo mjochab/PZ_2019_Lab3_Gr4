@@ -116,8 +116,8 @@ public class IndividualBookController implements Initializable {
     @FXML
     private void addToCart(){
             List<String> stringList = bookUnitTable.getSelectionModel().getSelectedItem();
-//            BookUnit bookUnit = bookUnitService.findBySignature(new UUID(stringList.get(0).getBytes())); // TODO repair that
-//            persistenceService.addToCart(bookUnit);
+            BookUnit bookUnit = bookUnitService.findBySignature(UUID.fromString(stringList.get(0)));
+            persistenceService.addToCart(bookUnit);
             viewManager.show(ViewType.READER_CART);
     }
 

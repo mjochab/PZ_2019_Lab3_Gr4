@@ -18,6 +18,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User findById(Integer id) { return userRepository.getOne(id); }
+
     public List<User> findAllReaders() {
         return findReadersByQueryIgnoreCase(null);
     }

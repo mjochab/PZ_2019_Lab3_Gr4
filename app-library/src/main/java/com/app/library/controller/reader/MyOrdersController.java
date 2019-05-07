@@ -91,9 +91,9 @@ public class MyOrdersController implements Initializable {
                 List<String> stringList = new ArrayList<>();
 
                 BookOrderUnit bookOrderUnit = bookOrderUnits.get(j);
-                BookUnit bookUnit = bookUnitService.findBySignature(bookOrderUnit.getBookUnit().getSignature());
+                BookUnit bookUnit = bookOrderUnit.getBookUnit();
                 int bookId = bookUnit.getBook().getId();
-                stringList.add(bookService.findById(bookId).getName());
+                stringList.add(bookUnit.getBook().getName());
                 stringList.add(bookOrderUnits.get(j).getBookUnit().getSignature().toString());
                 //do wypełnienia
                 stringList.add(null);

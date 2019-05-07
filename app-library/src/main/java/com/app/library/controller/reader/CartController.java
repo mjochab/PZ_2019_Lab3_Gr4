@@ -47,7 +47,8 @@ public class CartController implements Initializable {
     @Autowired
     private BookUnitOrderService bookUnitOrderService;
 
-
+    @Autowired
+    private UserService userService;
 
     @FXML
     private TableView<List<String>> cartTable = new TableView();
@@ -89,7 +90,7 @@ public class CartController implements Initializable {
     private ObservableList<List<String>> getListForCartTable(List<BookUnit> bookUnitList){
         ObservableList<List<String>> observableList = FXCollections.observableArrayList();
         for(int i = 0; i<bookUnitList.size(); i++){
-            Book book = bookService.findById(bookUnitList.get(i).getBook().getId().intValue());
+            Book book = bookUnitList.get(i).getBook();
             List<String> stringList1 = new ArrayList<>();
             stringList1.add(book.getName());
             stringList1.add(book.getAuthor());
@@ -116,7 +117,7 @@ public class CartController implements Initializable {
             booksOrder.setCreatedAt(date);
             booksOrder.setReadyToRelease(false);
             //tu będzie zalogowany user
-            booksOrder.setReader(null);
+            booksOrder.setReader(userService.findById(2));
             booksOrderService.save(booksOrder);
 
             for (int i = 0; i < persistenceService.getCart().size(); i++) {
