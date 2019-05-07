@@ -20,6 +20,8 @@ public class BookService {
 
     public List<Book> findAll() { return bookRepository.findAll(); }
 
+    public Book findByName(String name) {return bookRepository.findByName(name);}
+
     public List<Book> findByQueryIgnoreCase(String query) { return bookRepository.findByQuery(query.toLowerCase()); }
 
     public Book saveBook(@Valid Book book) { return bookRepository.save(book); }

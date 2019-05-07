@@ -10,10 +10,12 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
-      @Query("SELECT book " +
-              "FROM Book book " +
-              "WHERE    lower(book.name) LIKE %:query% " +
-              "OR       lower(book.author) LIKE %:query% " +
-              "OR       lower(book.publishingCompany) LIKE %:query%")
-      List<Book> findByQuery(@Param("query") String query);
+    @Query("SELECT book " +
+            "FROM Book book " +
+            "WHERE    lower(book.name) LIKE %:query% " +
+            "OR       lower(book.author) LIKE %:query% " +
+            "OR       lower(book.publishingCompany) LIKE %:query%")
+    List<Book> findByQuery(@Param("query") String query);
+
+    Book findByName(String name);
 }

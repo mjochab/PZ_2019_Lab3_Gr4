@@ -22,4 +22,6 @@ public interface BooksOrderRepository extends JpaRepository<BooksOrder, Integer>
     List<BooksOrder> findByQueryAndCreatedAtBetween(@Param("query") String query,
                                                     @Param("orderDateFrom") Date orderDateFrom,
                                                     @Param("orderDateTo") Date orderDateTo);
+
+    List<BooksOrder> findByReaderId(int id);
 }
