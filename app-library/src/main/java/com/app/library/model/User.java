@@ -41,7 +41,7 @@ public class User {
 
     @Email
     @NotBlank
-    @Size(min = 1, max = 128)
+    @Size(min = 1, max = 64)
     private String email;
 
     public Integer getId() {
