@@ -1,24 +1,19 @@
 package com.app.library.model;
 
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.UUID;
 
 @Entity
 @Table(name = "book_unit")
 public class BookUnit {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @NotBlank
-    @Length(min = 1, max = 64)
-    @Column(unique = true)
-    private String signature;
+    @GeneratedValue
+    @Column(length = 64)
+    private UUID signature;
 
     @Column(name = "checked_out")
     @NotNull
@@ -28,19 +23,14 @@ public class BookUnit {
     @NotNull
     private Book book;
 
-    public Integer getId() {
-        return id;
+    public BookUnit() {
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getSignature() {
+    public UUID getSignature() {
         return signature;
     }
 
-    public void setSignature(String signature) {
+    public void setSignature(UUID signature) {
         this.signature = signature;
     }
 
@@ -58,5 +48,14 @@ public class BookUnit {
 
     public void setBook(Book book) {
         this.book = book;
+    }
+
+    @Override
+    public String toString() {
+        return "BookUnit{" +
+                "signature=" + signature +
+                ", checkedOut=" + checkedOut +
+                ", book=" + book +
+                '}';
     }
 }

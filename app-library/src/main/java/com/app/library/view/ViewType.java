@@ -29,33 +29,13 @@ public enum ViewType {
             return "Moje zamówienia";
         }
     },
-
-    // shared
-    SIGN_IN {
-        public String getFxmlName() {
-            return "shared/logowanie";
+    READER_CART {
+        public String getFxmlName(){
+            return "reader/cart";
         }
 
-        public String getFrameTitle() {
-            return "Logowanie";
-        }
-    },
-    REGISTER {
-        public String getFxmlName() {
-            return "shared/rejestracja";
-        }
-
-        public String getFrameTitle() {
-            return "Rejestracja";
-        }
-    },
-    MAIN {
-        public String getFxmlName() {
-            return "shared/glowna";
-        }
-
-        public String getFrameTitle() {
-            return "Biblioteka";
+        public String getFrameTitle(){
+            return "Koszyk";
         }
     },
 
@@ -69,9 +49,9 @@ public enum ViewType {
             return "Lista książek";
         }
     },
-    EMPLOYEE_REALIZED_ORDERS {
+    EMPLOYEE_READER_ORDERS {
         public String getFxmlName() {
-            return "employee/realized-orders";
+            return "employee/reader-orders";
         }
 
         public String getFrameTitle() {
@@ -106,25 +86,8 @@ public enum ViewType {
             return "Dodawanie książki";
         }
     },
-    EMPLOYEE_BACK {
-        public String getFxmlName() {
 
-            return "employee/account-employee";
-        }
-
-        public String getFrameTitle() {
-            return "Konto";
-        }
-    },
-    READER_CART {
-        public String getFxmlName(){
-            return "reader/cart";
-        }
-
-        public String getFrameTitle(){
-            return "Koszyk";
-        }
-    },
+    // boss
     BOSS_ACCOUNT {
         public String getFxmlName() {
             return "boss/account-boss";
@@ -148,6 +111,40 @@ public enum ViewType {
         public String getFxmlName() { return "boss/add-employee"; }
 
         public String getFrameTitle() { return "Dodaj prcownika"; }
+    },
+
+    // shared
+    SINGLE_BOOK {
+      public String getFxmlName() {return "shared/individual-book's-view";}
+
+      public String getFrameTitle() { return "shared/individual-book's-view"; }
+    },
+    SIGN_IN {
+        public String getFxmlName() {
+            return "shared/logowanie";
+        }
+
+        public String getFrameTitle() {
+            return "Logowanie";
+        }
+    },
+    REGISTER {
+        public String getFxmlName() {
+            return "shared/rejestracja";
+        }
+
+        public String getFrameTitle() {
+            return "Rejestracja";
+        }
+    },
+    MAIN {
+        public String getFxmlName() {
+            return "shared/glowna";
+        }
+
+        public String getFrameTitle() {
+            return "Biblioteka";
+        }
     };
 
     public abstract String getFxmlName();

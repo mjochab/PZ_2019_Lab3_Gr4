@@ -11,11 +11,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.AccountEmployeeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.EmployeeAccountController">
    <top>
       <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pracownik" textAlignment="CENTER" wrappingWidth="215.625" BorderPane.alignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ustawienia konta" textAlignment="CENTER" wrappingWidth="423.625" BorderPane.alignment="CENTER">
                <font>
                   <Font size="38.0" />
                </font>
@@ -28,9 +28,9 @@
          <children>
             <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="122.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="122.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fx:id="home1" fitHeight="68.0" fitWidth="72.0" onMouseClicked="#goToHome" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="home" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/library.png" />
                            </image>
@@ -41,7 +41,7 @@
                         <String fx:value="border_menu" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToListBooks" onMouseClicked="#goToListBooks" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfBooks" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -57,7 +57,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button fx:id="orders1" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToListOrders" onMouseClicked="#goToListOrders" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToReaderOrders" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
                      <styleClass>
                         <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
@@ -66,14 +66,14 @@
                         <Font name="Candara Bold" size="20.0" />
                      </font>
                      <graphic>
-                        <Text onMouseClicked="#goToListOrders" strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
                      </graphic>
                   </Button>
-                  <Button fx:id="users1" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfUsers" prefHeight="100.0" prefWidth="202.0" stylesheets="@../../css/style.css" textAlignment="CENTER">
+                  <Button fx:id="users" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfUsers" prefHeight="100.0" prefWidth="202.0" stylesheets="@../../css/style.css" textAlignment="CENTER">
                      <styleClass>
                         <String fx:value="border_menu" />
                         <String fx:value="brown_background" />
@@ -82,33 +82,17 @@
                         <Font name="Candara Bold" size="20.0" />
                      </font>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Użytkownicy">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Czytelnicy">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
                      </graphic>
                   </Button>
-                  <Button fx:id="add_books1" layoutX="490.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddBooks" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="Candara Bold" size="20.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj książkę">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </graphic>
+                  <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
                      <styleClass>
-                        <String fx:value="border_menu" />
-                        <String fx:value="brown_background" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
-                     <styleClass>
-                        <String fx:value="border_menu" />
                         <String fx:value="menu_item_active" />
+                        <String fx:value="border_menu" />
                      </styleClass>
                      <font>
                         <Font name="Candara Bold" size="20.0" />
@@ -121,7 +105,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="160.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="logout" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>

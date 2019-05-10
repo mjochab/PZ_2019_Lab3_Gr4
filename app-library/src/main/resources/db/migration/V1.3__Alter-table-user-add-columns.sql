@@ -1,0 +1,3 @@
+ALTER TABLE `user`
+    ADD COLUMN `email` VARCHAR(64) NOT NULL AFTER `pesel`,
+    ADD COLUMN `password` VARCHAR(128) NOT NULL AFTER `email`;

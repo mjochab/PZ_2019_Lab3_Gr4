@@ -5,9 +5,8 @@
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -47,20 +46,19 @@
          <center>
             <FlowPane>
                <children>
-                  <JFXTextField alignment="BASELINE_CENTER" focusColor="#4bc34b" prefHeight="87.0" prefWidth="1180.0" promptText="Wyszukaj" style="-fx-background-color: rgba(255, 255, 255, 0.7);" unFocusColor="WHITE">
+                  <JFXTextField fx:id="search_field" alignment="BASELINE_CENTER" focusColor="#4bc34b" prefHeight="87.0" prefWidth="1180.0" promptText="Wyszukaj" style="-fx-background-color: rgba(255, 255, 255, 0.7);" unFocusColor="WHITE">
                      <font>
                         <Font name="AnjaliOldLipi" size="32.0" />
                      </font>
                   </JFXTextField>
-                  <TreeTableView opacity="0.88" prefHeight="510.0" prefWidth="1180.0" style="-fx-background-color: rgba(146, 119, 84, 0.9);">
+                  <TableView fx:id="table" opacity="0.88" prefHeight="510.0" prefWidth="1180.0" style="-fx-background-color: rgba(146, 119, 84, 0.9);" styleClass="table-row-cell" stylesheets="@../../css/style.css">
                     <columns>
-                      <TreeTableColumn prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Tytuł" />
-                      <TreeTableColumn prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Autor" />
-                        <TreeTableColumn prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Wydawnictwo" />
-                        <TreeTableColumn prefWidth="200.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Rok wydania" />
-                        <TreeTableColumn prefWidth="230.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Dostępna" />
+                      <TableColumn fx:id="colTitle" prefWidth="250.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Tytuł" />
+                      <TableColumn fx:id="colAuthor" prefWidth="296.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Autor" />
+                        <TableColumn fx:id="colPublishingCompany" prefWidth="284.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Wydawnictwo" />
+                        <TableColumn fx:id="colYearOfPublication" prefWidth="350.0" style="-fx-background-color: rgba(146, 119, 84, 1);" text="Rok wydania" />
                     </columns>
-                  </TreeTableView>
+                  </TableView>
                </children>
                <BorderPane.margin>
                   <Insets top="20.0" />

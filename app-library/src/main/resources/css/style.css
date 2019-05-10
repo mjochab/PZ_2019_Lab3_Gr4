@@ -22,4 +22,12 @@
 -fx-background-color: white;
 }
 
+.table-row-cell {
+    -fx-cell-size: 50px;
+    -fx-font-size: 22px;
+}
+
+
+
+
 

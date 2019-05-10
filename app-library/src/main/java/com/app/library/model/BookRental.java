@@ -31,6 +31,11 @@ public class BookRental {
     @JoinColumn(name = "lend_by_user", updatable = false)
     private User lender;
 
+    @ManyToOne(optional = false)
+    @NotNull
+    @JoinColumn(name = "book_signature", updatable = false)
+    private BookUnit bookUnit;
+
     public Integer getId() {
         return id;
     }
@@ -55,13 +60,9 @@ public class BookRental {
         this.dateOfReturn = dateOfReturn;
     }
 
-    public short getProlongationNumber() {
-        return prolongationNumber;
-    }
+    public short getProlongationNumber() { return prolongationNumber; }
 
-    public void setProlongationNumber(short prolongationNumber) {
-        this.prolongationNumber = prolongationNumber;
-    }
+    public void setProlongationNumber(short prolongationNumber) { this.prolongationNumber = prolongationNumber; }
 
     public User getBorrower() {
         return borrower;

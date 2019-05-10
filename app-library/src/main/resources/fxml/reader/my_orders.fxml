@@ -15,6 +15,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.MyOrdersController">
    <top>
       <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
@@ -132,67 +134,58 @@
             </HBox>
          </top>
          <center>
-            <JFXTreeTableView opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <TableView fx:id="ordersTable" opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets top="30.0" />
                </BorderPane.margin>
                <columns>
-                  <TreeTableColumn prefWidth="191.0">
+                  <TableColumn fx:id="titleColumn" prefWidth="320.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="142.0">
+                  </TableColumn>
+                  <TableColumn fx:id="signatureColumn" prefWidth="229.0">
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="244.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="201.0">
+                  </TableColumn>
+                  <TableColumn fx:id="dateOfOrderColumn" prefWidth="241.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data wypożyczenia">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="195.0">
+                  </TableColumn>
+                  <TableColumn fx:id="expireTimeColumn" prefWidth="186.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Termin oddania">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="206.0">
+                  </TableColumn>
+                  <TableColumn fx:id="statusColumn" prefWidth="203.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                            <font>
-                              <Font name="System Bold" size="14.0"  />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
+                  </TableColumn>
                </columns>
-            </JFXTreeTableView>
+            </TableView>
          </center>
       </BorderPane>
    </center>
