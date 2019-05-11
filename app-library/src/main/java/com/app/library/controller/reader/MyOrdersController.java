@@ -2,15 +2,10 @@ package com.app.library.controller.reader;
 
 
 import com.app.library.model.Book;
-import com.app.library.model.BookOrderUnit;
-import com.app.library.model.BookUnit;
 import com.app.library.model.BooksOrder;
-import com.app.library.service.BookService;
-import com.app.library.service.BookUnitOrderService;
-import com.app.library.service.BookUnitService;
-import com.app.library.service.BooksOrderService;
+import com.app.library.service.*;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
-
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -18,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +31,9 @@ public class MyOrdersController implements Initializable {
     private ViewManager viewManager;
 
     @Autowired
+    private PersistenceService persistenceService;
+
+    @Autowired
     private BooksOrderService booksOrderService;
 
     @Autowired
@@ -50,7 +49,7 @@ public class MyOrdersController implements Initializable {
     private TableView<List<String>> ordersTable = new TableView();
 
     @FXML
-    private TableColumn<List<String>, String> titleColumn, signatureColumn, dateOfOrderColumn, expireTimeColumn, statusColumn = new TableColumn();
+    private TableColumn<List<String>, String> idColumn, dateOfOrderColumn, statusColumn = new TableColumn();
 
 
     @FXML
@@ -75,54 +74,58 @@ public class MyOrdersController implements Initializable {
     }
 
 
-
+    //ustawianie itemów w tablicy
     private void setOrderTableItems(ObservableList orderTableItems){
         ordersTable.setItems(orderTableItems);
     }
 
 
-
+    //tworzenie listy dla tabeli
     private ObservableList getListToTable(List<BooksOrder> booksOrders){
         ObservableList<List<String>> observableList = FXCollections.observableArrayList();
-
         for(int i = 0; i<booksOrders.size(); i++){
-            List<BookOrderUnit> bookOrderUnits = bookUnitOrderService.findByBooksOrderId(booksOrders.get(i).getId());
-            for(int j = 0; j<bookOrderUnits.size(); j++){
-                List<String> stringList = new ArrayList<>();
+            List<String> stringList = new ArrayList<>();
+            stringList.add(booksOrders.get(i).getId().toString());
+            stringList.add(booksOrders.get(i).getCreatedAt().toString());
+            if(booksOrders.get(i).isReadyToRelease()){
+                stringList.add("Gotowe do odbioru");
+            }else stringList.add("W trakcie realizacji");
 
-                BookOrderUnit bookOrderUnit = bookOrderUnits.get(j);
-                BookUnit bookUnit = bookOrderUnit.getBookUnit();
-                int bookId = bookUnit.getBook().getId();
-                stringList.add(bookUnit.getBook().getName());
-                stringList.add(bookOrderUnits.get(j).getBookUnit().getSignature().toString());
-                //do wypełnienia
-                stringList.add(null);
-                stringList.add(null);
-                stringList.add("w trakcie realizacji");
-
-                observableList.addAll(stringList);
-
-            }
-
+            observableList.addAll(stringList);
         }
-
         return observableList;
+    }
+
+    @FXML
+    private void goToIndividualBooksView(){
+        //przejście do widoku indywidualnego książki na onDoubleClick
+        ordersTable.setRowFactory( tv -> {
+            TableRow<List<String>> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(event.getClickCount() == 2) {
+                    List<String> table_row = row.getItem();
+                    BooksOrder booksOrder = booksOrderService.findById(Integer.parseInt(table_row.get(0)));
+                    persistenceService.setSelectedBooksOrder(booksOrder);
+                    viewManager.show(ViewType.SINGLE_ORDER);
+                }
+            });
+            return row;
+        });
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
-        signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-        dateOfOrderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-        expireTimeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+        idColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
+        dateOfOrderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
+        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
 
-        //tutaj będzie findByUserId();
-        List<BooksOrder> booksOrders = booksOrderService.findAllOrders();
+        List<BooksOrder> booksOrders = booksOrderService.findByReaderId(persistenceService.getUser().getId());
 
         setOrderTableItems(getListToTable(booksOrders));
+
+        goToIndividualBooksView();
 
     }
 }

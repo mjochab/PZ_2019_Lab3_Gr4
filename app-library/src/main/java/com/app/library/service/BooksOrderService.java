@@ -21,6 +21,8 @@ public class BooksOrderService {
 
     public List<BooksOrder> findByReaderId(int id) { return booksOrderRepository.findByReaderId(id); }
 
+    public BooksOrder findById(int id) { return booksOrderRepository.findById(id);}
+
     public List<BooksOrder> findByQueryIgnoreCaseAndCreatedAtBetween(String query, LocalDate orderDateFrom, LocalDate orderDateTo) {
         String searchQuery = query != null ? query : "";
         Date dateFrom = DateUtils.asDate(orderDateFrom);

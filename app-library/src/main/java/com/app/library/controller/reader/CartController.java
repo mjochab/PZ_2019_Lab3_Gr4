@@ -1,9 +1,6 @@
 package com.app.library.controller.reader;
 
-import com.app.library.model.Book;
-import com.app.library.model.BookOrderUnit;
-import com.app.library.model.BookUnit;
-import com.app.library.model.BooksOrder;
+import com.app.library.model.*;
 import com.app.library.repository.BookOrderUnitRepository;
 import com.app.library.repository.BookRepository;
 import com.app.library.repository.BooksOrderRepository;
@@ -106,6 +103,8 @@ public class CartController implements Initializable {
         return observableList;
     }
 
+
+
     @FXML
     private void submitOrder(){
         if(!persistenceService.getCart().isEmpty()) {
@@ -116,8 +115,7 @@ public class CartController implements Initializable {
             BooksOrder booksOrder = new BooksOrder();
             booksOrder.setCreatedAt(date);
             booksOrder.setReadyToRelease(false);
-            //tu będzie zalogowany user
-            booksOrder.setReader(userService.findById(2));
+            booksOrder.setReader(persistenceService.getUser());
             booksOrderService.save(booksOrder);
 
             for (int i = 0; i < persistenceService.getCart().size(); i++) {
@@ -145,7 +143,6 @@ public class CartController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
         List<BookUnit> bookUnitList = persistenceService.getCart();
 

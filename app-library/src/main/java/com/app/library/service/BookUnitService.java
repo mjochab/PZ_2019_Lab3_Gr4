@@ -26,8 +26,8 @@ public class BookUnitService {
     }
 
     @Autowired
-    public void setBookRepository(BookUnitRepository bookRepository) {
-        this.bookUnitRepository = bookRepository;
+    public void setBookUnitRepository(BookUnitRepository bookRepository) {
+        this.bookUnitRepository = bookUnitRepository;
     }
 
 }
