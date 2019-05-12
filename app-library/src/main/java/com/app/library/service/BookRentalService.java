@@ -6,6 +6,7 @@ import com.app.library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -15,6 +16,8 @@ public class BookRentalService {
     private BookRentalRepository bookRentalRepository;
 
     public BookRental findBySignature(UUID signature) { return bookRentalRepository.findBybookUnit(signature); }
+
+    public List<BookRental> findByBookOrderUnitId(int id) {return bookRentalRepository.findByBookOrderUnitId(id);}
 
     @Autowired
     public void setBookRentalRepository(BookRentalRepository bookRentalRepository) {

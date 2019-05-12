@@ -2,6 +2,7 @@ package com.app.library.controller.reader;
 
 import com.app.library.model.Book;
 import com.app.library.model.BookOrderUnit;
+import com.app.library.model.BookRental;
 import com.app.library.service.*;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
@@ -69,7 +70,22 @@ public class IndividualOrderController implements Initializable {
             book.setName(bookOrderUnits.get(i).getBookUnit().getBook().getName());
             stringList.add(book.getName());
 
+
+
+            if(!bookRentalService.findByBookOrderUnitId(bookOrderUnits.get(i).getId()).isEmpty()){
+                stringList.add(bookRentalService.findByBookOrderUnitId(bookOrderUnits.get(i).getId()).get(i).getDateOfRental().toString());
+                stringList.add(bookRentalService.findByBookOrderUnitId(bookOrderUnits.get(i).getId()).get(i).getDateOfReturn().toString());
+            }else {
+                stringList.add(" ");
+                stringList.add(" ");
+            }
+
             //sprawdzenie czy książka została skompletowana
+            if(!bookOrderUnits.get(i).isReadyToRent()){
+                stringList.add("W trakcie kompletowania");
+            } else{
+                stringList.add("Gotowa");
+            }
 
             observableList.addAll(stringList);
         }
@@ -83,9 +99,9 @@ public class IndividualOrderController implements Initializable {
 
         signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(0)));
         titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
-//        dateOfRentalColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
-//        expireDateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
-//        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
+        dateOfRentalColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
+        expireDateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(3)));
+        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(4)));
 
         List<BookOrderUnit> bookOrderUnits = bookUnitOrderService.findByBooksOrderId(persistenceService.getSelectedBooksOrder().getId());
 
