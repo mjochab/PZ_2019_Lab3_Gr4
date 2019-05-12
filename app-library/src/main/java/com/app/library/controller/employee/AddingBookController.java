@@ -6,6 +6,7 @@ import com.app.library.model.Library;
 import com.app.library.service.BookService;
 import com.app.library.service.LibraryService;
 import com.app.library.utils.AlertMessage;
+import com.app.library.utils.BooksSignatureGeneratorUtils;
 import com.app.library.utils.ViewUtils;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
@@ -32,6 +33,9 @@ public class AddingBookController implements Initializable {
     private BookService bookService;
     private LibraryService libraryService;
     private ViewUtils viewUtils;
+
+    @Autowired
+    private BooksSignatureGeneratorUtils booksSignatureGeneratorUtils;
 
     @FXML
     private TextField titleTextBox;
@@ -92,22 +96,23 @@ public class AddingBookController implements Initializable {
                 .build();
 
         try {
-            bookService.saveBook(newBook);
+            Book savedBook = bookService.saveBook(newBook);
 
-            showSuccessMessage();
+            showSuccessMessage(savedBook);
             resetFormFields();
         } catch (ConstraintViolationException ex) {
             showErrorMessage(ex.getMessage());
         }
     }
 
-    private void showSuccessMessage() {
+    private void showSuccessMessage(Book book) {
         AlertMessage message = new AlertMessage.Builder()
                 .content("Książka została pomyślnie dodana")
                 .header("Sukces")
                 .build();
 
         viewUtils.showSuccessAlert(message);
+        booksSignatureGeneratorUtils.showWindowToSaveBookSignatures(book);
     }
 
     private void showErrorMessage(String messageContent) {

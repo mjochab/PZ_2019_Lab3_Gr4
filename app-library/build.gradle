@@ -27,6 +27,8 @@ dependencies {
 	implementation 'org.flywaydb:flyway-core'
 	compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.8'
 	compile group: 'com.google.guava', name: 'guava', version: '27.1-jre'
+
+	compile fileTree(dir: 'libs', include: ['*.jar'])
 //	compileOnly 'org.projectlombok:lombok'
 //	annotationProcessor 'org.projectlombok:lombok' --- TODO uncomment later
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
