@@ -1,8 +1,8 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group 'io.library.signature-generator'
+group 'io.library.signaturegenerator'
 version '1.0'
 
 jar {
@@ -16,10 +16,11 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    implementation 'com.itextpdf:itextpdf:5.5.13'
+    api 'com.itextpdf:itextpdf:5.5.13'
     implementation 'com.google.guava:guava:27.1-jre'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.0-M1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.0-M1'

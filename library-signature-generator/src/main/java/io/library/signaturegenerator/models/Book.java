@@ -1,4 +1,4 @@
-package models;
+package io.library.signaturegenerator.models;
 
 import java.util.List;
 import java.util.Objects;

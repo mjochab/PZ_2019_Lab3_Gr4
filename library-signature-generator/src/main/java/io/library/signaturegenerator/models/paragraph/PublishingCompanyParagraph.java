@@ -1,8 +1,8 @@
-package models.paragraph;
+package io.library.signaturegenerator.models.paragraph;
 
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
-import utils.StringUtils;
+import io.library.signaturegenerator.utils.StringUtils;
 
 class PublishingCompanyParagraph extends BookParagraph {
 
