@@ -14,7 +14,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.shared.RejestracjaController">
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
@@ -23,7 +22,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Text layoutX="525.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rejestracja" textAlignment="CENTER" wrappingWidth="154.13671875">
+                        <Text layoutX="430.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodanie nowego czytelnika" textAlignment="CENTER" wrappingWidth="420.13671875">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -68,7 +67,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="284.0" text="Nazwisko">
+                              <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="284.0" promptText="Nazwisko">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -86,7 +85,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Mail">
+                              <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="Mail">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -107,7 +106,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="282.0" text="Pesel">
+                              <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="282.0" promptText="Pesel">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -125,7 +124,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Kod pocztowy">
+                              <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="Kod pocztowy">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -143,7 +142,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Ulica">
+                              <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="Ulica">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -161,7 +160,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="Miasto">
+                              <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="Miasto">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -179,7 +178,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
+                              <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="*********">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -200,7 +199,7 @@
                                     <String fx:value="border_menu" />
                                  </styleClass>
                               </Label>
-                              <TextField fx:id="password2TextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" text="*********">
+                              <TextField fx:id="password2TextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="284.0" promptText="*********">
                                  <font>
                                     <Font name="System Bold" size="28.0" />
                                  </font>
@@ -209,7 +208,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <Button layoutX="222.0" layoutY="643.0" mnemonicParsing="false" onMouseClicked="#addUser" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Zarejestruj">
+                  <Button layoutX="222.0" layoutY="643.0" mnemonicParsing="false" onMouseClicked="#addUser" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Dodaj">
                      <font>
                         <Font size="24.0" />
                      </font>
