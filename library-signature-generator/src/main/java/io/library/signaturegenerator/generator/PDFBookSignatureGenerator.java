@@ -1,4 +1,4 @@
-package generator;
+package io.library.signaturegenerator.generator;
 
 import com.google.common.collect.ImmutableList;
 import com.itextpdf.text.Document;
@@ -7,9 +7,9 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfWriter;
-import models.Book;
-import models.paragraph.BookParagraphFactory;
-import models.paragraph.ParagraphType;
+import io.library.signaturegenerator.models.Book;
+import io.library.signaturegenerator.models.paragraph.BookParagraphFactory;
+import io.library.signaturegenerator.models.paragraph.ParagraphType;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;

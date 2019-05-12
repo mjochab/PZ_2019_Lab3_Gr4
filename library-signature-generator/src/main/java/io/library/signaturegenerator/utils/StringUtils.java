@@ -1,4 +1,4 @@
-package utils;
+package io.library.signaturegenerator.utils;
 
 public class StringUtils {
     private StringUtils() {

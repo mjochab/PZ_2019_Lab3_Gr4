@@ -1,4 +1,4 @@
-package models.paragraph;
+package io.library.signaturegenerator.models.paragraph;
 
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;

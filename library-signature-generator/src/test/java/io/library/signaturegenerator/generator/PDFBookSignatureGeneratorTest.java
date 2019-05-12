@@ -1,7 +1,7 @@
-package generator;
+package io.library.signaturegenerator.generator;
 
 import com.itextpdf.text.DocumentException;
-import models.Book;
+import io.library.signaturegenerator.models.Book;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

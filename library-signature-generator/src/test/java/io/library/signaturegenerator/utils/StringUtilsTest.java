@@ -1,4 +1,4 @@
-package utils;
+package io.library.signaturegenerator.utils;
 
 import org.junit.jupiter.api.Test;
 
