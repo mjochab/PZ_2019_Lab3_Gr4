@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1182.0" prefWidth="1288.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
    <top>
       <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <center>
@@ -191,42 +191,189 @@
                         <Insets left="236.0" right="236.0" top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
+                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
-                        <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="mailTextBox1" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
                            <font>
                               <Font size="38.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="5.0" />
+                              <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="379.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/pencil-edit-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kod">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="mailTextBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
                            <font>
                               <Font size="38.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="5.0" />
+                              <Insets left="10.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="413.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Miasto">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/pencil-edit-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
                               <Font size="38.0" />
                            </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
                         </Label>
+                        <Label fx:id="mailTextBox3" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/pencil-edit-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="396.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="mailTextBox31" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/pencil-edit-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="798.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
+                                 <font>
+                                    <Font size="38.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="mailTextBox311" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/pencil-edit-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
                      <children>
-                        <Label fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Ulica">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="379.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Kod">
+                        <Label fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -246,7 +393,7 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="100.0" prefWidth="752.0">
                      <children>
-                        <Label fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Województwo">
+                        <Label fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Kraj">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -266,6 +413,26 @@
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                  </HBox>
+                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
+                     <children>
+                        <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="379.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
                   </HBox>
                </children>
             </VBox>
