@@ -11,8 +11,7 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    // example method to fetch user by pesel
-    User findByPesel(String pesel);
+    User findByEmail(String email);
 
     // example query to fetch users with employee role
     @Query("SELECT user " +
