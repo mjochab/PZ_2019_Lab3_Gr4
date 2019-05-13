@@ -6,429 +6,438 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1182.0" prefWidth="1288.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
-   <top>
-      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
-         <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto" textAlignment="CENTER" translateX="50.0" wrappingWidth="331.13671875" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
-         </center>
-         <right>
-            <JFXButton fx:id="cart" onMouseClicked="#goToCart" prefHeight="100.0" prefWidth="100.0" styleClass="border_menu" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/shopping-cart.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </right>
-      </JFXToolbar>
-   </top>
-   <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <top>
-            <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <children>
-                  <JFXButton fx:id="home" layoutX="246.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/library.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </JFXButton>
-                  <JFXButton fx:id="search" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/lupa.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </JFXButton>
-                  <JFXButton fx:id="my_orders" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToMyOrders" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1288.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1160.0" prefWidth="1300.0">
+         <children>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1182.0" prefWidth="1290.0" styleClass="background" stylesheets="@../../css/style.css">
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                           <children>
+                              <JFXButton fx:id="home" layoutX="246.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                                 <graphic>
+                                    <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/library.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="brown_background" />
+                                    <String fx:value="border_menu" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton fx:id="search" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                                 <graphic>
+                                    <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/lupa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="brown_background" />
+                                    <String fx:value="border_menu" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton fx:id="my_orders" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToMyOrders" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                                 <styleClass>
+                                    <String fx:value="brown_background" />
+                                    <String fx:value="border_menu" />
+                                 </styleClass>
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="account" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="border_menu" />
+                                    <String fx:value="menu_item_active" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="logout" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                                 <graphic>
+                                    <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/logout.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="border_menu" />
+                                    <String fx:value="brown_background" />
+                                 </styleClass>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </top>
+                     <BorderPane.margin>
+                        <Insets left="50.0" right="50.0" top="20.0" />
+                     </BorderPane.margin>
+                     <center>
+                        <VBox prefHeight="616.0" prefWidth="1196.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox layoutX="246.0" layoutY="50.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mail">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="mailTextBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="236.0" right="126.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nr. karty">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="cardTextBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="\$nrnarty">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="236.0" right="236.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="streetTextBox1" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Ulica">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kod">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="zipCodeTextBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kod">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="stateTextBox3" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Województwo">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="396.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="cityTextBox31" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Miasto">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="798.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <graphic>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
+                                             <font>
+                                                <Font size="38.0" />
+                                             </font>
+                                          </Text>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="countryTextBox311" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kraj">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/pencil-edit-button.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
+                                 <children>
+                                    <Label fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="449.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
+                                 <children>
+                                    <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="389.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="429.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </center>
+               <top>
+                  <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+                     <center>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto" textAlignment="CENTER" translateX="50.0" wrappingWidth="331.13671875" BorderPane.alignment="CENTER">
                            <font>
-                              <Font size="24.0" />
+                              <Font size="40.0" />
                            </font>
                         </Text>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton fx:id="account" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="border_menu" />
-                        <String fx:value="menu_item_active" />
-                     </styleClass>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton fx:id="logout" layoutX="718.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/logout.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="border_menu" />
-                        <String fx:value="brown_background" />
-                     </styleClass>
-                  </JFXButton>
-               </children>
-            </HBox>
-         </top>
-         <BorderPane.margin>
-            <Insets left="50.0" right="50.0" top="20.0" />
-         </BorderPane.margin>
-         <center>
-            <VBox prefHeight="616.0" prefWidth="1196.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox layoutX="246.0" layoutY="50.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
+                     </center>
+                     <right>
+                        <JFXButton fx:id="cart" onMouseClicked="#goToCart" prefHeight="100.0" prefWidth="100.0" styleClass="border_menu" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
                            <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mail">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="mailTextBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
+                                    <Image url="@../../images/shopping-cart.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="236.0" right="126.0" top="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nr. karty">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="cardTextBox" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="\$nrnarty">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="236.0" right="236.0" top="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="streetTextBox1" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Ulica">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kod">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="zipCodeTextBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kod">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="stateTextBox3" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Województwo">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="396.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="cityTextBox31" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Miasto">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="798.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
-                     <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
-                                 <font>
-                                    <Font size="38.0" />
-                                 </font>
-                              </Text>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="countryTextBox311" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kraj">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#editMail" prefHeight="82.0" prefWidth="100.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/pencil-edit-button.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
-                     <children>
-                        <Label fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="449.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
-                     <children>
-                        <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="389.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" top="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="429.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
-   </center>
-</BorderPane>
+                        </JFXButton>
+                     </right>
+                  </JFXToolbar>
+               </top>
+            </BorderPane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
