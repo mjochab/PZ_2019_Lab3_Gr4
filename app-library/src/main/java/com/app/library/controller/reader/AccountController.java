@@ -40,31 +40,54 @@ public class AccountController {
     private Label cardTextBox;
 
     @FXML
+    private Label streetTextBox1;
+
+    @FXML
+    private Label zipCodeTextBox2;
+
+    @FXML
+    private Label stateTextBox3;
+
+    @FXML
+    private Label cityTextBox31;
+
+    @FXML
+    private Label countryTextBox311;
+
+    @FXML
+    private Label streetTextBox;
+
+    @FXML
+    private Label peselTextBox;
+
+    @FXML
     private Label firstNameTextBox;
 
     @FXML
     private Label surnameTextBox;
 
     @FXML
-    private Label cityTextBox;
-
-    @FXML
-    private Label streetTextBox;
-
-    @FXML
-    private Label codeTextBox;
-
-    @FXML
-    private Label peselTextBox;
-
-    @FXML
-    private Label wojewodztwoTextBox;
-
-    @FXML
-    private Label countryTextBox;
-
-    @FXML
     void editMail(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToCart(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToHome(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToMyOrders(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToSearchBooks(MouseEvent event) {
 
     }
 

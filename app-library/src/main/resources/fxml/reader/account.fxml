@@ -191,9 +191,9 @@
                         <Insets left="236.0" right="236.0" top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
-                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -205,7 +205,7 @@
                               </Text>
                            </graphic>
                         </Label>
-                        <Label fx:id="mailTextBox1" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                        <Label fx:id="streetTextBox1" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Ulica">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -226,8 +226,11 @@
                            </graphic>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
@@ -241,7 +244,7 @@
                               </Text>
                            </graphic>
                         </Label>
-                        <Label fx:id="mailTextBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                        <Label fx:id="zipCodeTextBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kod">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -262,8 +265,11 @@
                            </graphic>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
@@ -277,7 +283,7 @@
                               </Text>
                            </graphic>
                         </Label>
-                        <Label fx:id="mailTextBox3" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                        <Label fx:id="stateTextBox3" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Województwo">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -298,8 +304,11 @@
                            </graphic>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="396.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="396.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
@@ -313,7 +322,7 @@
                               </Text>
                            </graphic>
                         </Label>
-                        <Label fx:id="mailTextBox31" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                        <Label fx:id="cityTextBox31" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Miasto">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -334,22 +343,25 @@
                            </graphic>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="798.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="798.0" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                      <children>
                         <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
                               <Font size="38.0" />
                            </font>
                            <graphic>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                               </Text>
                            </graphic>
                         </Label>
-                        <Label fx:id="mailTextBox311" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Mail">
+                        <Label fx:id="countryTextBox311" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="349.0" styleClass="white_background" stylesheets="@../../css/style.css" text="Kraj">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -370,8 +382,11 @@
                            </graphic>
                         </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
                   </HBox>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
                      <children>
                         <Label fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
                            <font>
@@ -381,7 +396,7 @@
                               <Insets right="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="413.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
+                        <Label fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="449.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Pesel">
                            <font>
                               <Font size="38.0" />
                            </font>
@@ -391,40 +406,17 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="100.0" prefWidth="752.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
                      <children>
-                        <Label fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Kraj">
+                        <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="389.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
                            <font>
                               <Font size="38.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="5.0" />
+                              <Insets right="5.0" top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="countryTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="379.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Kraj">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="1216.0">
-                     <children>
-                        <Label fx:id="firstNameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="363.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Imię">
-                           <font>
-                              <Font size="38.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="379.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
+                        <Label fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="429.0" styleClass="brown_background" stylesheets="@../../css/style.css" text="Nazwisko">
                            <font>
                               <Font size="38.0" />
                            </font>
