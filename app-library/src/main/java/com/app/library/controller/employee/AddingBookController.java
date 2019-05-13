@@ -69,7 +69,7 @@ public class AddingBookController implements Initializable {
 
             return cell;
         });
-        libraryComboBox.setItems(libraries);
+        libraryComboBox.getItems().setAll(libraries);
         libraryComboBox.getSelectionModel().selectFirst();
     }
 
@@ -102,17 +102,19 @@ public class AddingBookController implements Initializable {
     }
 
     private void showSuccessMessage() {
-        AlertMessage message = new AlertMessage();
-        message.setHeader("Sukces");
-        message.setContent("Książka została pomyślnie dodana");
+        AlertMessage message = new AlertMessage.Builder()
+                .content("Książka została pomyślnie dodana")
+                .header("Sukces")
+                .build();
 
         viewUtils.showSuccessAlert(message);
     }
 
     private void showErrorMessage(String messageContent) {
-        AlertMessage message = new AlertMessage();
-        message.setHeader("Błąd walidacji formularza");
-        message.setContent(messageContent);
+        AlertMessage message = new AlertMessage.Builder()
+                .content(messageContent)
+                .header("Błąd walidacji formularza")
+                .build();
 
         viewUtils.showErrorAlert(message);
     }
@@ -153,8 +155,8 @@ public class AddingBookController implements Initializable {
     }
 
     @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    public void goToReaderOrders() {
+        viewManager.show(ViewType.EMPLOYEE_READER_ORDERS);
     }
 
     @FXML

@@ -3,6 +3,10 @@
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,11 +15,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.EmployeeAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.ReaderOrdersController">
    <top>
-      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="61.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
          <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ustawienia konta" textAlignment="CENTER" wrappingWidth="423.625" BorderPane.alignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista zamówień" textAlignment="CENTER" wrappingWidth="464.83984375" BorderPane.alignment="CENTER">
                <font>
                   <Font size="38.0" />
                </font>
@@ -24,11 +28,11 @@
       </JFXToolbar>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="490.0" prefWidth="600.0" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <children>
             <HBox layoutX="78.0" layoutY="20.0" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="122.0" stylesheets="@../../css/style.css">
+                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="122.0" stylesheets="@../../css/style.css">
                      <graphic>
                         <ImageView fx:id="home" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,20 +62,20 @@
                      </graphic>
                   </Button>
                   <Button fx:id="orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToReaderOrders" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
                      <font>
                         <Font name="Candara Bold" size="20.0" />
                      </font>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zamówienia">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="border_menu" />
+                        <String fx:value="menu_item_active" />
+                     </styleClass>
                   </Button>
                   <Button fx:id="users" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfUsers" prefHeight="100.0" prefWidth="202.0" stylesheets="@../../css/style.css" textAlignment="CENTER">
                      <styleClass>
@@ -91,7 +95,7 @@
                   </Button>
                   <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
                      <styleClass>
-                        <String fx:value="menu_item_active" />
+                        <String fx:value="brown_background" />
                         <String fx:value="border_menu" />
                      </styleClass>
                      <font>
@@ -120,6 +124,17 @@
                   </Button>
                </children>
             </HBox>
+            <TableView fx:id="readerOrdersTable" layoutX="80.0" layoutY="200.0" opacity="0.85" prefHeight="468.0" prefWidth="1122.0" style="-fx-background-color: #937854;">
+               <columns>
+                  <TableColumn fx:id="readerNameColumn" minWidth="0.0" prefWidth="326.0" text="Imie i nazwisko" />
+                  <TableColumn fx:id="readyToReleaseColumn" prefWidth="265.0" text="Status" />
+                  <TableColumn fx:id="quantityOfBooksColumn" prefWidth="265.0" text="Ilość zamówionych książek" />
+                  <TableColumn fx:id="orderCreatedAtColumn" prefWidth="265.0" text="Data zamówienia" />
+               </columns>
+            </TableView>
+            <DatePicker fx:id="orderDateFromDatePicker" layoutX="710.0" layoutY="137.0" onAction="#handleOrderDateFromChanged" prefHeight="40.0" prefWidth="230.0" promptText="Data zamówienia od" />
+            <DatePicker fx:id="orderDateToDatePicker" layoutX="954.0" layoutY="137.0" onAction="#handleOrderDateToChanged" prefHeight="40.0" prefWidth="248.0" promptText="Data zamówienia do" />
+            <TextField fx:id="searchOrdersTextField" layoutX="80.0" layoutY="137.0" onKeyReleased="#handleSearchOrdersTextChanged" prefHeight="40.0" prefWidth="615.0" promptText="Wyszukaj" />
          </children>
       </AnchorPane>
    </center>

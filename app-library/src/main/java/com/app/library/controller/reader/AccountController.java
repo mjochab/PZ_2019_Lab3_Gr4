@@ -2,47 +2,91 @@ package com.app.library.controller.reader;
 
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import java.awt.event.MouseEvent;
-import java.io.IOException;
 
 @Controller
 public class AccountController {
 
-   @Autowired
+    @Autowired
     private ViewManager viewManager;
 
-
+    @FXML
+    private JFXButton cart;
 
     @FXML
-    public void goToSearchBooks(){
+    private JFXButton home;
+
+    @FXML
+    private JFXButton search;
+
+    @FXML
+    private JFXButton my_orders;
+
+    @FXML
+    private JFXButton account;
+
+    @FXML
+    private JFXButton logout;
+
+    @FXML
+    private Label mailTextBox;
+
+    @FXML
+    private Label cardTextBox;
+
+    @FXML
+    private Label firstNameTextBox;
+
+    @FXML
+    private Label surnameTextBox;
+
+    @FXML
+    private Label cityTextBox;
+
+    @FXML
+    private Label streetTextBox;
+
+    @FXML
+    private Label codeTextBox;
+
+    @FXML
+    private Label peselTextBox;
+
+    @FXML
+    private Label wojewodztwoTextBox;
+
+    @FXML
+    private Label countryTextBox;
+
+    @FXML
+    void editMail(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void goToSearchBooks() {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
     @FXML
-    public void goToMyOrders(){
+    public void goToMyOrders() {
         viewManager.show(ViewType.READER_MY_ORDERS);
     }
 
     @FXML
-    public void goToHome(){
+    public void goToHome() {
         viewManager.show(ViewType.MAIN);
     }
 
     @FXML
-    public void goToCart(){
+    public void goToCart() {
         viewManager.show(ViewType.READER_CART);
     }
+
 
 }

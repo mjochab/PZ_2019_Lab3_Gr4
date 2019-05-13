@@ -2,10 +2,10 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXToolbar?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -117,12 +117,12 @@
             </HBox>
          </top>
          <center>
-            <JFXTreeTableView opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <TableView fx:id="cartTable" opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
                </BorderPane.margin>
                <columns>
-                  <TreeTableColumn prefWidth="278.0">
+                  <TableColumn fx:id="titleColumn" prefWidth="243.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł">
                            <font>
@@ -130,8 +130,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="245.0">
+                  </TableColumn>
+                  <TableColumn fx:id="authorColumn" prefWidth="172.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
                            <font>
@@ -139,8 +139,8 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="368.0">
+                  </TableColumn>
+                  <TableColumn fx:id="yearColumn" prefWidth="202.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania">
                            <font>
@@ -148,8 +148,17 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
-                  <TreeTableColumn prefWidth="188.0">
+                  </TableColumn>
+                  <TableColumn fx:id="signatureColumn" prefWidth="239.0">
+                     <graphic>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="statusColumn" prefWidth="223.0">
                      <graphic>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                            <font>
@@ -157,14 +166,14 @@
                            </font>
                         </Text>
                      </graphic>
-                  </TreeTableColumn>
+                  </TableColumn>
                </columns>
-            </JFXTreeTableView>
+            </TableView>
          </center>
       </BorderPane>
    </center>
    <bottom>
-      <JFXButton contentDisplay="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+      <JFXButton fx:id="orderButton" onMouseClicked="#submitOrder" contentDisplay="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" />
          </BorderPane.margin>

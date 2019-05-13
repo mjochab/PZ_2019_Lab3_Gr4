@@ -41,7 +41,7 @@ public class User {
 
     @Email
     @NotBlank
-    @Size(min = 1, max = 128)
+    @Size(min = 1, max = 64)
     private String email;
 
     public Integer getId() {
@@ -99,6 +99,10 @@ public class User {
     public String getEmail() { return email; }
 
     public void setEmail(String email) { this.email = email; }
+
+    public String getFullName() {
+        return String.format("%s %s", firstName, surname);
+    }
 
     @Override
     public String toString() {

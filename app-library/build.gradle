@@ -30,4 +30,5 @@ dependencies {
 //	compileOnly 'org.projectlombok:lombok'
 //	annotationProcessor 'org.projectlombok:lombok' --- TODO uncomment later
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'de.saxsys:jfx-testrunner:1.2'
 }

@@ -1,8 +1,7 @@
 package com.app.library.controller.employee;
 
 import com.app.library.model.Book;
-import com.app.library.model.User;
-import com.app.library.service.UserService;
+import com.app.library.service.BookService;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -23,49 +22,48 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 @Controller
-public class ListUsersController implements Initializable {
+public class BooksListController implements Initializable {
 
     private ViewManager viewManager;
-    private UserService userService;
+    private BookService bookService;
 
     @FXML
-    private TableView<User> readersTable;
+    private TableView<Book> booksTable;
 
     @FXML
-    private TableColumn<User, String> firstNameColumn;
+    private TableColumn<Book, String> publishingCompanyColumn;
 
     @FXML
-    private TableColumn<User, String> surnameColumn;
+    private TableColumn<Book, String> titleColumn;
 
     @FXML
-    private TableColumn<User, String> emailColumn;
+    private TableColumn<Book, String> authorColumn;
 
     @FXML
-    private TableColumn<User, String> peselColumn;
+    private TableColumn<Book, Number> quantityColumn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-        peselColumn.setCellValueFactory(new PropertyValueFactory<>("pesel"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        publishingCompanyColumn.setCellValueFactory(new PropertyValueFactory<>("publishingCompany"));
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getBookUnits().size()));
 
-        List<User> readers = userService.findAllReaders();
+        List<Book> books = bookService.findAll();
 
-        setTableItems(readers);
+        setTableItems(books);
     }
 
     @FXML
-    void findReaders(KeyEvent event) {
+    public void findBooks(KeyEvent event) {
         String query = ((TextField) event.getTarget()).getText();
-        List<User> readers = userService.findReadersByQueryIgnoreCase(query);
+        List<Book> books = bookService.findByQueryIgnoreCase(query);
 
-        setTableItems(readers);
+        setTableItems(books);
     }
 
-    private void setTableItems(List<User> readers) {
-        ObservableList<User> observableReaders = FXCollections.observableList(readers);
-        readersTable.setItems(observableReaders);
+    private void setTableItems(List<Book> books) {
+        booksTable.getItems().setAll(books);
     }
 
     @FXML
@@ -79,8 +77,8 @@ public class ListUsersController implements Initializable {
     }
 
     @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    public void goToReaderOrders() {
+        viewManager.show(ViewType.EMPLOYEE_READER_ORDERS);
     }
 
     @FXML
@@ -93,13 +91,18 @@ public class ListUsersController implements Initializable {
         viewManager.show(ViewType.MAIN);
     }
 
+    @FXML
+    public void goToAddBook() {
+        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
+    }
+
     @Autowired
     public void setViewManager(ViewManager viewManager) {
         this.viewManager = viewManager;
     }
 
     @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
     }
 }

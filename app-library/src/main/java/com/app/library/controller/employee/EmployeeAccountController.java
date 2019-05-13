@@ -7,15 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class ListOrdersController {
+public class EmployeeAccountController {
 
     @Autowired
     private ViewManager viewManager;
-
-    @FXML
-    public void goToEmployeeAccount() {
-        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
-    }
 
     @FXML
     public void goToListOfBooks() {
@@ -23,8 +18,8 @@ public class ListOrdersController {
     }
 
     @FXML
-    public void goToRealizedOrders() {
-        viewManager.show(ViewType.EMPLOYEE_REALIZED_ORDERS);
+    public void goToReaderOrders() {
+        viewManager.show(ViewType.EMPLOYEE_READER_ORDERS);
     }
 
     @FXML
@@ -38,8 +33,9 @@ public class ListOrdersController {
     }
 
     @FXML
-    public void goToAddBooks() {
-        viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
+    public void goToEmployeeAccount() {
+        viewManager.show(ViewType.EMPLOYEE_ACCOUNT);
     }
 
 }
+

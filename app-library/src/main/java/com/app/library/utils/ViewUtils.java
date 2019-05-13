@@ -3,16 +3,18 @@ package com.app.library.utils;
 import javafx.scene.control.Alert;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class ViewUtils {
 
     public void showErrorAlert(AlertMessage message) {
-        Alert alert = createAlert(message, Alert.AlertType.ERROR);
+        Alert alert = createAlert(Objects.requireNonNull(message), Alert.AlertType.ERROR);
         alert.showAndWait();
     }
 
     public void showSuccessAlert(AlertMessage message) {
-        Alert alert = createAlert(message, Alert.AlertType.CONFIRMATION);
+        Alert alert = createAlert(Objects.requireNonNull(message), Alert.AlertType.CONFIRMATION);
         alert.showAndWait();
     }
 
