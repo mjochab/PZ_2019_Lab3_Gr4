@@ -126,7 +126,7 @@
             </HBox>
             <TableView fx:id="readerOrdersTable" layoutX="80.0" layoutY="200.0" opacity="0.85" prefHeight="468.0" prefWidth="1122.0" style="-fx-background-color: #937854;">
                <columns>
-                  <TableColumn fx:id="readerNameColumn" minWidth="0.0" prefWidth="326.0" text="ID" />
+                  <TableColumn fx:id="readerNameColumn" minWidth="0.0" prefWidth="326.0" text="Imie i nazwisko" />
                   <TableColumn fx:id="readyToReleaseColumn" prefWidth="265.0" text="Status" />
                   <TableColumn fx:id="quantityOfBooksColumn" prefWidth="265.0" text="Ilość zamówionych książek" />
                   <TableColumn fx:id="orderCreatedAtColumn" prefWidth="265.0" text="Data zamówienia" />

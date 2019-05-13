@@ -58,7 +58,7 @@ public class ReaderOrdersController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        readerNameColumn.setCellValueFactory(this::getIdColumnProperty);
+        readerNameColumn.setCellValueFactory(this::getReaderNameProperty);
         readyToReleaseColumn.setCellValueFactory(this::getReadyToReleaseColumnProperty);
         quantityOfBooksColumn.setCellValueFactory(this::getQuantityOfBooksColumnProperty);
         orderCreatedAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
@@ -68,8 +68,8 @@ public class ReaderOrdersController implements Initializable {
         onOrderDoubleClick();
     }
 
-    private SimpleStringProperty getIdColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
-        return new SimpleStringProperty(cellData.getValue().getId().toString());
+    private SimpleStringProperty getReaderNameProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
+        return new SimpleStringProperty(cellData.getValue().getReader().getFullName());
     }
 
     private SimpleStringProperty getReadyToReleaseColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
@@ -103,7 +103,7 @@ public class ReaderOrdersController implements Initializable {
     }
 
     private void findOrders() {
-        List<BooksOrder> booksOrders = booksOrderService.findAllOrders();
+        List<BooksOrder> booksOrders = booksOrderService.findByQueryIgnoreCaseAndCreatedAtBetween(this.searchQuery, this.orderDateFrom, this.orderDateTo);
 
         setTableItems(booksOrders);
     }

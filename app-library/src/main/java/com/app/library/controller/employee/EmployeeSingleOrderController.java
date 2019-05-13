@@ -81,8 +81,8 @@ public class EmployeeSingleOrderController implements Initializable {
             BookOrderUnit bookOrderUnit = bookUnitOrderService.findById(bookOrderUnits.get(i).getId());
             bookOrderUnit.setReadyToRent(true);
             bookUnitOrderService.save(bookOrderUnit);
-
         }
+        setDisableButtonIfRealized(bookOrderUnits);
     }
 
     private void setDisableButtonIfRealized(List<BookOrderUnit> bookOrderUnits){
