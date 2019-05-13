@@ -17,6 +17,8 @@ public class PersistenceService {
 
     private User user;
 
+    private User employee;
+
     private BooksOrder selectedBooksOrder;
 
     private HashMap<String, Object> storedObjects;
@@ -60,6 +62,14 @@ public class PersistenceService {
 
     public BooksOrder getSelectedBooksOrder() {
         return selectedBooksOrder;
+    }
+
+    public User getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(User employee) {
+        this.employee = employee;
     }
 
     public void setSelectedBooksOrder(BooksOrder selectedBooksOrder) {

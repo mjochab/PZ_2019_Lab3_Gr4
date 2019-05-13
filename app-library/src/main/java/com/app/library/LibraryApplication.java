@@ -40,6 +40,7 @@ public class LibraryApplication extends Application {
 		springContext = SpringApplication.run(LibraryApplication.class);
 		springContext.getAutowireCapableBeanFactory().autowireBean(this);
 		setLoggedUser();
+		setLoggedEmployee();
 	}
 
 	@Override
@@ -58,4 +59,11 @@ public class LibraryApplication extends Application {
 		User user = userService.findById(2);
 		persistenceService.setUser(user);
 	}
+
+	private void setLoggedEmployee(){
+		//w bazie user ma id = 2
+		User user = userService.findById(3);
+		persistenceService.setEmployee(user);
+	}
+
 }

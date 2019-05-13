@@ -3,6 +3,7 @@ package com.app.library.controller.employee;
 import com.app.library.model.Book;
 import com.app.library.model.BooksOrder;
 import com.app.library.service.BooksOrderService;
+import com.app.library.service.PersistenceService;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -12,10 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +33,10 @@ public class ReaderOrdersController implements Initializable {
     private String searchQuery = "";
     private LocalDate orderDateFrom = LocalDate.now();
     private LocalDate orderDateTo = null;
+
+    @Autowired
+    private PersistenceService persistenceService;
+
 
     @FXML
     private TableView<BooksOrder> readerOrdersTable;
@@ -56,21 +58,22 @@ public class ReaderOrdersController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        readerNameColumn.setCellValueFactory(this::getReaderNameColumnProperty);
+        readerNameColumn.setCellValueFactory(this::getIdColumnProperty);
         readyToReleaseColumn.setCellValueFactory(this::getReadyToReleaseColumnProperty);
         quantityOfBooksColumn.setCellValueFactory(this::getQuantityOfBooksColumnProperty);
         orderCreatedAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
 
         orderDateFromDatePicker.setValue(orderDateFrom);
         findOrders();
+        onOrderDoubleClick();
     }
 
-    private SimpleStringProperty getReaderNameColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
-        return new SimpleStringProperty(cellData.getValue().getReader().getFullName());
+    private SimpleStringProperty getIdColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
+        return new SimpleStringProperty(cellData.getValue().getId().toString());
     }
 
     private SimpleStringProperty getReadyToReleaseColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
-        String readyToRelease = cellData.getValue().isReadyToRelease() == true ? "TAK" : "NIE";
+        String readyToRelease = cellData.getValue().isReadyToRelease() == true ? "Gotowe" : "W trakcie kompletowania";
 
         return new SimpleStringProperty(readyToRelease);
     }
@@ -100,9 +103,23 @@ public class ReaderOrdersController implements Initializable {
     }
 
     private void findOrders() {
-        List<BooksOrder> booksOrders = booksOrderService.findByQueryIgnoreCaseAndCreatedAtBetween(searchQuery, orderDateFrom, orderDateTo);
+        List<BooksOrder> booksOrders = booksOrderService.findAllOrders();
 
         setTableItems(booksOrders);
+    }
+
+    private void onOrderDoubleClick(){
+        readerOrdersTable.setRowFactory( tv -> {
+            TableRow<BooksOrder> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(event.getClickCount() == 2){
+                    persistenceService.setSelectedBooksOrder(row.getItem());
+                    viewManager.show(ViewType.EMPLOYEE_SINGLE_ORDER);
+                }
+
+            });
+            return row;
+        });
     }
 
     private void setTableItems(List<BooksOrder> booksOrders) {

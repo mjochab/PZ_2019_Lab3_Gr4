@@ -14,7 +14,6 @@ public interface BookOrderUnitRepository extends JpaRepository<BookOrderUnit, In
 
     List<BookOrderUnit> findByBooksOrderId(Integer id);
 
-
-
+    BookOrderUnit findById(int id);
 
 }

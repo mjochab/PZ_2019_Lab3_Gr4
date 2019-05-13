@@ -14,5 +14,6 @@ public interface BookRentalRepository extends JpaRepository<BookRental, Integer>
 
     List<BookRental> findByBookOrderUnitId(int id);
 
-
+    @Override
+    <S extends BookRental> S save(S entity);
 }

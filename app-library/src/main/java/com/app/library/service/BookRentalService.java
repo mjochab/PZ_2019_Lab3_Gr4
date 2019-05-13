@@ -19,6 +19,8 @@ public class BookRentalService {
 
     public List<BookRental> findByBookOrderUnitId(int id) {return bookRentalRepository.findByBookOrderUnitId(id);}
 
+    public void save(BookRental entity) { bookRentalRepository.save(entity);}
+
     @Autowired
     public void setBookRentalRepository(BookRentalRepository bookRentalRepository) {
         this.bookRentalRepository = bookRentalRepository;
