@@ -1,6 +1,8 @@
 package com.app.library.service;
 
 import com.app.library.model.BookUnit;
+import com.app.library.model.BooksOrder;
+import com.app.library.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +14,12 @@ import static java.util.Objects.requireNonNull;
 
 @Service
 public class PersistenceService {
+
+    private User user;
+
+    private User employee;
+
+    private BooksOrder selectedBooksOrder;
 
     private HashMap<String, Object> storedObjects;
 
@@ -42,5 +50,29 @@ public class PersistenceService {
 
     public List<BookUnit> getCart() {
         return this.cart;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public BooksOrder getSelectedBooksOrder() {
+        return selectedBooksOrder;
+    }
+
+    public User getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(User employee) {
+        this.employee = employee;
+    }
+
+    public void setSelectedBooksOrder(BooksOrder selectedBooksOrder) {
+        this.selectedBooksOrder = selectedBooksOrder;
     }
 }

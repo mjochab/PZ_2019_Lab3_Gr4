@@ -1,0 +1,31 @@
+plugins {
+    id 'java-library'
+}
+
+group 'io.library.signaturegenerator'
+version '1.0'
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    api 'com.itextpdf:itextpdf:5.5.13'
+    implementation 'com.google.guava:guava:27.1-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.0-M1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.0-M1'
+}
+
+test {
+    useJUnitPlatform()
+}

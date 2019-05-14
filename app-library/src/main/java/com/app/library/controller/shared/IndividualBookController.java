@@ -52,7 +52,10 @@ public class IndividualBookController implements Initializable {
     private TableView<List<String>> bookUnitTable = new TableView<>();
 
     @FXML
-    private TableColumn<List<String>, String> signatureColumn, availibilityColumn = new TableColumn<>();
+    private TableColumn<List<String>, String> signatureColumn = new TableColumn<>();
+
+    @FXML
+    private TableColumn<List<String>, String> availibilityColumn = new TableColumn<>();
 
     @FXML
     private Text authorText,yearText, titleText, companyText = new Text();
@@ -74,6 +77,8 @@ public class IndividualBookController implements Initializable {
             row.setOnMouseClicked(event -> {
                     if(row.getItem().get(1) == "Dostępna"){
                         addToCartButton.setDisable(false);
+                    } else {
+                        addToCartButton.setDisable(true);
                     }
 
             });
@@ -95,7 +100,7 @@ public class IndividualBookController implements Initializable {
 
         for(int i = 0; i<lista.size(); i++){
             List<String> stringList = new ArrayList<>();
-            stringList.add(String.valueOf(lista.get(i).getSignature()));
+            stringList.add(lista.get(i).getSignature().toString());
 
             if(lista.get(i).isCheckedOut()){
                 stringList.add("Niedostępna");
@@ -103,7 +108,7 @@ public class IndividualBookController implements Initializable {
                 stringList.add("Dostępna");
             }
             for(int j = 0; j<persistenceService.getCart().size(); j++){
-                if(persistenceService.getCart().get(j).getSignature().equals(stringList.get(0))){
+                if(persistenceService.getCart().get(j).getSignature().equals(UUID.fromString(stringList.get(0)))){
                     stringList.set(1, "Już w koszyku");
                 }
 
