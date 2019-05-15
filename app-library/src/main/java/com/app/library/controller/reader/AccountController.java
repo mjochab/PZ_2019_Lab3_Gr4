@@ -72,26 +72,6 @@ public class AccountController {
     }
 
     @FXML
-    void goToCart(MouseEvent event) {
-
-    }
-
-    @FXML
-    void goToHome(MouseEvent event) {
-
-    }
-
-    @FXML
-    void goToMyOrders(MouseEvent event) {
-
-    }
-
-    @FXML
-    void goToSearchBooks(MouseEvent event) {
-
-    }
-
-    @FXML
     public void goToSearchBooks() {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
