@@ -5,6 +5,10 @@ import com.app.library.model.Address;
 import com.app.library.model.EmployeeOfLibrary;
 import com.app.library.model.Library;
 import com.app.library.model.User;
+import com.app.library.service.EmployeeOfLibraryService;
+import com.app.library.service.UserService;
+import com.app.library.utils.AlertMessage;
+import com.app.library.utils.ViewUtils;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.collections.FXCollections;
@@ -23,16 +27,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.app.library.service.LibraryService;
-
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Controller
 public class AddEmployeeController implements Initializable {
 
     private LibraryService libraryService;
+    private UserService userService;
+    private EmployeeOfLibraryService employeeOfLibraryService;
 
     @Autowired
     private ViewManager viewManager;
+
+    @Autowired
+    private ViewUtils viewUtils;
 
     @FXML
     private TextField employeeFirstName;
@@ -85,12 +94,6 @@ public class AddEmployeeController implements Initializable {
         libraryComboBox.getSelectionModel().selectFirst();
     }
 
-    @Autowired
-    void setLibraryService(LibraryService libraryService) {
-        this.libraryService = libraryService;
-    }
-
-
     private class LibraryListCell extends ListCell<Library> {
         @Override
         protected void updateItem(Library item, boolean empty) {
@@ -137,6 +140,7 @@ public class AddEmployeeController implements Initializable {
     public void goToLogout(ActionEvent event) throws IOException {
         viewManager.show(ViewType.MAIN);
     }
+
     @FXML
     public void addEmployee(MouseEvent mouseEvent) {
         Address userAddress = new Address();
@@ -147,17 +151,55 @@ public class AddEmployeeController implements Initializable {
         userAddress.setCountry(country.getText());
 
         User user = new User();
-//        user.setRole(3);
+        user.setRole(userService.getEmployeeRole());
         user.setFirstName(employeeFirstName.getText());
         user.setSurname(employeeSurName.getText());
         user.setPesel(employeePesel.getText());
         user.setEmail(employeeEmail.getText());
-        user.setPassword(employeePassword.getText());
+        user.setPassword(employeePassword.getText()); // TODO encrypt password
         user.setAddress(userAddress);
 
         EmployeeOfLibrary employee = new EmployeeOfLibrary();
-//        employeeOfLibraryService.save(employee);
+        employee.setLibrary(libraryComboBox.getValue());
+        employee.setUser(user);
+
+        try {
+            employeeOfLibraryService.save(employee);
+            showSuccessMessage();
+        } catch (Exception ex) {
+            showErrorMessage(ex.getMessage());
+        }
     }
 
+    private void showSuccessMessage() {
+        AlertMessage message = new AlertMessage.Builder()
+                .content("Pracownik został pomyślnie dodany")
+                .header("Sukces")
+                .build();
+
+        viewUtils.showSuccessAlert(message);
+    }
+
+    private void showErrorMessage(String messageContent) {
+        AlertMessage message = new AlertMessage.Builder()
+                .content(messageContent)
+                .header("Błąd walidacji formularza")
+                .build();
+
+        viewUtils.showErrorAlert(message);
+    }
+
+    @Autowired
+    void setEmployeeOfLibraryService(EmployeeOfLibraryService employeeOfLibraryService) {
+        this.employeeOfLibraryService = employeeOfLibraryService;
+    }
+
+    @Autowired
+    void setUserService(UserService userService) { this.userService = userService; }
+
+    @Autowired
+    void setLibraryService(LibraryService libraryService) {
+        this.libraryService = libraryService;
+    }
 }
 

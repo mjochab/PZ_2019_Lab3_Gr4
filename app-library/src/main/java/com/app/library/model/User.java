@@ -17,7 +17,7 @@ public class User {
     @ManyToOne(optional = false)
     private Role role;
 
-    @OneToOne(optional = false, cascade = {CascadeType.ALL})
+    @OneToOne(optional = false, cascade = { CascadeType.ALL })
     private Address address;
 
     // this field will be mapped to first_name by default, so we do not need to set up name in @Column

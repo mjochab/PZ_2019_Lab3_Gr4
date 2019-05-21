@@ -14,6 +14,8 @@ public class EmployeeOfLibraryService {
         return employeeOfLibraryRepository.findAll();
     }
 
+    public EmployeeOfLibrary save(EmployeeOfLibrary employee) { return this.employeeOfLibraryRepository.save(employee); }
+
     @Autowired
     public void setEmployeeOfLibraryRepository(EmployeeOfLibraryRepository employeeOfLibraryRepository) {
         this.employeeOfLibraryRepository = employeeOfLibraryRepository;
