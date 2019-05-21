@@ -145,6 +145,21 @@ public enum ViewType {
         public String getFrameTitle() {
             return "Biblioteka";
         }
+    },
+    SINGLE_ORDER {
+
+        public String getFxmlName() {
+            return "reader/individual-order-view";
+        }
+
+        public String getFrameTitle() {
+            return "Order";
+        }
+    },
+    EMPLOYEE_SINGLE_ORDER {
+        public String getFxmlName() {return "employee/single-order";}
+
+        public String getFrameTitle() { return "Order";}
     };
 
     public abstract String getFxmlName();

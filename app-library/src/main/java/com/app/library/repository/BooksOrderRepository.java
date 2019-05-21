@@ -24,4 +24,6 @@ public interface BooksOrderRepository extends JpaRepository<BooksOrder, Integer>
                                                     @Param("orderDateTo") Date orderDateTo);
 
     List<BooksOrder> findByReaderId(int id);
+
+    BooksOrder findById(int id);
 }

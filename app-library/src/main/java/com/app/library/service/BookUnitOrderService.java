@@ -16,6 +16,8 @@ public class BookUnitOrderService {
         bookOrderUnitRepository.save(entity);
     }
 
+    public BookOrderUnit findById(int id) {return bookOrderUnitRepository.findById(id);}
+
     public List<BookOrderUnit> findByBooksOrderId(Integer id) {
         return bookOrderUnitRepository.findByBooksOrderId(id);
     }

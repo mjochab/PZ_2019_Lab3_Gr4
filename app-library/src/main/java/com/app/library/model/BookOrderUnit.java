@@ -1,5 +1,7 @@
 package com.app.library.model;
 
+import javafx.scene.control.CheckBox;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,7 @@ public class BookOrderUnit {
     @ManyToOne(optional = false)
     @JoinColumn(name = "book_signature")
     private BookUnit bookUnit;
+
 
     public BookOrderUnit() {
     }
@@ -52,6 +55,8 @@ public class BookOrderUnit {
     public void setBookUnit(BookUnit bookUnit) {
         this.bookUnit = bookUnit;
     }
+
+
 
     @Override
     public String toString() {

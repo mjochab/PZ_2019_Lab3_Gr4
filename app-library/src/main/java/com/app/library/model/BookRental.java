@@ -36,6 +36,11 @@ public class BookRental {
     @JoinColumn(name = "book_signature", updatable = false)
     private BookUnit bookUnit;
 
+    @OneToOne(optional = false)
+    @NotNull
+    @JoinColumn(name = "book_order_unit_id", updatable = false)
+    private BookOrderUnit bookOrderUnit;
+
     public Integer getId() {
         return id;
     }
@@ -78,5 +83,21 @@ public class BookRental {
 
     public void setLender(User lender) {
         this.lender = lender;
+    }
+
+    public BookUnit getBookUnit() {
+        return bookUnit;
+    }
+
+    public void setBookUnit(BookUnit bookUnit) {
+        this.bookUnit = bookUnit;
+    }
+
+    public BookOrderUnit getBookOrderUnit() {
+        return bookOrderUnit;
+    }
+
+    public void setBookOrderUnit(BookOrderUnit bookOrderUnit) {
+        this.bookOrderUnit = bookOrderUnit;
     }
 }
