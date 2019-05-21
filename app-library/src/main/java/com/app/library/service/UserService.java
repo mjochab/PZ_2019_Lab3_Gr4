@@ -5,7 +5,10 @@ import com.app.library.model.User;
 import com.app.library.model.enumerate.RoleName;
 import com.app.library.repository.RoleRepository;
 import com.app.library.repository.UserRepository;
+import com.app.library.utils.security.AuthenticationFacade;
+import com.app.library.utils.security.AuthorizationDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -17,6 +20,8 @@ public class UserService {
 
     private UserRepository userRepository;
     private RoleRepository roleRepository;
+    private AuthenticationFacade<AuthorizationDto> authenticationFacade;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -40,9 +45,30 @@ public class UserService {
         return roleRepository.findByName(RoleName.ROLE_EMPLOYEE);
     }
 
+    public AuthorizationDto loginUser(String email, String password) throws Exception {
+        return authenticationFacade.login(email, password);
+    }
+
+    public String getEncryptedPassword(String password) {
+        if (password == null || password.trim().length() == 0) {
+            throw new IllegalArgumentException("Password can not be null");
+        }
+        return bCryptPasswordEncoder.encode(password);
+    }
+
+    @Autowired
+    public void setbCryptPasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
     @Autowired
     public void setRoleRepository(RoleRepository roleRepository) {
         this.roleRepository = roleRepository;
+    }
+
+    @Autowired
+    public void setAuthenticationFacade(AuthenticationFacade authenticationFacade) {
+        this.authenticationFacade = authenticationFacade;
     }
 
     @Autowired

@@ -156,7 +156,8 @@ public class AddEmployeeController implements Initializable {
         user.setSurname(employeeSurName.getText());
         user.setPesel(employeePesel.getText());
         user.setEmail(employeeEmail.getText());
-        user.setPassword(employeePassword.getText()); // TODO encrypt password
+        String encryptedPassword = userService.getEncryptedPassword(employeePassword.getText());
+        user.setPassword(encryptedPassword);
         user.setAddress(userAddress);
 
         EmployeeOfLibrary employee = new EmployeeOfLibrary();

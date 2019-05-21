@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
@@ -14,43 +13,51 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.shared.ZalogujController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.shared.UserLoginController">
    <top>
       <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
-         <left>
-            <JFXHamburger prefHeight="64.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
-         </left>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Text layoutX="507.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logowanie" textAlignment="CENTER" wrappingWidth="154.13671875">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="home" layoutX="1117.0" layoutY="13.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #DAA520;" text="Powrót" />
-               </children>
-            </AnchorPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Logowanie" textAlignment="CENTER" wrappingWidth="271.13671875" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Text>
          </center>
+         <right>
+            <Button fx:id="home" mnemonicParsing="false" onAction="#goToHome" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #DAA520;" text="Powrót" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </right>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="25.0" right="25.0" />
+         </padding>
       </JFXToolbar>
    </top>
    <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefWidth="534.0" BorderPane.alignment="TOP_CENTER">
+      <AnchorPane layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="847.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <VBox layoutX="41.0" layoutY="104.0" prefHeight="164.0" prefWidth="493.0">
+            <VBox layoutX="41.0" layoutY="104.0" prefHeight="232.0" prefWidth="797.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="100.0">
                <children>
-                  <HBox opacity="0.88" prefHeight="55.0" prefWidth="535.0">
+                  <HBox alignment="CENTER" opacity="0.88" prefHeight="55.0" prefWidth="750.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="161.0" stylesheets="@../../css/style.css" text="Login:">
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="500.0" stylesheets="@../../css/style.css" text="Login:">
                            <font>
                               <Font size="28.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
                            </styleClass>
                         </Label>
-                        <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Login">
+                        <TextField fx:id="emailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="618.0" promptText="Login">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -59,7 +66,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="89.0" opacity="0.88" prefHeight="60.0" prefWidth="489.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="175.0" stylesheets="@../../css/style.css" text="Hasło:">
+                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="500.0" stylesheets="@../../css/style.css" text="Hasło:">
                            <font>
                               <Font size="28.0" />
                            </font>
@@ -67,8 +74,11 @@
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
                            </styleClass>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
                         </Label>
-                        <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="335.0" text="Password">
+                        <TextField fx:id="passwordTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="618.0" promptText="Password">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -80,13 +90,15 @@
                   </HBox>
                </children>
             </VBox>
-            <AnchorPane layoutX="188.0" layoutY="419.0" prefHeight="92.0" prefWidth="211.0" />
-            <Button layoutX="182.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Zaloguj">
+            <Button layoutX="182.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="58.0" prefWidth="171.0" style="-fx-background-color: #DAA520;" text="Zaloguj" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
          </children>
+         <BorderPane.margin>
+            <Insets top="100.0" />
+         </BorderPane.margin>
       </AnchorPane>
    </center>
 </BorderPane>
