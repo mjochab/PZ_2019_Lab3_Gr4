@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXHamburger?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,396 +17,398 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.boss.AddEmployeeController">
-    <top>
-        <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
-            <left>
-                <JFXHamburger prefHeight="64.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
-            </left>
-            <center>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dyrektor" textAlignment="CENTER" wrappingWidth="215.625" BorderPane.alignment="CENTER">
-                    <font>
-                        <Font size="48.0" />
-                    </font>
-                </Text>
-            </center>
-        </JFXToolbar>
-    </top>
-    <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <HBox layoutX="106.0" layoutY="14.0" opacity="0.88" prefHeight="78.0" prefWidth="1069.0">
-                    <children>
-                        <Button fx:id="home" layoutX="56.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
-                            <graphic>
-                                <ImageView fitHeight="57.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../images/library.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <styleClass>
-                                <String fx:value="border_menu" />
-                                <String fx:value="brown_background" />
-                            </styleClass>
-                        </Button>
-                        <Button fx:id="employees" mnemonicParsing="false" onAction="#goToListEmployee" prefHeight="78.0" prefWidth="218.0" stylesheets="@../../css/style.css" text="Lista pracowników">
-                            <styleClass>
-                                <String fx:value="brown_background" />
-                                <String fx:value="border_menu" />
-                            </styleClass>
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="users" mnemonicParsing="false" onAction="#goToListLibraries" prefHeight="78.0" prefWidth="220.0" stylesheets="@../../css/style.css" text="Lista bibliotek">
-                            <styleClass>
-                                <String fx:value="brown_background" />
-                                <String fx:value="border_menu" />
-                            </styleClass>
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="add_books" mnemonicParsing="false" onAction="#goToAddEmployee" prefHeight="78.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Dodawanie pracowników" wrapText="true">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <styleClass>
-                                <String fx:value="border_menu" />
-                                <String fx:value="menu_item_active" />
-                            </styleClass>
-                        </Button>
-                        <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="78.0" prefWidth="100.0" stylesheets="@../../css/style.css" text="Konto">
-                            <styleClass>
-                                <String fx:value="brown_background" />
-                                <String fx:value="border_menu" />
-                            </styleClass>
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToLogout" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
-                            <graphic>
-                                <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../images/logout.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <styleClass>
-                                <String fx:value="border_menu" />
-                                <String fx:value="brown_background" />
-                            </styleClass>
-                        </Button>
-                    </children>
-                </HBox>
-    
 
-                <VBox layoutX="29.0" layoutY="112.0" prefHeight="470.0" prefWidth="490.0" BorderPane.alignment="CENTER">
-                    <BorderPane.margin>
-                        <Insets left="160.0" right="160.0" top="20.0" />
-                    </BorderPane.margin>
-                    <children>
-                        <HBox opacity="0.88" prefHeight="110.0" prefWidth="490.0">
-                            <children>
-                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                </Label>
-                                <TextField fx:id="employeeFirstName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="10.0" opacity="0.88" prefHeight="64.0" prefWidth="734.0">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                </Label>
-                                <TextField fx:id="employeeSurName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                </Label>
-                                <TextField fx:id="employeePesel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                </Label>
-                                <TextField fx:id="employeeEmail" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                </Label>
-                                <TextField fx:id="employeePassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="150.0" opacity="0.88" prefHeight="50.0" prefWidth="200.0">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                                    <font>
-                                        <Font name="System Bold" size="28.0" />
-                                    </font>
-                                    <graphic>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Biblioteka">
-                                            <font>
-                                                <Font size="28.0" />
-                                            </font>
-                                        </Text>
-                                    </graphic>
-                                    <HBox.margin>
-                                        <Insets />
-                                    </HBox.margin>
-                                </Label>
-                                <ComboBox fx:id="libraryComboBox" prefHeight="50.0" prefWidth="340.0">
-                                    <HBox.margin>
-                                        <Insets left="20.0" />
-                                    </HBox.margin>
-                                </ComboBox>
-                            </children>
-                            <VBox.margin>
-                                <Insets top="20.0" />
-                            </VBox.margin>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" opacity="0.92" prefHeight="70.0" prefWidth="828.0">
-                            <VBox.margin>
-                                <Insets top="70.0" />
-                            </VBox.margin>
-                        </HBox>
-                    </children>
-                </VBox>
-                    <Button fx:id="addEmployeeButton" layoutX="540.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addEmployee" prefHeight="70.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css">
-                        <font>
-                            <Font name="System Bold" size="21.0" />
-                        </font>
-                        <graphic>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj">
-                                <font>
-                                    <Font size="24.0" />
-                                </font>
-                            </Text>
-                        </graphic>
-                    </Button>
-            <HBox layoutX="680.0" layoutY="195.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
-               <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.boss.AddEmployeeController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
+          <top>
+              <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+                  <center>
+                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dyrektor" textAlignment="CENTER" wrappingWidth="215.625" BorderPane.alignment="CENTER">
+                          <font>
+                              <Font size="48.0" />
+                          </font>
+                      </Text>
+                  </center>
+              </JFXToolbar>
+          </top>
+          <center>
+              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <HBox layoutX="106.0" layoutY="14.0" opacity="0.88" prefHeight="78.0" prefWidth="1069.0">
+                          <children>
+                              <Button fx:id="home" layoutX="56.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
+                                  <graphic>
+                                      <ImageView fitHeight="57.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../images/library.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <styleClass>
+                                      <String fx:value="border_menu" />
+                                      <String fx:value="brown_background" />
+                                  </styleClass>
+                              </Button>
+                              <Button fx:id="employees" mnemonicParsing="false" onAction="#goToListEmployee" prefHeight="78.0" prefWidth="218.0" stylesheets="@../../css/style.css" text="Lista pracowników">
+                                  <styleClass>
+                                      <String fx:value="brown_background" />
+                                      <String fx:value="border_menu" />
+                                  </styleClass>
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                              </Button>
+                              <Button fx:id="users" mnemonicParsing="false" onAction="#goToListLibraries" prefHeight="78.0" prefWidth="220.0" stylesheets="@../../css/style.css" text="Lista bibliotek">
+                                  <styleClass>
+                                      <String fx:value="brown_background" />
+                                      <String fx:value="border_menu" />
+                                  </styleClass>
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                              </Button>
+                              <Button fx:id="add_books" mnemonicParsing="false" onAction="#goToAddEmployee" prefHeight="78.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Dodawanie pracowników" wrapText="true">
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                                  <styleClass>
+                                      <String fx:value="border_menu" />
+                                      <String fx:value="menu_item_active" />
+                                  </styleClass>
+                              </Button>
+                              <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="78.0" prefWidth="100.0" stylesheets="@../../css/style.css" text="Konto">
+                                  <styleClass>
+                                      <String fx:value="brown_background" />
+                                      <String fx:value="border_menu" />
+                                  </styleClass>
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                              </Button>
+                              <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToLogout" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
+                                  <graphic>
+                                      <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../images/logout.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <styleClass>
+                                      <String fx:value="border_menu" />
+                                      <String fx:value="brown_background" />
+                                  </styleClass>
+                              </Button>
+                          </children>
+                      </HBox>
+          
+      
+                      <VBox layoutX="29.0" layoutY="112.0" prefHeight="470.0" prefWidth="490.0" BorderPane.alignment="CENTER">
+                          <BorderPane.margin>
+                              <Insets left="160.0" right="160.0" top="20.0" />
+                          </BorderPane.margin>
+                          <children>
+                              <HBox opacity="0.88" prefHeight="110.0" prefWidth="490.0">
+                                  <children>
+                                      <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Imie">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                      </Label>
+                                      <TextField fx:id="employeeFirstName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="10.0" opacity="0.88" prefHeight="64.0" prefWidth="734.0">
+                                  <children>
+                                      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                      </Label>
+                                      <TextField fx:id="employeeSurName" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                                  <children>
+                                      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                      </Label>
+                                      <TextField fx:id="employeePesel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                                  <children>
+                                      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                      </Label>
+                                      <TextField fx:id="employeeEmail" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="130.0" opacity="0.88" prefHeight="70.0" prefWidth="200.0">
+                                  <children>
+                                      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                      </Label>
+                                      <TextField fx:id="employeePassword" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="150.0" opacity="0.88" prefHeight="50.0" prefWidth="200.0">
+                                  <children>
+                                      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                                          <font>
+                                              <Font name="System Bold" size="28.0" />
+                                          </font>
+                                          <graphic>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Biblioteka">
+                                                  <font>
+                                                      <Font size="28.0" />
+                                                  </font>
+                                              </Text>
+                                          </graphic>
+                                          <HBox.margin>
+                                              <Insets />
+                                          </HBox.margin>
+                                      </Label>
+                                      <ComboBox fx:id="libraryComboBox" prefHeight="50.0" prefWidth="340.0">
+                                          <HBox.margin>
+                                              <Insets left="20.0" />
+                                          </HBox.margin>
+                                      </ComboBox>
+                                  </children>
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" opacity="0.92" prefHeight="70.0" prefWidth="828.0">
+                                  <VBox.margin>
+                                      <Insets top="70.0" />
+                                  </VBox.margin>
+                              </HBox>
+                          </children>
+                      </VBox>
+                          <Button fx:id="addEmployeeButton" layoutX="540.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addEmployee" prefHeight="70.0" prefWidth="200.0" styleClass="menu_item_active" stylesheets="@../../css/style.css">
+                              <font>
+                                  <Font name="System Bold" size="21.0" />
+                              </font>
+                              <graphic>
+                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                              </graphic>
+                          </Button>
+                  <HBox layoutX="680.0" layoutY="195.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </Label>
-                  <TextField fx:id="town" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox layoutX="680.0" layoutY="282.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
-               <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <TextField fx:id="town" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                            <font>
-                              <Font size="28.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </Label>
-                  <TextField fx:id="street" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox layoutX="680.0" layoutY="368.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
-               <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stan">
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="680.0" layoutY="282.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </Label>
-                  <TextField fx:id="state" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox layoutX="680.0" layoutY="451.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
-               <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <TextField fx:id="street" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                            <font>
-                              <Font size="28.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </Label>
-                  <TextField fx:id="country" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox layoutX="680.0" layoutY="112.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
-               <children>
-                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="185.0" styleClass="brown_background" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kod pocztowy">
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="680.0" layoutY="368.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                            <font>
-                              <Font size="28.0" />
+                              <Font name="System Bold" size="28.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </Label>
-                  <TextField fx:id="zipCode" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="188.0" text="">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="28.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </HBox>
-            </children>
-        </AnchorPane>
-    </center>
-</BorderPane>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stan">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <TextField fx:id="state" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="680.0" layoutY="451.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="150.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <TextField fx:id="country" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="320.0" text="">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="680.0" layoutY="112.0" opacity="0.88" prefHeight="72.0" prefWidth="495.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="185.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kod pocztowy">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Label>
+                        <TextField fx:id="zipCode" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="188.0" text="">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  </children>
+              </AnchorPane>
+          </center>
+      </BorderPane>
+   </content>
+</ScrollPane>

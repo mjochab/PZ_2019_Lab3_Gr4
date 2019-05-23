@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,74 +11,79 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.IndividualOrderController">
-   <center>
-      <BorderPane>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.IndividualOrderController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="background" stylesheets="@../../css/style.css">
+         <center>
+            <BorderPane>
+               <top>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets top="20.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <JFXButton fx:id="goBackButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToMyOrders" opacity="0.88" prefHeight="56.0" prefWidth="119.0" styleClass="menu_item_active" stylesheets="@../../css/style.css">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Powrót" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </top>
+               <center>
+                  <TableView fx:id="bookUnitTable" opacity="0.88" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="signatureColumn" prefWidth="170.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura" />
+                           </graphic>
+                        </TableColumn>
+                      <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="195.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="dateOfRentalColumn" minWidth="0.0" prefWidth="221.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data wypożyczenia" />
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="expireDateColumn" minWidth="0.0" prefWidth="211.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Termin Oddania" />
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="202.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+                           </graphic>
+                        </TableColumn>
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+               <BorderPane.margin>
+                  <Insets left="50.0" right="50.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </center>
          <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets top="20.0" />
-               </BorderPane.margin>
-               <children>
-                  <JFXButton fx:id="goBackButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goToMyOrders" opacity="0.88" prefHeight="56.0" prefWidth="119.0" styleClass="menu_item_active" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Powrót" />
-                     </graphic>
-                     <HBox.margin>
-                        <Insets left="50.0" />
-                     </HBox.margin>
-                  </JFXButton>
-               </children>
-            </HBox>
+            <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+               <center>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID zamówienia:" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </center>
+            </JFXToolbar>
          </top>
-         <center>
-            <TableView fx:id="bookUnitTable" opacity="0.88" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="signatureColumn" prefWidth="170.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura" />
-                     </graphic>
-                  </TableColumn>
-                <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="195.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
-                     </graphic>
-                  </TableColumn>
-                  <TableColumn fx:id="dateOfRentalColumn" minWidth="0.0" prefWidth="221.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data wypożyczenia" />
-                     </graphic>
-                  </TableColumn>
-                  <TableColumn fx:id="expireDateColumn" minWidth="0.0" prefWidth="211.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Termin Oddania" />
-                     </graphic>
-                  </TableColumn>
-                  <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="202.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
-                     </graphic>
-                  </TableColumn>
-              </columns>
-               <BorderPane.margin>
-                  <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
-               </BorderPane.margin>
-            </TableView>
-         </center>
-         <BorderPane.margin>
-            <Insets left="50.0" right="50.0" />
-         </BorderPane.margin>
       </BorderPane>
-   </center>
-   <top>
-      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
-         <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID zamówienia:" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-         </center>
-      </JFXToolbar>
-   </top>
-</BorderPane>
+   </content>
+</ScrollPane>

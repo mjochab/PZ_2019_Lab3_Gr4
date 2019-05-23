@@ -59,6 +59,8 @@ public class RejestracjaController {
     @FXML
     private TextField password2TextBox;
 
+
+
     @FXML
     public void addBook(MouseEvent mouseEvent) {
         String firstName = firstNameTextBox.getText();
