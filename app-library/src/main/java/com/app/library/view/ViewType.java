@@ -160,6 +160,11 @@ public enum ViewType {
         public String getFxmlName() {return "employee/single-order";}
 
         public String getFrameTitle() { return "Order";}
+    },
+    EMPLOYEE_EDITING_BOOK {
+        public String getFxmlName() {return "employee/editing-book";}
+
+        public String getFrameTitle() { return "Edit";}
     };
 
     public abstract String getFxmlName();
