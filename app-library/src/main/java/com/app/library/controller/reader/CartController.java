@@ -116,6 +116,7 @@ public class CartController implements Initializable {
             booksOrder.setCreatedAt(date);
             booksOrder.setReadyToRelease(false);
             booksOrder.setReader(persistenceService.getUser());
+            booksOrder.setReleased(false);
             booksOrderService.save(booksOrder);
 
             for (int i = 0; i < persistenceService.getCart().size(); i++) {

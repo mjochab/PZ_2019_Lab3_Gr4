@@ -73,7 +73,10 @@ public class ReaderOrdersController implements Initializable {
     }
 
     private SimpleStringProperty getReadyToReleaseColumnProperty(TableColumn.CellDataFeatures<BooksOrder, String> cellData) {
-        String readyToRelease = cellData.getValue().isReadyToRelease() == true ? "Gotowe" : "W trakcie kompletowania";
+        String readyToRelease;
+        if(cellData.getValue().isReleased()){
+            readyToRelease = "Wydano";
+        }else {readyToRelease = cellData.getValue().isReadyToRelease() == true ? "Gotowe" : "W trakcie kompletowania";}
 
         return new SimpleStringProperty(readyToRelease);
     }

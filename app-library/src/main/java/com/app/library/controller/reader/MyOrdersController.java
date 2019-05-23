@@ -87,9 +87,13 @@ public class MyOrdersController implements Initializable {
             List<String> stringList = new ArrayList<>();
             stringList.add(booksOrders.get(i).getId().toString());
             stringList.add(booksOrders.get(i).getCreatedAt().toString());
-            if(booksOrders.get(i).isReadyToRelease()){
-                stringList.add("Gotowe do odbioru");
-            }else stringList.add("W trakcie realizacji");
+            if(booksOrders.get(i).isReleased()){
+                stringList.add("Odebrano");
+            }else{
+                if(booksOrders.get(i).isReadyToRelease()){
+                    stringList.add("Gotowe do odbioru");
+                }else stringList.add("W trakcie realizacji");
+            }
 
             observableList.addAll(stringList);
         }

@@ -3,6 +3,7 @@ package com.app.library.utils;
 import java.util.Objects;
 
 public class AlertMessage {
+
     private AlertMessage() {}
 
     private String content;
