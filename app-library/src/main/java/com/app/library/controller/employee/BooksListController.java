@@ -1,7 +1,10 @@
 package com.app.library.controller.employee;
 
 import com.app.library.model.Book;
+import com.app.library.model.BooksOrder;
 import com.app.library.service.BookService;
+import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -10,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -21,11 +25,16 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.app.library.utils.PersistenceKeys.SINGLE_BOOK;
+
 @Controller
 public class BooksListController implements Initializable {
 
     private ViewManager viewManager;
     private BookService bookService;
+
+    @Autowired
+    private PersistenceService persistenceService;
 
     @FXML
     private TableView<Book> booksTable;
@@ -52,6 +61,7 @@ public class BooksListController implements Initializable {
         List<Book> books = bookService.findAll();
 
         setTableItems(books);
+        editBook();
     }
 
     @FXML
@@ -60,6 +70,22 @@ public class BooksListController implements Initializable {
         List<Book> books = bookService.findByQueryIgnoreCase(query);
 
         setTableItems(books);
+    }
+
+
+    private void editBook(){
+        booksTable.setRowFactory( tv -> {
+            TableRow<Book> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(event.getClickCount() == 2) {
+                    Book table_row = row.getItem();
+                    Book book = bookService.findByName(table_row.getName());
+                    persistenceService.addToStore(PersistenceKeys.SINGLE_BOOK, book);
+                    viewManager.show(ViewType.EMPLOYEE_EDITING_BOOK);
+                }
+            });
+            return row;
+        });
     }
 
     private void setTableItems(List<Book> books) {
@@ -95,6 +121,12 @@ public class BooksListController implements Initializable {
     public void goToAddBook() {
         viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
     }
+
+
+
+
+
+
 
     @Autowired
     public void setViewManager(ViewManager viewManager) {
