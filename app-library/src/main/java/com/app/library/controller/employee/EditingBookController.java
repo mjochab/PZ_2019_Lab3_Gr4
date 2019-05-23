@@ -9,6 +9,7 @@ import com.app.library.service.BookUnitService;
 import com.app.library.service.LibraryService;
 import com.app.library.service.PersistenceService;
 import com.app.library.utils.AlertMessage;
+import com.app.library.utils.BooksSignatureGeneratorUtils;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.utils.ViewUtils;
 import com.app.library.view.ViewManager;
@@ -52,6 +53,9 @@ public class EditingBookController implements Initializable {
 
     @Autowired
     private BookUnitService bookUnitService;
+
+    @Autowired
+    private BooksSignatureGeneratorUtils booksSignatureGeneratorUtils;
 
     @FXML
     private TextField titleField;
@@ -118,6 +122,7 @@ public class EditingBookController implements Initializable {
             try {
                 bookService.saveBook(newBook);
                 showSuccessMessage();
+                booksSignatureGeneratorUtils.showWindowToSaveBookSignatures(newBook);
 
             } catch (ConstraintViolationException ex) {
                 showErrorMessage(ex.getMessage());
