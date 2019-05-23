@@ -26,4 +26,7 @@ public interface BooksOrderRepository extends JpaRepository<BooksOrder, Integer>
     List<BooksOrder> findByReaderId(int id);
 
     BooksOrder findById(int id);
+
+    @Override
+    <S extends BooksOrder> S save(S entity);
 }

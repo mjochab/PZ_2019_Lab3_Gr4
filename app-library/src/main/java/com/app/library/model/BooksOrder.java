@@ -24,6 +24,9 @@ public class BooksOrder {
     @ManyToOne(optional = false)
     private User reader;
 
+
+    private boolean released;
+
     public BooksOrder() {
     }
 
@@ -65,6 +68,14 @@ public class BooksOrder {
 
     public void setReader(User reader) {
         this.reader = reader;
+    }
+
+    public boolean isReleased() {
+        return released;
+    }
+
+    public void setReleased(boolean released) {
+        this.released = released;
     }
 
     @Override

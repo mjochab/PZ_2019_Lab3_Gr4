@@ -51,7 +51,7 @@ public class EmployeeSingleOrderController implements Initializable {
     private TableColumn<BookOrderUnit, String> signatureColumn, titleColumn = new TableColumn<>();
 
     @FXML
-    private Button applyButton = new Button();
+    private Button applyButton, releaseButton = new Button();
 
     @FXML
     public void goBack(){
@@ -83,12 +83,31 @@ public class EmployeeSingleOrderController implements Initializable {
             bookUnitOrderService.save(bookOrderUnit);
         }
         setDisableButtonIfRealized(bookOrderUnits);
+        setDisabledReleaseButton();
     }
 
     private void setDisableButtonIfRealized(List<BookOrderUnit> bookOrderUnits){
             if(!bookRentalService.findByBookOrderUnitId(bookOrderUnits.get(0).getId()).isEmpty()){
                 applyButton.setDisable(true);
             }
+    }
+
+    private void setDisabledReleaseButton(){
+            BooksOrder booksOrder = persistenceService.getSelectedBooksOrder();
+            if(booksOrder.isReleased()){
+                releaseButton.setDisable(true);
+            }else{
+                releaseButton.setDisable(false);
+            }
+    }
+
+    @FXML
+    private void releaseOrder(){
+            BooksOrder booksOrder = persistenceService.getSelectedBooksOrder();
+            booksOrder.setReleased(true);
+            booksOrderService.save(booksOrder);
+
+            setDisabledReleaseButton();
     }
 
 
@@ -99,6 +118,10 @@ public class EmployeeSingleOrderController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        setDisabledReleaseButton();
+
+
 
         signatureColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBookUnit().getSignature().toString()));
         titleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBookUnit().getBook().getName()));
