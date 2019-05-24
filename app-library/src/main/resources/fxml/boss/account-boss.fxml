@@ -35,22 +35,25 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="1151.0" prefWidth="1282.0">
                      <children>
-                        <HBox alignment="CENTER" opacity="0.88" prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.88" prefHeight="119.0" prefWidth="1156.0">
                            <children>
-                              <Button fx:id="homeButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToHome" prefHeight="100.0" prefWidth="122.0" stylesheets="@../../css/style.css">
+                              <Button fx:id="home" layoutX="56.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="78.0" prefWidth="155.0" stylesheets="@../../css/style.css">
                                  <graphic>
-                                    <ImageView fx:id="home1" fitHeight="68.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="57.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../images/library.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                                  <styleClass>
-                                    <String fx:value="brown_background" />
                                     <String fx:value="border_menu" />
+                                    <String fx:value="brown_background" />
                                  </styleClass>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
                               </Button>
-                              <Button fx:id="list_of_books" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfBooks" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
+                              <Button fx:id="employees" mnemonicParsing="false" onAction="#goToListEmployee" prefHeight="78.0" prefWidth="218.0" stylesheets="@../../css/style.css" text="Lista pracowników">
                                  <styleClass>
                                     <String fx:value="brown_background" />
                                     <String fx:value="border_menu" />
@@ -58,65 +61,37 @@
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
-                                 <graphic>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista książek">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Text>
-                                 </graphic>
                               </Button>
-                              <Button fx:id="orders" layoutX="170.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToReaderOrders" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
+                              <Button fx:id="users" mnemonicParsing="false" onAction="#goToListLibraries" prefHeight="78.0" prefWidth="220.0" stylesheets="@../../css/style.css" text="Lista bibliotek">
                                  <styleClass>
                                     <String fx:value="brown_background" />
                                     <String fx:value="border_menu" />
                                  </styleClass>
                                  <font>
-                                    <Font name="Candara Bold" size="20.0" />
+                                    <Font name="System Bold" size="20.0" />
                                  </font>
-                                 <graphic>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Text>
-                                 </graphic>
                               </Button>
-                              <Button fx:id="users1" layoutX="330.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToListOfUsers" prefHeight="100.0" prefWidth="202.0" stylesheets="@../../css/style.css" textAlignment="CENTER">
+                              <Button fx:id="add_books" mnemonicParsing="false" onAction="#goToAddEmployee" prefHeight="78.0" prefWidth="280.0" stylesheets="@../../css/style.css" text="Dodawanie pracowników" wrapText="true">
                                  <styleClass>
-                                    <String fx:value="border_menu" />
                                     <String fx:value="brown_background" />
+                                    <String fx:value="border_menu" />
                                  </styleClass>
                                  <font>
-                                    <Font name="Candara Bold" size="20.0" />
+                                    <Font name="System Bold" size="20.0" />
                                  </font>
-                                 <graphic>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Czytelnicy">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Text>
-                                 </graphic>
                               </Button>
-                              <Button fx:id="account" layoutX="650.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToEmployeeAccount" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
+                              <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="78.0" prefWidth="100.0" stylesheets="@../../css/style.css" text="Konto">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
                                  <styleClass>
+                                    <String fx:value="border_menu" />
                                     <String fx:value="menu_item_active" />
-                                    <String fx:value="border_menu" />
                                  </styleClass>
-                                 <font>
-                                    <Font name="Candara Bold" size="20.0" />
-                                 </font>
-                                 <graphic>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Text>
-                                 </graphic>
                               </Button>
-                              <Button fx:id="logout1" layoutX="810.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../css/style.css">
+                              <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToLogout" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
                                  <graphic>
-                                    <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../images/logout.png" />
                                        </image>
@@ -375,7 +350,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <JFXButton fx:id="backButton" alignment="CENTER" onMouseClicked="#goToListOfBooks" prefHeight="99.0" prefWidth="1372.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                        <JFXButton fx:id="backButton" alignment="CENTER" prefHeight="99.0" prefWidth="1372.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
                            <font>
                               <Font size="25.0" />
                            </font>

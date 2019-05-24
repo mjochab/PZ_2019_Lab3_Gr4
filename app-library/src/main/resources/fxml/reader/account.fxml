@@ -370,7 +370,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <JFXButton fx:id="backButton" alignment="CENTER" onMouseClicked="#goToListOfBooks" prefHeight="99.0" prefWidth="1372.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                        <JFXButton fx:id="backButton" alignment="CENTER" prefHeight="99.0" prefWidth="1372.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
                            <font>
                               <Font size="25.0" />
                            </font>
