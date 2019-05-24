@@ -139,7 +139,7 @@
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
-                                    <Text fx:id="surnameTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
+                                    <Text fx:id="surnameTextBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
                                        <font>
                                           <Font size="38.0" />
                                        </font>
@@ -158,7 +158,7 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label fx:id="peselTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
@@ -182,7 +182,7 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label fx:id="countryTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>

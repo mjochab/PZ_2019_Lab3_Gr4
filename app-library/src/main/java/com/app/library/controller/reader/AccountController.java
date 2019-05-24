@@ -5,7 +5,9 @@ import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -34,39 +36,54 @@ public class AccountController {
     private JFXButton logout;
 
     @FXML
-    private Label mailTextBox;
+    private Text firstNameTextBox1;
 
     @FXML
-    private Label cardTextBox;
+    private TextField nameTextBox;
 
     @FXML
-    private Label firstNameTextBox;
+    private Text surnameTextBox1;
 
     @FXML
-    private Label surnameTextBox;
+    private TextField surnameTextBox;
 
     @FXML
-    private Label cityTextBox;
+    private Label peselTextBox1;
 
     @FXML
-    private Label streetTextBox;
+    private TextField peselTextBox;
 
     @FXML
-    private Label codeTextBox;
+    private Label countryTextBox1;
 
     @FXML
-    private Label peselTextBox;
+    private TextField mailTextBox;
 
     @FXML
-    private Label wojewodztwoTextBox;
+    private Text cityTextBox1;
 
     @FXML
-    private Label countryTextBox;
+    private TextField cityTextBox;
 
     @FXML
-    void editMail(MouseEvent event) {
+    private TextField streetTextBox;
 
-    }
+    @FXML
+    private Text codeTextBox1;
+
+    @FXML
+    private TextField codeTextBox;
+
+    @FXML
+    private TextField wojewodztwoTextBox;
+
+    @FXML
+    private TextField countryTextBox;
+
+    @FXML
+    private JFXButton saveChange;
+    
+
 
     @FXML
     public void goToSearchBooks() {
