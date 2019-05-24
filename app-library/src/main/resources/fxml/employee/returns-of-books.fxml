@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.ReturnOfBooksController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
+         <top>
+            <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="61.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+               <center>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zwroty" textAlignment="CENTER" wrappingWidth="464.83984375" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Text>
+               </center>
+               <padding>
+                  <Insets left="150.0" right="25.0" />
+               </padding>
+               <right>
+                  <JFXButton fx:id="backButton" onMouseClicked="#goToOrders" prefHeight="50.0" prefWidth="103.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Powrót" BorderPane.alignment="CENTER" />
+               </right>
+            </JFXToolbar>
+         </top>
+         <center>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="1193.0" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="rentalsTable" layoutX="40.0" layoutY="100.0" opacity="0.85" prefHeight="468.0" prefWidth="1122.0" style="-fx-background-color: #937854;">
+                     <columns>
+                        <TableColumn fx:id="signatureColumn" minWidth="0.0" prefWidth="326.0" text="Sygnatura" />
+                        <TableColumn fx:id="statusColumn" prefWidth="265.0" text="Status" />
+                        <TableColumn fx:id="dateOfOrderColumn" prefWidth="265.0" text="Data wypożyczenia" />
+                        <TableColumn fx:id="dateOfReturnColumn" prefWidth="265.0" text="Data zwrotu" />
+                     </columns>
+                  </TableView>
+                  <DatePicker fx:id="orderDateFromDatePicker"  layoutX="680.0" layoutY="40.0" prefHeight="40.0" prefWidth="230.0" promptText="Data zamówienia od" />
+                  <DatePicker fx:id="orderDateToDatePicker"  layoutX="924.0" layoutY="40.0" prefHeight="40.0" prefWidth="248.0" promptText="Data zamówienia do" />
+                  <TextField fx:id="searchRentalsTextField"  layoutX="40.0" layoutY="40.0" prefHeight="40.0" prefWidth="615.0" promptText="Wyszukaj" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <JFXButton fx:id="returnButton" onMouseClicked="#returnBook" prefHeight="56.0" prefWidth="209.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zwróć" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </bottom>
+      </BorderPane>
+   </content>
+</ScrollPane>

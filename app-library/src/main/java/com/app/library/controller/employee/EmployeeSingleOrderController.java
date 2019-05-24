@@ -7,6 +7,7 @@ import com.app.library.service.BookRentalService;
 import com.app.library.service.BookUnitOrderService;
 import com.app.library.service.BooksOrderService;
 import com.app.library.service.PersistenceService;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleStringProperty;
@@ -83,31 +84,31 @@ public class EmployeeSingleOrderController implements Initializable {
             bookUnitOrderService.save(bookOrderUnit);
         }
         setDisableButtonIfRealized(bookOrderUnits);
-        setDisabledReleaseButton();
+
     }
 
     private void setDisableButtonIfRealized(List<BookOrderUnit> bookOrderUnits){
             if(!bookRentalService.findByBookOrderUnitId(bookOrderUnits.get(0).getId()).isEmpty()){
                 applyButton.setDisable(true);
-            }
-    }
-
-    private void setDisabledReleaseButton(){
-            BooksOrder booksOrder = persistenceService.getSelectedBooksOrder();
-            if(booksOrder.isReleased()){
-                releaseButton.setDisable(true);
-            }else{
                 releaseButton.setDisable(false);
             }
+            disabelButtonIfReleased();
     }
+
+    private void disabelButtonIfReleased(){
+        if(persistenceService.getSelectedBooksOrder().isReleased()){
+            releaseButton.setDisable(true);
+        }
+    }
+
 
     @FXML
     private void releaseOrder(){
             BooksOrder booksOrder = persistenceService.getSelectedBooksOrder();
             booksOrder.setReleased(true);
             booksOrderService.save(booksOrder);
+            releaseButton.setDisable(true);
 
-            setDisabledReleaseButton();
     }
 
 
@@ -119,7 +120,7 @@ public class EmployeeSingleOrderController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        setDisabledReleaseButton();
+        releaseButton.setDisable(true);
 
 
 

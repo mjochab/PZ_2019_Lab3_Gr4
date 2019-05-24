@@ -150,6 +150,11 @@ public class ReaderOrdersController implements Initializable {
     }
 
     @FXML
+    public void goToReturns(){
+        viewManager.show(ViewType.RETURN_OF_BOOKS);
+    }
+
+    @FXML
     public void goToHome() {
         viewManager.show(ViewType.MAIN);
     }

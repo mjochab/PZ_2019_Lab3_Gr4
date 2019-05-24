@@ -59,7 +59,7 @@
                <bottom>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="847.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton fx:id="applyButton" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="179.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zatwierdź">
+                        <JFXButton fx:id="applyButton" onMouseClicked="#realizeOrder" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="179.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zatwierdź">
                            <font>
                               <Font size="18.0" />
                            </font>
