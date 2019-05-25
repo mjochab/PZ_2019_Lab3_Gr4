@@ -1,23 +1,16 @@
 package com.app.library.controller.boss;
 
-import com.app.library.model.Address;
-import com.app.library.model.Book;
-import com.app.library.model.BooksOrder;
 import com.app.library.model.Library;
 import com.app.library.service.LibraryService;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -108,7 +101,7 @@ public class ListLibrariesController implements Initializable {
 
     @FXML
     public void goToListLibraries(ActionEvent event) throws IOException {
-        viewManager.show(ViewType.BOSS_LIST_OF_LIBRERIES);
+        viewManager.show(ViewType.BOSS_LIST_OF_LIBRARIES);
     }
 
     @FXML

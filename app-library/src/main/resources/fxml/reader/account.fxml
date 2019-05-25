@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane prefHeight="1258.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
+<ScrollPane prefHeight="1258.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1264.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <top>
@@ -130,14 +130,14 @@
                      <children>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text fx:id="firstNameTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -145,23 +145,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="nameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Imię">
+                              <TextField fx:id="nameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Imię">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text fx:id="surnameTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -169,23 +169,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Nazwisko">
+                              <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Nazwisko">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label fx:id="peselTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label fx:id="peselTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -193,23 +193,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Pesel">
+                              <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Pesel">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label fx:id="countryTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label fx:id="countryTextBox1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mail">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -217,23 +217,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Mail">
+                              <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Mail">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text fx:id="cityTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -241,23 +241,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Miasto">
+                              <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Miasto">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -265,23 +265,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Ulica">
+                              <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Ulica">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text fx:id="codeTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Kod">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -289,23 +289,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Kod">
+                              <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kod">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -313,23 +313,23 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Województwo">
+                              <TextField fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Województwo">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
-                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
+                              <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" styleClass="brown_background" stylesheets="@../../css/style.css">
                                  <font>
                                     <Font size="38.0" />
                                  </font>
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -337,18 +337,22 @@
                                     <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="countryTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="700.0" text="Kraj">
+                              <TextField fx:id="countryTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kraj">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
-                        <JFXButton fx:id="saveChange" alignment="CENTER" prefHeight="99.0" prefWidth="1372.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </JFXButton>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="saveChange" alignment="CENTER" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </center>

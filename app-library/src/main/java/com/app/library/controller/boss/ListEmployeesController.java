@@ -6,7 +6,6 @@ import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -109,7 +108,7 @@ public class ListEmployeesController implements Initializable {
 
     @FXML
     public void goToListLibraries(ActionEvent event) throws IOException {
-        viewManager.show(ViewType.BOSS_LIST_OF_LIBRERIES);
+        viewManager.show(ViewType.BOSS_LIST_OF_LIBRARIES);
     }
 
     @FXML

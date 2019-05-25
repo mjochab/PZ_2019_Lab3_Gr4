@@ -3,7 +3,6 @@ package com.app.library.controller.boss;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +28,7 @@ public class AccountBossController {
 
     @FXML
     public void goToListLibraries(ActionEvent event) throws IOException {
-        viewManager.show(ViewType.BOSS_LIST_OF_LIBRERIES);
+        viewManager.show(ViewType.BOSS_LIST_OF_LIBRARIES);
     }
 
     @FXML

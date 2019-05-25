@@ -1,6 +1,5 @@
 package com.app.library.controller.boss;
 
-import com.app.library.controller.employee.AddingBookController;
 import com.app.library.model.Address;
 import com.app.library.model.EmployeeOfLibrary;
 import com.app.library.model.Library;
@@ -14,7 +13,6 @@ import com.app.library.view.ViewType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -27,7 +25,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.app.library.service.LibraryService;
-import org.springframework.transaction.annotation.Transactional;
 
 
 @Controller
@@ -123,7 +120,7 @@ public class AddEmployeeController implements Initializable {
 
     @FXML
     public void goToListLibraries(ActionEvent event) throws IOException {
-        viewManager.show(ViewType.BOSS_LIST_OF_LIBRERIES);
+        viewManager.show(ViewType.BOSS_LIST_OF_LIBRARIES);
     }
 
     @FXML
