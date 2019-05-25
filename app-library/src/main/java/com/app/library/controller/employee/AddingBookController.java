@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.util.StringConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -58,12 +59,28 @@ public class AddingBookController implements Initializable {
     @FXML
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        quantityNumberBox.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 200, DEFAULT_BOOKS_QUANTITY));
-        yearOfPublicationNumberBox.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, DEFAULT_YEAR_OF_PUBLICATION));
+        this.initializeQuantitySpinner();
+        this.initializeYearOfPublicationSpinner();
 
         ObservableList<Library> libs = FXCollections.observableList(libraryService.findAll());
         ObservableList<Library> libraries = FXCollections.unmodifiableObservableList(libs);
         this.initializeComboBox(libraries);
+    }
+
+    private void initializeQuantitySpinner() {
+        quantityNumberBox.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 50, DEFAULT_BOOKS_QUANTITY));
+        quantityNumberBox.focusedProperty().addListener((s, ov, nv) -> {
+            if (nv) return;
+            viewUtils.handleSpinnerValueChanged(quantityNumberBox);
+        });
+    }
+
+    private void initializeYearOfPublicationSpinner() {
+        yearOfPublicationNumberBox.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, DEFAULT_BOOKS_QUANTITY));
+        yearOfPublicationNumberBox.focusedProperty().addListener((s, ov, nv) -> {
+            if (nv) return;
+            viewUtils.handleSpinnerValueChanged(yearOfPublicationNumberBox);
+        });
     }
 
     private void initializeComboBox(ObservableList<Library> libraries) {

@@ -1,6 +1,9 @@
 package com.app.library.utils;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.util.StringConverter;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -26,5 +29,18 @@ public class ViewUtils {
         alert.setResizable(true);
 
         return alert;
+    }
+
+    public <T> void handleSpinnerValueChanged(Spinner<T> spinner) {
+        if (!spinner.isEditable()) return;
+        String text = spinner.getEditor().getText();
+        SpinnerValueFactory<T> valueFactory = spinner.getValueFactory();
+        if (valueFactory != null) {
+            StringConverter<T> converter = valueFactory.getConverter();
+            if (converter != null) {
+                T value = converter.fromString(text);
+                valueFactory.setValue(value);
+            }
+        }
     }
 }
