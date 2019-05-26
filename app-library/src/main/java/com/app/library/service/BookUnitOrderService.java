@@ -12,8 +12,12 @@ public class BookUnitOrderService {
 
     private BookOrderUnitRepository bookOrderUnitRepository;
 
-    public void save(BookOrderUnit entity) {
-        bookOrderUnitRepository.save(entity);
+    public BookOrderUnit save(BookOrderUnit entity) {
+        return bookOrderUnitRepository.save(entity);
+    }
+
+    public List<BookOrderUnit> saveAll(List<BookOrderUnit> orderUnits) {
+        return bookOrderUnitRepository.saveAll(orderUnits);
     }
 
     public BookOrderUnit findById(int id) {return bookOrderUnitRepository.findById(id);}

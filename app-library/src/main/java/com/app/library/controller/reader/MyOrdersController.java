@@ -3,6 +3,7 @@ package com.app.library.controller.reader;
 
 import com.app.library.model.Book;
 import com.app.library.model.BooksOrder;
+import com.app.library.model.User;
 import com.app.library.service.*;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
@@ -125,7 +126,8 @@ public class MyOrdersController implements Initializable {
         dateOfOrderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
         statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
 
-        List<BooksOrder> booksOrders = booksOrderService.findByReaderId(persistenceService.getUser().getId());
+        User reader = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_READER);
+        List<BooksOrder> booksOrders = booksOrderService.findByReaderId(reader.getId());
 
         setOrderTableItems(getListToTable(booksOrders));
 

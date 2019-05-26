@@ -23,7 +23,9 @@ public class BookRentalService {
 
     public List<BookRental> findByBookOrderUnitId(int id) {return bookRentalRepository.findByBookOrderUnitId(id);}
 
-    public void save(BookRental entity) { bookRentalRepository.save(entity);}
+    public BookRental save(BookRental entity) { return bookRentalRepository.save(entity);}
+
+    public List<BookRental> saveAll(List<BookRental> rentals) { return bookRentalRepository.saveAll(rentals); }
 
     public List<BookRental> findAll() {return bookRentalRepository.findAll();}
 

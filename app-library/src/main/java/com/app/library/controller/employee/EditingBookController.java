@@ -19,168 +19,156 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import javax.validation.ConstraintViolationException;
-import java.awt.*;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 public class EditingBookController implements Initializable {
 
-    private static final int DEFAULT_YEAR_OF_PUBLICATION = 2000;
+	private static final int DEFAULT_YEAR_OF_PUBLICATION = 2000;
 
-    @Autowired
-    private PersistenceService persistenceService;
+	@Autowired
+	private PersistenceService persistenceService;
 
-    @Autowired
-    private BookService bookService;
+	@Autowired
+	private BookService bookService;
 
-    @Autowired
-    private LibraryService libraryService;
+	@Autowired
+	private LibraryService libraryService;
 
-    @Autowired
-    private ViewUtils viewUtils;
+	@Autowired
+	private ViewUtils viewUtils;
 
-    @Autowired
-    private ViewManager viewManager;
+	@Autowired
+	private ViewManager viewManager;
 
-    @Autowired
-    private BookUnitService bookUnitService;
+	@Autowired
+	private BookUnitService bookUnitService;
 
-    @Autowired
-    private BooksSignatureGeneratorUtils booksSignatureGeneratorUtils;
+	@Autowired
+	private BooksSignatureGeneratorUtils booksSignatureGeneratorUtils;
 
-    @FXML
-    private TextField titleField;
+	@FXML
+	private TextField titleField;
 
-    @FXML
-    private TextField authorField;
+	@FXML
+	private TextField authorField;
 
-    @FXML
-    private TextField companyField;
+	@FXML
+	private TextField companyField;
 
-    @FXML
-    private Spinner<Integer> yearOfPublicationField;
+	@FXML
+	private Spinner<Integer> yearOfPublicationField;
 
-    @FXML
-    private ComboBox<Library> libraryField;
+	@FXML
+	private ComboBox<Library> libraryField;
 
-    private void initializeTextBoxes(){
+	private void initializeTextBoxes() {
 
-        Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
-        titleField.setText(book.getName());
-        authorField.setText(book.getAuthor());
-        companyField.setText(book.getPublishingCompany());
-        yearOfPublicationField.getValueFactory().setValue(book.getYearOfPublication());
+		Book book = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
+		titleField.setText(book.getName());
+		authorField.setText(book.getAuthor());
+		companyField.setText(book.getPublishingCompany());
+		yearOfPublicationField.getValueFactory().setValue(book.getYearOfPublication());
+	}
 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 
-    }
+		yearOfPublicationField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, DEFAULT_YEAR_OF_PUBLICATION));
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+		initializeTextBoxes();
 
-        yearOfPublicationField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, DEFAULT_YEAR_OF_PUBLICATION));
+		ObservableList<Library> libs = FXCollections.observableList(libraryService.findAll());
+		ObservableList<Library> libraries = FXCollections.unmodifiableObservableList(libs);
+		this.initializeComboBox(libraries);
+	}
 
-        initializeTextBoxes();
+	@FXML
+	private void saveChanges() {
+		Book editedBook = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
 
-        ObservableList<Library> libs = FXCollections.observableList(libraryService.findAll());
-        ObservableList<Library> libraries = FXCollections.unmodifiableObservableList(libs);
-        this.initializeComboBox(libraries);
+		editedBook.setName(titleField.getText());
+		editedBook.setAuthor(authorField.getText());
+		editedBook.setPublishingCompany(companyField.getText());
+		editedBook.setYearOfPublication(yearOfPublicationField.getValue());
+		editedBook.setLibrary(libraryField.getValue());
 
-    }
+		List<BookUnit> bookUnitList = bookUnitService.findByBookId(editedBook.getId());
+		editedBook.setBookUnits(bookUnitList.stream().collect(Collectors.toSet()));
 
-    @FXML
-    private void saveChanges(){
-        Book newBook = (Book) persistenceService.getStoredObject(PersistenceKeys.SINGLE_BOOK);
+		if (titleField.getText().trim().isEmpty() || authorField.getText().trim().isEmpty() ||
+				companyField.getText().trim().isEmpty() || yearOfPublicationField.getValue().toString().isEmpty()) {
+			showErrorMessage("Nie wszystkie pola zostały wypełnione");
+		} else {
+			try {
+				bookService.saveBook(editedBook);
+				showSuccessMessage();
+				booksSignatureGeneratorUtils.showWindowToSaveBookSignatures(editedBook);
 
-        newBook.setName(titleField.getText());
-        newBook.setAuthor(authorField.getText());
-        newBook.setPublishingCompany(companyField.getText());
-        newBook.setYearOfPublication(yearOfPublicationField.getValue());
-        newBook.setLibrary(libraryField.getValue());
+			} catch (ConstraintViolationException ex) {
+				showErrorMessage(ex.getMessage());
+			}
+		}
 
-        List<BookUnit> bookUnitList = bookUnitService.findByBookId(newBook.getId());
-        Set<BookUnit> set = new HashSet<>();
-
-        for (BookUnit unit: bookUnitList) {
-            set.add(unit);
-        }
-
-        newBook.setBookUnits(set);
-
-        if(titleField.getText().trim().isEmpty() || authorField.getText().trim().isEmpty() ||
-                companyField.getText().trim().isEmpty() || yearOfPublicationField.getValue().toString().isEmpty()){
-            showErrorMessage("Nie wszystkie pola zostały wypełnione");
-        }else{
-            try {
-                bookService.saveBook(newBook);
-                showSuccessMessage();
-                booksSignatureGeneratorUtils.showWindowToSaveBookSignatures(newBook);
-
-            } catch (ConstraintViolationException ex) {
-                showErrorMessage(ex.getMessage());
-            }
-        }
-
-    }
+	}
 
 
-    private void initializeComboBox(ObservableList<Library> libraries) {
-        libraryField.setButtonCell(new EditingBookController.LibraryListCell());
-        libraryField.setCellFactory((ListView<Library> p) -> {
-            final ListCell<Library> cell = new EditingBookController.LibraryListCell();
+	private void initializeComboBox(ObservableList<Library> libraries) {
+		libraryField.setButtonCell(new EditingBookController.LibraryListCell());
+		libraryField.setCellFactory((ListView<Library> p) -> {
+			final ListCell<Library> cell = new EditingBookController.LibraryListCell();
 
-            return cell;
-        });
-        libraryField.getItems().setAll(libraries);
-        libraryField.getSelectionModel().selectFirst();
-    }
+			return cell;
+		});
+		libraryField.getItems().setAll(libraries);
+		libraryField.getSelectionModel().selectFirst();
+	}
 
-    private class LibraryListCell extends ListCell<Library> {
-        @Override
-        protected void updateItem(Library item, boolean empty) {
-            super.updateItem(item, empty);
-            if (!empty && item != null) {
-                Address libraryAddress = item.getAddress();
-                String libraryCellText = String.format(
-                        "%s, %s, %s, %s", item.getName(), libraryAddress.getCity(), libraryAddress.getStreet(), libraryAddress.getZipCode()
-                );
-                setText(libraryCellText);
-            } else {
-                setText(null);
-            }
-        }
-    }
+	private class LibraryListCell extends ListCell<Library> {
+		@Override
+		protected void updateItem(Library item, boolean empty) {
+			super.updateItem(item, empty);
+			if (!empty && item != null) {
+				Address libraryAddress = item.getAddress();
+				String libraryCellText = String.format(
+						"%s, %s, %s, %s", item.getName(), libraryAddress.getCity(), libraryAddress.getStreet(), libraryAddress.getZipCode()
+				);
+				setText(libraryCellText);
+			} else {
+				setText(null);
+			}
+		}
+	}
 
-    private void showSuccessMessage() {
-        AlertMessage message = new AlertMessage.Builder()
-                .content("Dane zostały pomyślnie zedytowane")
-                .header("Sukces")
-                .build();
+	private void showSuccessMessage() {
+		AlertMessage message = new AlertMessage.Builder()
+				.content("Dane zostały pomyślnie zedytowane")
+				.header("Sukces")
+				.build();
 
-        viewUtils.showSuccessAlert(message);
+		viewUtils.showSuccessAlert(message);
 
-    }
+	}
 
-    private void showErrorMessage(String messageContent) {
-        AlertMessage message = new AlertMessage.Builder()
-                .content(messageContent)
-                .header("Błąd")
-                .build();
+	private void showErrorMessage(String messageContent) {
+		AlertMessage message = new AlertMessage.Builder()
+				.content(messageContent)
+				.header("Błąd")
+				.build();
 
-        viewUtils.showErrorAlert(message);
-    }
+		viewUtils.showErrorAlert(message);
+	}
 
-    @FXML
-    private void goToListOfBooks(){
-        viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
-    }
+	@FXML
+	private void goToListOfBooks() {
+		viewManager.show(ViewType.EMPLOYEE_LIST_OF_BOOKS);
+	}
 
 }

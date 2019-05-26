@@ -122,12 +122,6 @@ public class BooksListController implements Initializable {
         viewManager.show(ViewType.EMPLOYEE_ADD_OF_BOOKS);
     }
 
-
-
-
-
-
-
     @Autowired
     public void setViewManager(ViewManager viewManager) {
         this.viewManager = viewManager;
