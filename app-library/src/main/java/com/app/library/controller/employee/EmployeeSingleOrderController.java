@@ -74,7 +74,7 @@ public class EmployeeSingleOrderController implements Initializable {
 		Date dateOfRental = DateUtils.asDate(now);
 		Date dateOfReturn = getDateOfReturn(now);
 
-		User borrower = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_EMPLOYEE);
+		User lender = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_EMPLOYEE);
 
 		List<BookRental> bookRentals = bookOrderUnits.stream()
 				.map(bookOrderUnit -> {
@@ -83,8 +83,8 @@ public class EmployeeSingleOrderController implements Initializable {
 					bookRental.setDateOfRental(dateOfRental);
 					bookRental.setDateOfReturn(dateOfReturn);
 
-					bookRental.setBorrower(borrower);
-					bookRental.setLender(order.getReader());
+					bookRental.setBorrower(order.getReader());
+					bookRental.setLender(lender);
 					bookRental.setBookOrderUnit(bookOrderUnit);
 					bookRental.setBookUnit(bookOrderUnit.getBookUnit());
 
