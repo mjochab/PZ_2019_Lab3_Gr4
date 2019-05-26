@@ -89,7 +89,12 @@ public class ReturnOfBooksController implements Initializable {
 			TableRow<BookRental> row = new TableRow<>();
 			row.setOnMouseClicked(event -> {
 				selectedBookRental = row.getItem();
-				returnButton.setDisable(false);
+					if (selectedBookRental.getBookUnit().isCheckedOut()) {
+						returnButton.setDisable(false);
+					} else {
+						returnButton.setDisable(true);
+					}
+
 			});
 			return row;
 		});
