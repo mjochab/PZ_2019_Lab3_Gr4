@@ -127,7 +127,7 @@
                               </Label>
                               <TextField fx:id="nameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Imię">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -151,7 +151,7 @@
                               </Label>
                               <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Nazwisko">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -175,7 +175,7 @@
                               </Label>
                               <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Pesel">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -199,7 +199,7 @@
                               </Label>
                               <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Mail">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -223,7 +223,7 @@
                               </Label>
                               <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Miasto">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -247,7 +247,7 @@
                               </Label>
                               <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Ulica">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -271,7 +271,7 @@
                               </Label>
                               <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kod">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -295,7 +295,7 @@
                               </Label>
                               <TextField fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Województwo">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -319,7 +319,7 @@
                               </Label>
                               <TextField fx:id="countryTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kraj">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
