@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.IndividualOrderController">
+<ScrollPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.IndividualOrderController">
    <content>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="background" stylesheets="@../../css/style.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <center>
             <BorderPane>
                <top>
@@ -41,29 +41,29 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura" />
                            </graphic>
                         </TableColumn>
-                      <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="195.0">
+                      <TableColumn fx:id="titleColumn" minWidth="0.0" prefWidth="209.0">
                            <graphic>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
                            </graphic>
                         </TableColumn>
-                        <TableColumn fx:id="dateOfRentalColumn" minWidth="0.0" prefWidth="221.0">
+                        <TableColumn fx:id="dateOfRentalColumn" minWidth="0.0" prefWidth="321.0">
                            <graphic>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data wypożyczenia" />
                            </graphic>
                         </TableColumn>
-                        <TableColumn fx:id="expireDateColumn" minWidth="0.0" prefWidth="211.0">
+                        <TableColumn fx:id="expireDateColumn" minWidth="0.0" prefWidth="307.0">
                            <graphic>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Termin Oddania" />
                            </graphic>
                         </TableColumn>
-                        <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="202.0">
+                        <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="172.0">
                            <graphic>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
                            </graphic>
                         </TableColumn>
                     </columns>
                      <BorderPane.margin>
-                        <Insets bottom="20.0" left="50.0" right="50.0" top="50.0" />
+                        <Insets bottom="20.0" top="50.0" />
                      </BorderPane.margin>
                   </TableView>
                </center>
@@ -73,7 +73,7 @@
             </BorderPane>
          </center>
          <top>
-            <JFXToolbar opacity="0.88" prefHeight="80.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <center>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID zamówienia:" BorderPane.alignment="CENTER">
                      <font>
