@@ -109,7 +109,7 @@ public enum ViewType {
     RETURN_OF_BOOKS {
         public String getFxmlName() {return "employee/returns-of-books";}
 
-        public String getFrameTitle() { return "Return";}
+        public String getFrameTitle() { return "Zwroty książek";}
     },
 
     // boss
@@ -142,7 +142,7 @@ public enum ViewType {
     SINGLE_BOOK {
       public String getFxmlName() {return "shared/individual-book's-view";}
 
-      public String getFrameTitle() { return "shared/individual-book's-view"; }
+      public String getFrameTitle() { return "Widok książki"; }
     },
     SIGN_IN {
         public String getFxmlName() {
