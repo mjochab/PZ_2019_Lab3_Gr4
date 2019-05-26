@@ -2,9 +2,11 @@ package com.app.library.service;
 
 import com.app.library.model.Role;
 import com.app.library.model.User;
+import com.app.library.model.dto.ReaderRegistrationDto;
 import com.app.library.model.enumerate.RoleName;
 import com.app.library.repository.RoleRepository;
 import com.app.library.repository.UserRepository;
+import com.app.library.utils.StringUtils;
 import com.app.library.utils.security.AuthenticationFacade;
 import com.app.library.utils.security.AuthorizationDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
@@ -47,6 +50,28 @@ public class UserService {
 
     public AuthorizationDto loginUser(String email, String password) throws Exception {
         return authenticationFacade.login(email, password);
+    }
+
+    public User registerReaderAccount(@Valid ReaderRegistrationDto registrationDto) throws Exception {
+        if (!StringUtils.matches(registrationDto.getPassword(), registrationDto.getConfirmPassword())) {
+            throw new Exception("Passwords should be matched");
+        }
+        User existedUser = userRepository.findByEmail(registrationDto.getEmail());
+        if (existedUser != null) {
+            throw new Exception("User with given email exists");
+        }
+        User user = new User();
+        user.setFirstName(registrationDto.getFirstName());
+        user.setSurname(registrationDto.getSurname());
+        user.setEmail(registrationDto.getEmail());
+        user.setAddress(registrationDto.getAddress());
+        user.setPesel(registrationDto.getPesel());
+        user.setRole(getReaderRole());
+
+        String encryptedPassword = getEncryptedPassword(registrationDto.getPassword());
+        user.setPassword(encryptedPassword);
+
+        return userRepository.save(user);
     }
 
     public String getEncryptedPassword(String password) {

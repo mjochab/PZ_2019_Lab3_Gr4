@@ -15,11 +15,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane prefHeight="1140.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
+<ScrollPane prefHeight="1068.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.AccountController">
    <content>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1142.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1092.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <top>
-            <JFXToolbar opacity="0.88" prefHeight="90.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <center>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto" textAlignment="CENTER" translateX="50.0" wrappingWidth="331.13671875" BorderPane.alignment="CENTER">
                      <font>
@@ -41,14 +41,14 @@
             </JFXToolbar>
          </top>
          <center>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1048.0" prefWidth="1282.0" BorderPane.alignment="CENTER">
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <top>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.88" prefHeight="100.0" prefWidth="1182.0" BorderPane.alignment="CENTER">
+                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
-                        <Insets bottom="30.0" />
+                        <Insets bottom="20.0" />
                      </BorderPane.margin>
                      <children>
-                        <JFXButton fx:id="home" layoutX="246.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="240.0" stylesheets="@../../css/style.css">
+                        <JFXButton fx:id="home" layoutX="246.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                            <graphic>
                               <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -126,7 +126,7 @@
                   <Insets left="50.0" right="50.0" top="20.0" />
                </BorderPane.margin>
                <center>
-                  <VBox prefHeight="832.0" prefWidth="1228.0" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="616.0" prefWidth="1196.0" BorderPane.alignment="CENTER">
                      <children>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0">
                            <children>
@@ -137,7 +137,7 @@
                                  <graphic>
                                     <Text fx:id="firstNameTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Imię">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -147,7 +147,7 @@
                               </Label>
                               <TextField fx:id="nameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Imię">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -161,7 +161,7 @@
                                  <graphic>
                                     <Text fx:id="surnameTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -171,7 +171,7 @@
                               </Label>
                               <TextField fx:id="surnameTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Nazwisko">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -185,7 +185,7 @@
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pesel">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -195,7 +195,7 @@
                               </Label>
                               <TextField fx:id="peselTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Pesel">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -209,7 +209,7 @@
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mail">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -219,7 +219,7 @@
                               </Label>
                               <TextField fx:id="mailTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Mail">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -233,7 +233,7 @@
                                  <graphic>
                                     <Text fx:id="cityTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Miasto">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -243,7 +243,7 @@
                               </Label>
                               <TextField fx:id="cityTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Miasto">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -257,7 +257,7 @@
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ulica">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -267,7 +267,7 @@
                               </Label>
                               <TextField fx:id="streetTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Ulica">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -281,7 +281,7 @@
                                  <graphic>
                                     <Text fx:id="codeTextBox1" strokeType="OUTSIDE" strokeWidth="0.0" text="Kod">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -291,7 +291,7 @@
                               </Label>
                               <TextField fx:id="codeTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kod">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -305,7 +305,7 @@
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Województwo">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -315,7 +315,7 @@
                               </Label>
                               <TextField fx:id="wojewodztwoTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Województwo">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
@@ -329,7 +329,7 @@
                                  <graphic>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kraj">
                                        <font>
-                                          <Font size="38.0" />
+                                          <Font size="28.0" />
                                        </font>
                                     </Text>
                                  </graphic>
@@ -339,16 +339,20 @@
                               </Label>
                               <TextField fx:id="countryTextBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="700.0" promptText="Kraj">
                                  <font>
-                                    <Font size="38.0" />
+                                    <Font size="28.0" />
                                  </font>
                               </TextField>
                            </children>
                         </HBox>
-                        <JFXButton fx:id="saveChange" alignment="CENTER" prefHeight="99.0" prefWidth="1268.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </JFXButton>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="saveChange" alignment="CENTER" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </center>

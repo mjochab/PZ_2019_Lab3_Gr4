@@ -349,7 +349,7 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <JFXButton fx:id="saveChange" alignment="CENTER" onMouseClicked="#goToListOfBooks" prefHeight="99.0" prefWidth="1268.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                        <JFXButton fx:id="saveChange" alignment="CENTER" onMouseClicked="#goToListOfBooks" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
                            <font>
                               <Font size="25.0" />
                            </font>

@@ -54,7 +54,7 @@ public class UserLoginController {
             viewManager.show(ViewType.READER_ACCOUNT);
         }
         else if (authorizationDto.getRoleName().equals(RoleName.ROLE_DIRECTOR)) {
-            // TODO
+            viewManager.show(ViewType.BOSS_ACCOUNT);
         }
     }
 
@@ -65,6 +65,11 @@ public class UserLoginController {
                 .build();
 
         viewUtils.showErrorAlert(message);
+    }
+
+    @FXML
+    void goToReaderRegistration(ActionEvent event) {
+        this.viewManager.show(ViewType.READER_REGISTRATION);
     }
 
     @Autowired
