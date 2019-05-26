@@ -19,7 +19,7 @@
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1092.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <top>
-            <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <JFXToolbar opacity="0.88" prefHeight="80.0" prefWidth="1280.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
                <center>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto" textAlignment="CENTER" translateX="50.0" wrappingWidth="331.13671875" BorderPane.alignment="CENTER">
                      <font>
@@ -43,24 +43,11 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <top>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.88" prefHeight="100.0" prefWidth="946.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" />
                      </BorderPane.margin>
                      <children>
-                        <JFXButton fx:id="home" layoutX="246.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                           <graphic>
-                              <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/library.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
-                        </JFXButton>
                         <JFXButton fx:id="search" layoutX="482.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                            <graphic>
                               <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">

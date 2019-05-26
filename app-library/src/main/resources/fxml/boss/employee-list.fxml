@@ -14,16 +14,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.boss.ListEmployeesController">
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <top>
-            <JFXToolbar prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+            <JFXToolbar prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
                <center>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dyrektor" textAlignment="CENTER" wrappingWidth="215.625" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="48.0" />
+                        <Font size="40.0" />
                      </font>
                   </Text>
                </center>
@@ -49,21 +48,8 @@
                         </HBox>
                      </center>
                   </BorderPane>
-                  <HBox layoutX="106.0" layoutY="14.0" opacity="0.88" prefHeight="78.0" prefWidth="1069.0">
+                  <HBox layoutX="104.0" layoutY="14.0" opacity="0.88" prefHeight="78.0" prefWidth="1071.0">
                      <children>
-                        <Button fx:id="home" layoutX="56.0" layoutY="57.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
-                           <graphic>
-                              <ImageView fitHeight="57.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/library.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="border_menu" />
-                              <String fx:value="brown_background" />
-                           </styleClass>
-                        </Button>
                         <Button fx:id="employees" mnemonicParsing="false" onAction="#goToListEmployee" prefHeight="78.0" prefWidth="218.0" stylesheets="@../../css/style.css" text="Lista pracowników">
                            <font>
                               <Font name="System Bold" size="20.0" />
@@ -91,7 +77,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="78.0" prefWidth="100.0" stylesheets="@../../css/style.css" text="Konto">
+                        <Button layoutX="220.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="78.0" prefWidth="180.0" stylesheets="@../../css/style.css" text="Konto">
                            <styleClass>
                               <String fx:value="brown_background" />
                               <String fx:value="border_menu" />
@@ -100,7 +86,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToLogout" prefHeight="78.0" prefWidth="107.0" stylesheets="@../../css/style.css">
+                        <Button fx:id="logout" layoutX="325.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToLogout" prefHeight="78.0" prefWidth="180.0" stylesheets="@../../css/style.css">
                            <graphic>
                               <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

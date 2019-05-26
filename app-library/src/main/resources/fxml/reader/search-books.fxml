@@ -16,12 +16,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.SearchBooksController">
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <top>
-            <JFXToolbar prefHeight="64.0" prefWidth="1280.0" style="-fx-background-color: rgba(147,120,84,0.9);" BorderPane.alignment="CENTER">
+            <JFXToolbar prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: rgba(147,120,84,0.9);" BorderPane.alignment="CENTER">
                <center>
                   <Text lineSpacing="10.0" smooth="false" strokeType="OUTSIDE" text="Wyszukiwarka książek" textAlignment="CENTER" textOrigin="CENTER" translateX="50.0" wrappingWidth="323.0" BorderPane.alignment="CENTER">
                      <font>
@@ -70,21 +69,8 @@
                   </FlowPane>
                </center>
                <top>
-                  <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.88" prefHeight="100.0" prefWidth="944.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton fx:id="home" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                           <graphic>
-                              <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/library.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <styleClass>
-                              <String fx:value="brown_background" />
-                              <String fx:value="border_menu" />
-                           </styleClass>
-                        </JFXButton>
                         <JFXButton fx:id="search" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                            <graphic>
                               <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">

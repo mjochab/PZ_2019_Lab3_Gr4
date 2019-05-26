@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXToolbar?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,17 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.EmployeeSingleOrderController">
    <content>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
-         <top>
-            <JFXToolbar prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
-               <center>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER" />
-               </center>
-            </JFXToolbar>
-         </top>
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
@@ -59,7 +50,7 @@
                <bottom>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="847.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton fx:id="applyButton" onMouseClicked="#realizeOrder" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="179.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zatwierdź">
+                        <JFXButton fx:id="applyButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#realizeOrder" prefHeight="66.0" prefWidth="179.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zatwierdź">
                            <font>
                               <Font size="18.0" />
                            </font>
