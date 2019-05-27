@@ -43,6 +43,9 @@ public class AccountController implements Initializable {
 		viewManager.show(ViewType.READER_SEARCH_BOOKS);
 	}
 
+    /**
+     * Metoda, dzięki której przechodzimy do widoku zamówień czytelnika.
+     */
 	@FXML
 	public void goToMyOrders() {
 		viewManager.show(ViewType.READER_MY_ORDERS);
@@ -136,5 +139,6 @@ public class AccountController implements Initializable {
 
 		viewUtils.showErrorAlert(message);
 	}
+
 
 }
