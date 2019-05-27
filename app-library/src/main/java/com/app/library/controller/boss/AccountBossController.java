@@ -5,6 +5,7 @@ import com.app.library.model.User;
 import com.app.library.service.PersistenceService;
 import com.app.library.service.UserService;
 import com.app.library.utils.AlertMessage;
+import com.app.library.utils.PersistenceKeys;
 import com.app.library.utils.ViewUtils;
 import com.app.library.view.ViewManager;
 import com.app.library.view.ViewType;
@@ -15,7 +16,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 
+import javax.validation.ConstraintViolationException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -77,8 +80,7 @@ public class AccountBossController implements Initializable {
     }
 
     public void fillTextField() {
-
-        User user = (User) persistenceService.getStoredObject("LOGGED_DIRECTOR");
+        User user = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_DIRECTOR);
 
         nameTextBox.setText(user.getFirstName());
         surnameTextBox.setText(user.getSurname());
@@ -87,49 +89,49 @@ public class AccountBossController implements Initializable {
         cityTextBox.setText(user.getAddress().getCity());
         streetTextBox.setText(user.getAddress().getStreet());
         codeTextBox.setText(user.getAddress().getZipCode());
-
     }
 
+
     @FXML
-    public void profilUpdate(){
+    public void updateProfile() {
+        User user = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_DIRECTOR);
 
-        User user = (User) persistenceService.getStoredObject("LOGGED_DIRECTOR");
-
-
-
-
-
-        String name = nameTextBox.getText();
-        String surname = surnameTextBox.getText();
-        String pesel =  peselTextBox.getText();
-        String mail =  mailTextBox.getText();
-        String city =  cityTextBox.getText();
-        String street =  streetTextBox.getText();
-        String code =  codeTextBox.getText();
-
-        if(name.equals(null) || surname.equals(null) || pesel.equals(null) || mail.equals(null) || city.equals(null)
-                || street.equals(null) || code.equals(null) ) {
+        if (!isFormValid()) {
 
             showErrorMessage("Wypełnij wszystkie pola.");
 
-        }else {
+        } else {
 
-            user.setFirstName(name);
-            user.setSurname(surname);
-            user.setPesel(pesel);
-            user.setEmail(mail);
+            user.setFirstName(nameTextBox.getText());
+            user.setSurname(surnameTextBox.getText());
+            user.setPesel(peselTextBox.getText());
+            user.setEmail(mailTextBox.getText());
             Address address = new Address();
-            address.setCity(city);
-            address.setStreet(street);
-            address.setZipCode(code);
+            address.setCity(cityTextBox.getText());
+            address.setStreet(streetTextBox.getText());
+            address.setZipCode(codeTextBox.getText());
             user.setAddress(address);
 
-            userService.saveUser(user);
-
-            showSuccessMessage("Dokonano zmiany.");
+            try {
+                userService.save(user);
+                showSuccessMessage("Dokonano zmiany.");
+            } catch (ConstraintViolationException ex) {
+                showErrorMessage(ex.getMessage());
+            }
         }
+    }
 
+    private boolean isFormValid() {
+        String name = nameTextBox.getText();
+        String surname = surnameTextBox.getText();
+        String pesel = peselTextBox.getText();
+        String mail = mailTextBox.getText();
+        String city = cityTextBox.getText();
+        String street = streetTextBox.getText();
+        String code = codeTextBox.getText();
 
+        return !(StringUtils.isEmpty(name) || StringUtils.isEmpty(surname) || StringUtils.isEmpty(pesel) ||
+                StringUtils.isEmpty(mail) || StringUtils.isEmpty(city) || StringUtils.isEmpty(street) || StringUtils.isEmpty(code));
     }
 
     private void showSuccessMessage(String content) {
@@ -149,6 +151,7 @@ public class AccountBossController implements Initializable {
 
         viewUtils.showErrorAlert(message);
     }
+
 
 
 }
