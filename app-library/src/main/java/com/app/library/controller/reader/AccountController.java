@@ -83,13 +83,18 @@ public class AccountController {
     @FXML
     private JFXButton saveChange;
 
-
+    /**
+     *
+     */
 
     @FXML
     public void goToSearchBooks() {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
+    /**
+     * Metoda, dzięki której przechodzimy do widoku zamówień czytelnika.
+     */
     @FXML
     public void goToMyOrders() {
         viewManager.show(ViewType.READER_MY_ORDERS);

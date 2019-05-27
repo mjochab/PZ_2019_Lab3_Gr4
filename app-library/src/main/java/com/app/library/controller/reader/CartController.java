@@ -100,7 +100,9 @@ public class CartController implements Initializable {
 		return observableList;
 	}
 
-
+	/**
+	 *  dodawanie nowych rekordów do tabeli books_order
+	 */
 	@FXML
 	private void submitOrder() {
 		if (!persistenceService.getCart().isEmpty()) {
@@ -138,7 +140,14 @@ public class CartController implements Initializable {
 
 	}
 
-
+	/**
+	 * Metoda inicjalizująca się automatycznie po przejściu do widoku.
+	 * Ustawiane są dane dla poszczególnych kolumn, oraz wywołanie metod wypełniających tabelę danymi.
+	 * @param location Lokalizacja używana do rozwiązywania ścieżek względnych dla obiektu głównego lub wartość null,
+	 *                   jeśli lokalizacja nie jest znana.
+	 * @param resources Zasoby używane do lokalizacji obiektu głównego lub wartość null,
+	 *                     jeśli obiekt główny nie został zlokalizowany.
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
