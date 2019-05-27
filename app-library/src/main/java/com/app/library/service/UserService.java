@@ -74,6 +74,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User save(@Valid User user){
+        return userRepository.save(user);
+    }
+
     public String getEncryptedPassword(String password) {
         if (password == null || password.trim().length() == 0) {
             throw new IllegalArgumentException("Password can not be null");
