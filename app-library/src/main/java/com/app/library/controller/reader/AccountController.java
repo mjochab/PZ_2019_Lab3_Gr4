@@ -11,7 +11,6 @@ import com.app.library.view.ViewType;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -38,16 +37,8 @@ public class AccountController implements Initializable {
     private ViewUtils viewUtils;
 
     @FXML
-
     private TextField nameTextBox, surnameTextBox, peselTextBox, mailTextBox, cityTextBox, streetTextBox,
             codeTextBox = new TextField();
-
-
-
-
-
-
-
 
 
 
@@ -56,6 +47,9 @@ public class AccountController implements Initializable {
         viewManager.show(ViewType.READER_SEARCH_BOOKS);
     }
 
+    /**
+     * Metoda, dzięki której przechodzimy do widoku zamówień czytelnika.
+     */
     @FXML
     public void goToMyOrders() {
         viewManager.show(ViewType.READER_MY_ORDERS);
@@ -71,14 +65,10 @@ public class AccountController implements Initializable {
         viewManager.show(ViewType.READER_CART);
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         fillTextField();
-
     }
-
 
     public void fillTextField() {
 
@@ -153,5 +143,6 @@ public class AccountController implements Initializable {
 
         viewUtils.showErrorAlert(message);
     }
+
 
 }
