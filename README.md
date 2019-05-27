@@ -46,13 +46,13 @@ Przewidywane funkcjonalności:
 
 ## Projekt wizualny aplikacji (szkice)
 ### Logowanie (jako strona główna)
-![](https://i.imgsafe.org/image/c1127b148d.png)
+![](https://i.imgsafe.org/c1/c19d28cf7e.png)
 
 ### Rejestracja użytkowanika
-![](https://i.imgsafe.org/image/c11fa66c38.png)
+![](https://i.imgsafe.org/c1/c19d7ea4b8.png)
 
 ### Zamawianie / Wypożyczanie
-![](https://i.imgsafe.org/image/c12556576f.png)
+![](https://i.imgsafe.org/c1/c19e89b3c3.png)
 
 ### Ustawienia konta (możliwa edycja)
 ![](https://i.imgsafe.org/c1/c1488ca7c6.png)
