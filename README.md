@@ -4,18 +4,12 @@
 Aplikacja ma na celu usprawnić zarządanie biblioteką jak i większą ilością bibliotek. 
 
 Przewidywane funkcjonalności: 
-1. Przesunięcia między bibliotekami np. książek, pracowników
-1. Dodawanie/edycja klienta przez pracownika
-1. Dodawanie/edycja pracownika przez administratora
+1. Przesunięcia między bibliotekami książek
 1. Dodawanie/edycja książek przez pracownika
-1. Dodawanie administratora
-1. Wświetlanie najpopularniejszych książek
-1. Wświetlanie polecanych książek
-1. Możliwość wypożyczania i rezerwowania książek
+1. Możliwość wypożyczania,rezerwowania i oddawania książek
 1. Wyszukiwanie książek po np. rok wydania, autor, kategorii, itp.
 1. Zamawianie książek
-1. Generowanie pliku z listą wypożyczonych książek przez klienta 
-1. Generowanie pliku z listą zamównionych książek
+1. Generowanie sygnatur
 
 
 ### Wykorzystane technologie
@@ -51,24 +45,28 @@ Przewidywane funkcjonalności:
 
 
 ## Projekt wizualny aplikacji (szkice)
+### Logowanie (jako strona główna)
+![](https://i.imgsafe.org/image/c1127b148d.png)
+
+### Rejestracja użytkowanika
+![](https://i.imgsafe.org/image/c11fa66c38.png)
+
 ### Zamawianie / Wypożyczanie
-![](https://i.imgsafe.org/0a/0af2c5b40d.png)
-![](https://i.imgsafe.org/3b/3bd4fca808.png)
+![](https://i.imgsafe.org/image/c12556576f.png)
+
+### Ustawienia konta (możliwa edycja)
+![](https://i.imgsafe.org/c1/c1488ca7c6.png)
+
 #### Obsługa zamówień
-![](https://i.imgsafe.org/3c/3c75210bcf.png)
+![](https://i.imgsafe.org/c1/c14ef189d2.png)
 
-### Strona główna
-![](https://i.imgsafe.org/2a/2a42e56962.png)
-![](https://i.imgsafe.org/2a/2a42e8e6d3.png)
+### Dodawanie książek
+![](https://i.imgsafe.org/c1/c15f0b7dd1.png)
 
-### Dodawanie użytkownika
-![](https://i.imgsafe.org/3a/3a4825ff4c.jpeg)
+### Edytowanie książek
+![](https://i.imgsafe.org/c1/c166dd288f.png)
+
 
 ### Edycja pracownika
 ![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
 
-### Dodawanie książek
-![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
-
-### Edytowanie książek
-![](https://i.imgsafe.org/3a/3a48a191ba.jpeg)
