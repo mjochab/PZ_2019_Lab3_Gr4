@@ -29,4 +29,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             "OR     lower(user.pesel) LIKE %:query% " +
             "OR     lower(user.email) LIKE %:query%)")
     List<User> findReadersByQuery(@Param("query") String query);
+
+    @Override
+    <S extends User> S save(S entity);
+
 }
