@@ -288,7 +288,7 @@
                         <HBox alignment="CENTER" />
                         <HBox alignment="CENTER" layoutX="10.0" layoutY="650.0">
                            <children>
-                              <JFXButton fx:id="saveChange1" alignment="CENTER" onMouseClicked="#profilUpdate" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                              <JFXButton fx:id="saveChange1" alignment="CENTER" onMouseClicked="#updateProfile" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
                                  <font>
                                     <Font size="25.0" />
                                  </font>

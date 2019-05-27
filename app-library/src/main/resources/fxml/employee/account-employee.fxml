@@ -290,7 +290,7 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0" />
                         <HBox alignment="TOP_CENTER" opacity="0.88" prefHeight="0.0" prefWidth="820.0" />
-                        <JFXButton fx:id="saveChange" alignment="CENTER" onMouseClicked="#profilUpdate" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
+                        <JFXButton fx:id="saveChange" alignment="CENTER" onMouseClicked="#updateProfile" prefHeight="60.0" prefWidth="300.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zapisz zmiany">
                            <font>
                               <Font size="25.0" />
                            </font>

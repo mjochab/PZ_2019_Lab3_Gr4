@@ -74,8 +74,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void saveUser(User user){
-        userRepository.save(user);
+    public User save(@Valid User user){
+        return userRepository.save(user);
     }
 
     public String getEncryptedPassword(String password) {
