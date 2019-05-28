@@ -68,4 +68,3 @@ Przewidywane funkcjonalności:
 
 ### Lista pracowników
 ![](https://i.imgsafe.org/ce/ce30d095b8.png)
-
