@@ -46,13 +46,13 @@ Przewidywane funkcjonalności:
 
 ## Projekt wizualny aplikacji (szkice)
 ### Logowanie (jako strona główna)
-![](https://i.imgsafe.org/c1/c19d28cf7e.png)
+![](https://i.imgsafe.org/image/c1127b148d.png)
 
 ### Rejestracja użytkowanika
-![](https://i.imgsafe.org/c1/c19d7ea4b8.png)
+![](https://i.imgsafe.org/image/c11fa66c38.png)
 
 ### Zamawianie / Wypożyczanie
-![](https://i.imgsafe.org/c1/c19e89b3c3.png)
+![](https://i.imgsafe.org/image/c12556576f.png)
 
 ### Ustawienia konta (możliwa edycja)
 ![](https://i.imgsafe.org/c1/c1488ca7c6.png)
@@ -66,7 +66,6 @@ Przewidywane funkcjonalności:
 ### Edytowanie książek
 ![](https://i.imgsafe.org/c1/c166dd288f.png)
 
-
-### Edycja pracownika
-![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
+### Lista pracowników
+![](https://i.imgsafe.org/ce/ce30d095b8.png)
 
