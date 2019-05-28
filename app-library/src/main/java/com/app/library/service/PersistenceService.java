@@ -15,10 +15,6 @@ import static java.util.Objects.requireNonNull;
 @Service
 public class PersistenceService {
 
-    private User user;
-
-    private User employee;
-
     private BooksOrder selectedBooksOrder;
 
     private HashMap<String, Object> storedObjects;
@@ -52,24 +48,8 @@ public class PersistenceService {
         return this.cart;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public BooksOrder getSelectedBooksOrder() {
         return selectedBooksOrder;
-    }
-
-    public User getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(User employee) {
-        this.employee = employee;
     }
 
     public void setSelectedBooksOrder(BooksOrder selectedBooksOrder) {

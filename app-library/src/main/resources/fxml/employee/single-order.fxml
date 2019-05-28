@@ -1,65 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXToolbar?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.EmployeeSingleOrderController">
-   <top>
-      <JFXToolbar prefHeight="64.0" prefWidth="600.0" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.employee.EmployeeSingleOrderController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../../css/style.css">
          <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER" />
-         </center>
-      </JFXToolbar>
-   </top>
-   <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="50.0" right="50.0" top="20.0" />
-         </BorderPane.margin>
-         <center>
-            <TableView fx:id="orderTable" prefHeight="368.0" prefWidth="879.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="signatureColumn" prefWidth="435.0">
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="50.0" right="50.0" top="20.0" />
+               </BorderPane.margin>
+               <center>
+                  <TableView fx:id="orderTable" prefHeight="416.0" prefWidth="1032.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="signatureColumn" prefWidth="435.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura" wrappingWidth="57.4921875" />
+                           </graphic>
+                        </TableColumn>
+                      <TableColumn fx:id="titleColumn" prefWidth="444.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
+                           </graphic>
+                        </TableColumn>
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="70.0" left="100.0" right="100.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+               <top>
+                  <JFXButton fx:id="goBackButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#goBack" prefHeight="60.0" prefWidth="110.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="TOP_RIGHT">
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </BorderPane.margin>
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sygnatura" wrappingWidth="57.4921875" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Powrót" />
                      </graphic>
-                  </TableColumn>
-                <TableColumn fx:id="titleColumn" prefWidth="444.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
-                     </graphic>
-                  </TableColumn>
-              </columns>
-               <BorderPane.margin>
-                  <Insets bottom="100.0" left="150.0" right="50.0" />
-               </BorderPane.margin>
-            </TableView>
+                  </JFXButton>
+               </top>
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="847.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton fx:id="applyButton" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#realizeOrder" prefHeight="66.0" prefWidth="179.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Zatwierdź">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="340.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="releaseButton" alignment="CENTER" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onMouseClicked="#releaseOrder" prefHeight="67.0" prefWidth="159.0" ripplerFill="#fcfcfc" styleClass="menu_item_active" stylesheets="@../../css/style.css" text="Wydaj" textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
          </center>
-         <top>
-            <JFXButton fx:id="goBackButton" onMouseClicked="#goBack" alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="110.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER_LEFT">
-               <BorderPane.margin>
-                  <Insets top="20.0" />
-               </BorderPane.margin>
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Powrót" />
-               </graphic>
-            </JFXButton>
-         </top>
-         <bottom>
-            <JFXButton fx:id="applyButton" onMouseClicked="#realizeOrder" prefHeight="68.0" prefWidth="150.0" styleClass="menu_item_active" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Potwierdź zamówienie" />
-               </graphic>
-               <BorderPane.margin>
-                  <Insets bottom="100.0" />
-               </BorderPane.margin>
-            </JFXButton>
-         </bottom>
       </BorderPane>
-   </center>
-</BorderPane>
+   </content>
+</ScrollPane>

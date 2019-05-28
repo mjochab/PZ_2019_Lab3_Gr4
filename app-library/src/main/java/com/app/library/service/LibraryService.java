@@ -16,6 +16,8 @@ public class LibraryService {
         return libraryRepository.findAll();
     }
 
+    public Library save(Library library) { return this.libraryRepository.save(library); }
+
     @Autowired
     public void setLibraryRepository(LibraryRepository libraryRepository) {
         this.libraryRepository = libraryRepository;

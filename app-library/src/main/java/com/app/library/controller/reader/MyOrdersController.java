@@ -3,6 +3,7 @@ package com.app.library.controller.reader;
 
 import com.app.library.model.Book;
 import com.app.library.model.BooksOrder;
+import com.app.library.model.User;
 import com.app.library.service.*;
 import com.app.library.utils.PersistenceKeys;
 import com.app.library.view.ViewManager;
@@ -87,9 +88,13 @@ public class MyOrdersController implements Initializable {
             List<String> stringList = new ArrayList<>();
             stringList.add(booksOrders.get(i).getId().toString());
             stringList.add(booksOrders.get(i).getCreatedAt().toString());
-            if(booksOrders.get(i).isReadyToRelease()){
-                stringList.add("Gotowe do odbioru");
-            }else stringList.add("W trakcie realizacji");
+            if(booksOrders.get(i).isReleased()){
+                stringList.add("Odebrano");
+            }else{
+                if(booksOrders.get(i).isReadyToRelease()){
+                    stringList.add("Gotowe do odbioru");
+                }else stringList.add("W trakcie realizacji");
+            }
 
             observableList.addAll(stringList);
         }
@@ -121,7 +126,8 @@ public class MyOrdersController implements Initializable {
         dateOfOrderColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(1)));
         statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().get(2)));
 
-        List<BooksOrder> booksOrders = booksOrderService.findByReaderId(persistenceService.getUser().getId());
+        User reader = (User) persistenceService.getStoredObject(PersistenceKeys.LOGGED_READER);
+        List<BooksOrder> booksOrders = booksOrderService.findByReaderId(reader.getId());
 
         setOrderTableItems(getListToTable(booksOrders));
 

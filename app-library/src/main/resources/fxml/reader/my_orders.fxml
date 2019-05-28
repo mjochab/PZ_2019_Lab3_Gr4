@@ -6,6 +6,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -15,158 +16,149 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.MyOrdersController">
-   <top>
-      <JFXToolbar opacity="0.88" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
-         <center>
-            <Label BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="40.0" />
-               </font>
-               <graphic>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia" translateX="50.0">
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.library.controller.reader.MyOrdersController">
+   <content>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../../css/style.css">
+         <top>
+            <JFXToolbar opacity="0.88" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #937854;" BorderPane.alignment="CENTER">
+               <center>
+                  <Label BorderPane.alignment="CENTER">
                      <font>
                         <Font size="40.0" />
                      </font>
-                  </Text>
-               </graphic>
-            </Label>
-         </center>
-         <right>
-            <JFXButton fx:id="cart" onMouseClicked="#goToCart" prefHeight="100.0" prefWidth="100.0" styleClass="border_menu" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/shopping-cart.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </right>
-      </JFXToolbar>
-   </top>
-   <styleClass>
-      <String fx:value="brown_background" />
-      <String fx:value="background" />
-   </styleClass>
-   <center>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="50.0" right="50.0" top="20.0" />
-         </BorderPane.margin>
-         <top>
-            <HBox opacity="0.88" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                      <graphic>
-                        <ImageView fitHeight="85.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/library.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="search" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/lupa.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="my_orders" layoutX="246.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="border_menu" />
-                        <String fx:value="menu_item_active" />
-                     </styleClass>
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia" translateX="50.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font size="40.0" />
                            </font>
                         </Text>
                      </graphic>
-                  </Button>
-                  <Button fx:id="account" layoutX="482.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
+                  </Label>
+               </center>
+               <right>
+                  <JFXButton fx:id="cart" onMouseClicked="#goToCart" prefHeight="100.0" prefWidth="100.0" styleClass="border_menu" stylesheets="@../../css/style.css" text=" " BorderPane.alignment="CENTER">
                      <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="logout" layoutX="718.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
-                     <graphic>
-                        <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/logout.png" />
+                              <Image url="@../../images/shopping-cart.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <styleClass>
-                        <String fx:value="brown_background" />
-                        <String fx:value="border_menu" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </HBox>
+                  </JFXButton>
+               </right>
+            </JFXToolbar>
          </top>
+         <styleClass>
+            <String fx:value="brown_background" />
+            <String fx:value="background" />
+         </styleClass>
          <center>
-            <TableView fx:id="ordersTable" opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets top="30.0" />
+                  <Insets left="50.0" right="50.0" top="20.0" />
                </BorderPane.margin>
-               <columns>
-                  <TableColumn fx:id="idColumn" prefWidth="232.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID zamówienia">
+               <top>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.88" prefHeight="100.0" prefWidth="928.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="search" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToSearchBooks" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                           <graphic>
+                              <ImageView fitHeight="74.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/lupa.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="my_orders" layoutX="246.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font size="23.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </TableColumn>
-                  <TableColumn fx:id="dateOfOrderColumn" prefWidth="621.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data złożenia zamówienia">
+                           <styleClass>
+                              <String fx:value="border_menu" />
+                              <String fx:value="menu_item_active" />
+                           </styleClass>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moje zamówienia">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="account" layoutX="482.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToAccount" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font size="23.0" />
                            </font>
-                        </Text>
-                     </graphic>
-                  </TableColumn>
-                  <TableColumn fx:id="statusColumn" prefWidth="326.0">
-                     <graphic>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </TableColumn>
-               </columns>
-            </TableView>
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Konto">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logout" layoutX="718.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="100.0" prefWidth="236.0" stylesheets="@../../css/style.css">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/logout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="brown_background" />
+                              <String fx:value="border_menu" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </HBox>
+               </top>
+               <center>
+                  <TableView fx:id="ordersTable" opacity="0.88" styleClass="brown_background" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets top="30.0" />
+                     </BorderPane.margin>
+                     <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="232.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID zamówienia">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="dateOfOrderColumn" prefWidth="621.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data złożenia zamówienia">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="statusColumn" prefWidth="326.0">
+                           <graphic>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </graphic>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
          </center>
       </BorderPane>
-   </center>
-</BorderPane>
+   </content>
+</ScrollPane>

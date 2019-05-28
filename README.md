@@ -66,7 +66,5 @@ Przewidywane funkcjonalności:
 ### Edytowanie książek
 ![](https://i.imgsafe.org/c1/c166dd288f.png)
 
-
-### Edycja pracownika
-![](https://i.imgsafe.org/3a/3a48831d80.jpeg)
-
+### Lista pracowników
+![](https://i.imgsafe.org/ce/ce30d095b8.png)

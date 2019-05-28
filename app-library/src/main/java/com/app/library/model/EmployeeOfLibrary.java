@@ -13,7 +13,7 @@ public class EmployeeOfLibrary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
     private User user;
 
     @ManyToOne(optional = false)

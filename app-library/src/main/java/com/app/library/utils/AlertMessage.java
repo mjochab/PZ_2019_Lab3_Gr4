@@ -3,6 +3,7 @@ package com.app.library.utils;
 import java.util.Objects;
 
 public class AlertMessage {
+
     private AlertMessage() {}
 
     private String content;
@@ -52,4 +53,6 @@ public class AlertMessage {
         this.title = title;
         this.header = Objects.requireNonNull(header);
     }
+
+
 }

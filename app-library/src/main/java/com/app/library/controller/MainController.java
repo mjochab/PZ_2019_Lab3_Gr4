@@ -49,7 +49,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void goToRejestracja(Event event) throws IOException {
-        viewManager.show(ViewType.REGISTER);
+        viewManager.show(ViewType.READER_REGISTRATION);
     }
 
     @FXML

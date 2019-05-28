@@ -14,12 +14,10 @@ public class Library {
     private Integer id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(insertable = false, updatable = false)
     @NotNull
     private User director;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(insertable = false, updatable = false)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @NotNull
     private Address address;
 
