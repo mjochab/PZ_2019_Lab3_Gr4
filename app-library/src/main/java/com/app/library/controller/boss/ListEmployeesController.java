@@ -48,9 +48,9 @@ public class ListEmployeesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         firstNameColumn.setCellValueFactory(this::getFirstName);
-//        surnameColumn.setCellValueFactory(this::getSurname);
-//        peselColumn.setCellValueFactory(this::getPesel);
-//        libraryColumn.setCellValueFactory(this::getLibraryName);
+        surnameColumn.setCellValueFactory(this::getSurname);
+        peselColumn.setCellValueFactory(this::getPesel);
+        libraryColumn.setCellValueFactory(this::getLibraryName);
 
 
         List<EmployeeOfLibrary> employees = employeeOfLibraryService.findAll();

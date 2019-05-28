@@ -137,6 +137,12 @@ public enum ViewType {
 
         public String getFrameTitle() { return "Dodaj prcownika"; }
     },
+    BOSS_ADD_LIBRARY {
+        public String getFxmlName() { return "boss/add-library"; }
+
+        public String getFrameTitle() { return "Dodaj bibliotekę"; }
+    },
+
 
     // shared
     SINGLE_BOOK {

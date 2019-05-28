@@ -95,6 +95,11 @@
       
                               </columns>
                           </TableView>
+                  <Button layoutX="1021.0" layoutY="172.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="169.0" text="Dodaj bibliotekę" onAction="#goToAddLibrary">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
                   </children>
               </AnchorPane>
           </center>

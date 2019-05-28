@@ -118,7 +118,10 @@ public class ListLibrariesController implements Initializable {
     public void goToLogout(ActionEvent event) throws IOException {
         viewManager.show(ViewType.MAIN);
     }
-
+    @FXML
+    public void goToAddLibrary(ActionEvent event) throws IOException {
+        viewManager.show(ViewType.BOSS_ADD_LIBRARY);
+    }
 
 }
 
